@@ -9,7 +9,7 @@ images: []
 resources:
 - name: featured-image
   src: featured-image.jpg
-
+  
 tags: ["knowledge"]
 categories: ["formal_epistemology"]
 
