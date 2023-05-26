@@ -9,6 +9,8 @@ images: []
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
+- name: "featured-image-preview"
+  src: "featured-image-preview.jpg"
 
 tags: ["knowledge"]
 categories: ["formal_epistemology"]
@@ -22,8 +24,6 @@ toc:
 La epistemología formal es un campo interdisciplinario que reflexiona sobre el conocimiento y el aprendizaje empleando métodos formales. 
 
 <!--more-->
-
-{{< image src="/images/formalepistemology.jpg" caption="Ice (`imagen`)" >}}
 
 ## Introducción
 

@@ -7,7 +7,9 @@ draft: false
 images: []
 resources:
 - name: "featured-image"
-  src: "formalepistemology.jpg"
+  src: "featured-image.jpg"
+- name: "featured-image-preview"
+  src: "featured-image-preview.jpg"
 
 tags: ["knowledge"]
 categories: ["formal_epistemology"]
@@ -19,8 +21,6 @@ toc:
 Formal epistemology is an interdisciplinary field that reflects on knowledge and learning using formal methods. 
 
 <!--more-->
-
-{{< image src="/images/formalepistemology.jpg" caption="Ice (`image`)" >}}
 
 ## Introduction
 
