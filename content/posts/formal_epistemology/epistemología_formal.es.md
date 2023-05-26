@@ -23,7 +23,7 @@ La epistemología formal es un campo interdisciplinario que reflexiona sobre el 
 
 <!--more-->
 
-
+{{< image src="/images/formalepistemology.jpg" caption="Ice (`imagen`)" >}}
 
 ## Introducción
 
