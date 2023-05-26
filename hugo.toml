@@ -2,11 +2,43 @@ baseURL = "https://castillosebastian.github.io/castillocs/"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
-
 # website title
 title = "CastilloCS"
 
 defaultContentLanguage = "en"
+
+# Menu config
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    # 当您将鼠标悬停在此菜单链接上时, 将显示标题
+    title = ""
+  [[menu.main]]
+    weight = 2
+    identifier = "tags"
+    pre = ""
+    post = ""
+    name = "Tags"
+    url = "/tags/"
+    title = ""
+  [[menu.main]]
+    weight = 3
+    identifier = "categories"
+    pre = ""
+    post = ""
+    name = "Categories"
+    url = "/categories/"
+    title = ""
 
 [languages]
   [languages.en]
@@ -14,30 +46,39 @@ defaultContentLanguage = "en"
     title = "CastilloCS"
     languageCode = "en"
     languageName = "English"
-    [[languages.en.menu.main]]
-      weight = 1
-      identifier = "posts"
-      pre = ""
-      post = ""
-      name = "Posts"
-      url = "/posts/"
-      title = ""
-    [[languages.en.menu.main]]
-      weight = 2
-      identifier = "tags"
-      pre = ""
-      post = ""
-      name = "Tags"
-      url = "/tags/"
-      title = ""
-    [[languages.en.menu.main]]
-      weight = 3
-      identifier = "categories"
-      pre = ""
-      post = ""
-      name = "Categories"
-      url = "/categories/"
-      title = ""
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        weight = 1
+        identifier = "posts"
+        pre = ""
+        post = ""
+        name = "Posts"
+        url = "/posts/"
+        title = ""
+      [[languages.en.menu.main]]
+        weight = 2
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "Tags"
+        url = "/tags/"
+        title = ""
+      [[languages.en.menu.main]]
+        weight = 3
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "Categories"
+        url = "/categories/"
+        title = ""
+      [[languages.en.menu.main]]
+        weight = 6
+        identifier = "github"
+        pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
+        post = ""
+        name = ""
+        url = "https://github.com/castillosebastian/castillocs"
+        title = "GitHub"
     [languages.en.params]
       [languages.en.params.search]
         enable = true
@@ -59,7 +100,7 @@ defaultContentLanguage = "en"
           gravatarEmail = ""
           avatarURL = "images/avatar.png"
           title = ""
-          subtitle = "An amazing journey"
+          subtitle = "deep fascination for intelligent algorithms"
           typeit = true
           social = true
           disclaimer = ""
@@ -73,28 +114,30 @@ defaultContentLanguage = "en"
         Phone = "555-555-555"
         Email = "xxxx@xxxx.com"
         RSS = true
+  
   [languages.es]
-    weight = 3
+    weight = 2
     title = "CastilloCS"
     languageCode = "es"
     languageName = "Spanish"
-    [[languages.es.menu.main]]
-      weight = 1
-      identifier = "posts"
-      pre = ""
-      post = ""
-      name = "Posts"
-      url = "/posts/"
-      title = ""
-    [[languages.es.menu.main]]
-      weight = 2
-      identifier = "tags"
-      pre = ""
-      post = ""
-      name = "Tags"
-      url = "/tags/"
-      title = ""
-    [[languages.es.menu.main]]
+    [languages.es.menu]
+      [[languages.es.menu.main]]
+        weight = 1
+        identifier = "posts"
+        pre = ""
+        post = ""
+        name = "Posts"
+        url = "/posts/"
+        title = ""
+      [[languages.es.menu.main]]
+        weight = 2
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "Tags"
+        url = "/tags/"
+        title = ""
+      [[languages.es.menu.main]]
       weight = 3
       identifier = "categories"
       name = "Categorías"
@@ -102,6 +145,14 @@ defaultContentLanguage = "en"
       post = ""
       url = "/categories/"
       title = ""
+      [[languages.es.menu.main]]
+        weight = 6
+        identifier = "github"
+        pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
+        post = ""
+        name = ""
+        url = "https://github.com/castillosebastian/castillocs"
+        title = "GitHub"    
     [languages.es.params]
       [languages.es.params.search]
         enable = true
@@ -123,7 +174,7 @@ defaultContentLanguage = "en"
           gravatarEmail = ""
           #avatarURL = "images/avatar.png"
           title = ""
-          subtitle = "Un gran viaje"
+          subtitle = "profunda admiración por los algoritmos inteligentes"
           typeit = true
           social = true
           disclaimer = ""
@@ -144,7 +195,6 @@ paginate = 12
 googleAnalytics = ""
 # copyright description used only for seo schema
 copyright = ""
-
 # whether to use robots.txt
 enableRobotsTXT = true
 # whether to use git commit log
@@ -160,42 +210,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   name = "Castillo Claudio Sebastian"
   email = "castilloclaudiosebastian@gmail.com"
   link = ""
-
-# Menu config
-[menu]
-  [[menu.main]]
-    weight = 1
-    identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
-    name = "Posts"
-    url = "/posts/"
-    # title will be shown when you hover on this menu link
-    title = ""
-  [[menu.main]]
-    weight = 2
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
-  [[menu.main]]
-    weight = 3
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
-
 [params]
   # site default theme ["auto", "light", "dark"]
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
-  gitRepo = ""
+  gitRepo = "https://github.com/castillosebastian/castillocs"
   #  which hash function used for SRI, when empty, no SRI is used
   # ["sha256", "sha384", "sha512", "md5"]
   fingerprint = ""
@@ -204,10 +223,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # website title for Open Graph and Twitter Cards
   title = "CastilloCS"
   # website description for RSS, SEO, Open Graph and Twitter Cards
-  description = "This is my cool site"
+  #description = "This is my cool site"
   # website images for Open Graph and Twitter Cards
   images = ["/logo.png"]
-
   # Header config
   [params.header]
     # desktop header mode ["fixed", "normal", "auto"]
@@ -226,7 +244,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       post = ""
       #  whether to use typeit animation for title name
       typeit = false
-
   # Footer config
   [params.footer]
     enable = true
@@ -266,7 +283,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   #  App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "My cool site"
+    title = "castillocs"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
@@ -506,7 +523,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     cursorChar = "|"
     # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
     duration = -1
-
   # Site verification code config for Google/Bing/Yandex/Pinterest/Baidu
   [params.verification]
     google = ""
@@ -514,14 +530,12 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     yandex = ""
     pinterest = ""
     baidu = ""
-
   #  Site SEO config
   [params.seo]
     # image URL
     image = ""
     # thumbnail URL
     thumbnailUrl = ""
-
   #  Analytics config
   [params.analytics]
     enable = false
