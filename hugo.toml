@@ -98,7 +98,7 @@ defaultContentLanguage = "en"
         [languages.en.params.home.profile]
           enable = true
           gravatarEmail = ""
-          avatarURL = "images/avatar1.jpg"
+          avatarURL = "images/avatar0.jpeg"
           title = ""
           subtitle = "learn, build, excel, share"
           typeit = true
@@ -106,6 +106,7 @@ defaultContentLanguage = "en"
           disclaimer = ""
       [languages.en.params.social]
         GitHub = "castillosebastian"
+        Linkedin = "castillocs"
         Twitter = "clausecastillo"   
         Phone = "+5493434153914"
         Email = "castilloclaudiosebastian@gmail.com"
@@ -176,6 +177,7 @@ defaultContentLanguage = "en"
           disclaimer = ""
       [languages.es.params.social]
         GitHub = "castillosebastian"
+        Linkedin = "castillocs"
         Twitter = "clausecastillo"
         Phone = "+5493434153914"
         Email = "castilloclaudiosebastian@gmail.com"
