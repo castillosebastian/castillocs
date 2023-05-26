@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>knowledge - Tag - CastilloCS</title>
+        <link>https://castillosebastian.github.io/castillocs/tags/knowledge/</link>
+        <description>knowledge - Tag - CastilloCS</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Wed, 25 Mar 2015 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/tags/knowledge/" rel="self" type="application/rss+xml" /><item>
+    <title>Formal Epistemology</title>
+    <link>https://castillosebastian.github.io/castillocs/epistemolog%C3%ADa_formal/</link>
+    <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/castillocs/epistemolog%C3%ADa_formal/</guid>
+    <description><![CDATA[Lighthouse (figure) Introduction In this comment, the field of formal epistemology is introduced as an interdisciplinary branch that reflects on knowledge and learning using formal methods. These methods not only include tools that come from logic and mathematics,1 but also - and today more than ever - from computing, particularly developments in the field of artificial intelligence. Nevertheless, to advance in a formal analysis of knowledge, it is secondary where the analysis devices originate from, as long as they assume formal characteristics.]]></description>
+</item>
+</channel>
+</rss>

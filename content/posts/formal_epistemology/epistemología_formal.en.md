@@ -5,11 +5,12 @@ date: 2015-03-25T10:49:29-03:00
 lastmod: 2015-03-06T21:29:01+08:00
 draft: false
 description: "Una mirada elemental a la epistemología"
-images: []
+images: 
+- featured-image.jpg
 resources:
 - name: featured-image
   src: featured-image.jpg
-  
+
 tags: ["knowledge"]
 categories: ["formal_epistemology"]
 
@@ -18,6 +19,8 @@ lightgallery: true
 toc:
   auto: false
 ---
+
+{{< figure src="images/featured-image.jpg" title="Lighthouse (figure)" >}}
 
 ## Introduction
 

@@ -98,7 +98,7 @@ defaultContentLanguage = "en"
         [languages.en.params.home.profile]
           enable = true
           gravatarEmail = ""
-          avatarURL = "images/avatar0.jpeg"
+          avatarURL = "images/avatar1.jpg"
           title = ""
           subtitle = "learn, build, excel, share"
           typeit = true

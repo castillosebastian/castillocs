@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>formal_epistemology - Categoría - CastilloCS</title>
+        <link>https://castillosebastian.github.io/castillocs/es/categories/formal_epistemology/</link>
+        <description>formal_epistemology - Categoría - CastilloCS</description>
+        <generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Wed, 25 Mar 2015 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/es/categories/formal_epistemology/" rel="self" type="application/rss+xml" /><item>
+    <title>Epistemología Formal</title>
+    <link>https://castillosebastian.github.io/castillocs/es/epistemolog%C3%ADa_formal/</link>
+    <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/castillocs/es/epistemolog%C3%ADa_formal/</guid>
+    <description><![CDATA[Introducción En este comentario se presenta el campo de la epistemología formal como rama interdisciplinaria que reflexiona sobre el conocimiento y el aprendizaje empleando métodos formales. Estos métodos no solo incluyen herramientas que vienen de la lógica y la matemática,1 sino también -y hoy más que nunca- de la computación, particularmente de los desarrollos en el campo de la inteligencia artificial. Con todo, para avanzar en un análisis formal del conocimiento es secundario el dominio de origen de los dispositivos de análisis, basta con que asuman características formales.]]></description>
+</item>
+</channel>
+</rss>
