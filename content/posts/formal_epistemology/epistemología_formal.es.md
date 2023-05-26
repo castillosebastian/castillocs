@@ -7,8 +7,8 @@ draft: false
 description: "Una mirada elemental a la epistemología"
 images: []
 resources:
-- name: featured-image
-  src: featured-image.jpg
+- name: "featured-image"
+  src: "featured-image.jpg"
 
 tags: ["knowledge"]
 categories: ["formal_epistemology"]
@@ -18,6 +18,12 @@ lightgallery: true
 toc:
   auto: false
 ---
+
+La epistemología formal es un campo interdisciplinario que reflexiona sobre el conocimiento y el aprendizaje empleando métodos formales. 
+
+<!--more-->
+
+
 
 ## Introducción
 
