@@ -20,8 +20,6 @@ toc:
   auto: false
 ---
 
-{{< figure src="images/featured-image.jpg" title="Lighthouse (figure)" >}}
-
 ## Introduction
 
 In this comment, the field of formal epistemology is introduced as an interdisciplinary branch that reflects on knowledge and learning using formal methods. These methods not only include tools that come from logic and mathematics,[^Weinsberg] but also - and today more than ever - from computing, particularly developments in the field of artificial intelligence. Nevertheless, to advance in a formal analysis of knowledge, it is secondary where the analysis devices originate from, as long as they assume formal characteristics.[^formal_characteristics] This commits the reflection methodologically to certain procedures, seeking results with a level of abstraction useful for understanding complex phenomena such as knowledge and learning. Following Weinsberg, let's clarify this form of analysis with an example.
