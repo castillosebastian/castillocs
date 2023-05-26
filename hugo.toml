@@ -98,21 +98,17 @@ defaultContentLanguage = "en"
         [languages.en.params.home.profile]
           enable = true
           gravatarEmail = ""
-          avatarURL = "images/avatar.png"
+          avatarURL = "images/avatar1.jpg"
           title = ""
-          subtitle = "deep fascination for intelligent algorithms"
+          subtitle = "learn, build, excel, share"
           typeit = true
           social = true
           disclaimer = ""
       [languages.en.params.social]
-        GitHub = "xxxx"
-        Twitter = "xxxx"
-        Instagram = "xxxx"
-        Facebook = "xxxx"
-        Telegram = "xxxx"
-        Youtubelegacy = "xxxx"
-        Phone = "555-555-555"
-        Email = "xxxx@xxxx.com"
+        GitHub = "castillosebastian"
+        Twitter = "clausecastillo"   
+        Phone = "+5493434153914"
+        Email = "castilloclaudiosebastian@gmail.com"
         RSS = true
   
   [languages.es]
@@ -174,19 +170,15 @@ defaultContentLanguage = "en"
           gravatarEmail = ""
           #avatarURL = "images/avatar.png"
           title = ""
-          subtitle = "profunda admiración por los algoritmos inteligentes"
+          subtitle = "aprender, construir, superarse, compartir"
           typeit = true
           social = true
           disclaimer = ""
       [languages.es.params.social]
-        GitHub = "xxxx"
-        Twitter = "xxxx"
-        Instagram = "xxxx"
-        Facebook = "xxxx"
-        Telegram = "xxxx"
-        Youtubelegacy = "xxxx"
-        Phone = "555-555-555"
-        Email = "xxxx@xxxx.com"
+        GitHub = "castillosebastian"
+        Twitter = "clausecastillo"
+        Phone = "+5493434153914"
+        Email = "castilloclaudiosebastian@gmail.com"
         RSS = true
 
 # default amount of posts in each pages
