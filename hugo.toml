@@ -57,7 +57,7 @@ defaultContentLanguage = "en"
         [languages.en.params.home.profile]
           enable = true
           gravatarEmail = ""
-          #avatarURL = "images/avatar.png"
+          avatarURL = "images/avatar.png"
           title = ""
           subtitle = "An amazing journey"
           typeit = true
