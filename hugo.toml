@@ -39,6 +39,14 @@ defaultContentLanguage = "en"
     name = "Categories"
     url = "/categories/"
     title = ""
+  [[menu.main]]
+    weight = 4
+    identifier = "aplications"
+    pre = ""
+    post = ""
+    name = "Aplications"
+    url = "/aplications/"
+    title = ""
 
 [languages]
   [languages.en]
@@ -72,7 +80,15 @@ defaultContentLanguage = "en"
         url = "/categories/"
         title = ""
       [[languages.en.menu.main]]
-        weight = 6
+        weight = 4
+        identifier = "aplications"
+        pre = ""
+        post = ""
+        name = "Aplications"
+        url = "/aplications/"
+        title = ""
+      [[languages.en.menu.main]]
+        weight = 5
         identifier = "github"
         pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
         post = ""
@@ -143,7 +159,15 @@ defaultContentLanguage = "en"
       url = "/categories/"
       title = ""
       [[languages.es.menu.main]]
-        weight = 6
+        weight = 4
+        identifier = "aplications"
+        pre = ""
+        post = ""
+        name = "Aplicaciones"
+        url = "/aplications/"
+        title = ""
+      [[languages.es.menu.main]]
+        weight = 5
         identifier = "github"
         pre = "<i class='fab fa-github fa-fw' aria-hidden='true'></i>"
         post = ""
