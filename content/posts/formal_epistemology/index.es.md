@@ -12,8 +12,8 @@ resources:
 - name: "featured-image-preview"
   src: "featured-image-preview.jpg"
 
-tags: ["knowledge"]
-categories: ["formal_epistemology"]
+tags: ["Conocimiento"]
+categories: ["Epistemología Formal"]
 
 lightgallery: true
 

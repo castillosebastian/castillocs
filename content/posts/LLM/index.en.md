@@ -8,8 +8,8 @@ author: "CastilloCS"
 images: []
 resources:
 - name: "featured-image"
-  src: "featured-image.jpg"
-tags: ["LLM", "Machine_Learning"]
+  src: "featured-image.png"
+tags: ["LLM", "Machine Learning"]
 categories: ["AI"]
 
 lightgallery: true

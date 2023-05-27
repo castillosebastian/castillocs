@@ -8,9 +8,9 @@ author: "CastilloCS"
 images: []
 resources:
 - name: "featured-image"
-  src: "featured-image.jpg"
-tags: ["LLM", "Machine_Learning"]
-categories: ["AI"]
+  src: "featured-image.png"
+tags: ["LLM", "Aprendizaje Computacional"]
+categories: ["IA"]
 
 lightgallery: true
 ---
