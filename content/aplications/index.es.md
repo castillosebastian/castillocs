@@ -11,24 +11,31 @@ math:
   enable: true
 ---
 
-{{< style "img { height: 1.25rem; }" >}}
-[![License](https://img.shields.io/github/license/dillonzq/LoveIt?style=flat-square)](https://github.com/dillonzq/LoveIt/blob/master/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/dillonzq/LoveIt?style=social)](https://github.com/dillonzq/LoveIt)
-[![GitHub forks](https://img.shields.io/github/forks/dillonzq/LoveIt?style=social)](https://github.com/dillonzq/LoveIt/fork)
-{{< /style >}}
+## Tablero de Justicia
 
-> [LoveIt](https://github.com/dillonzq/LoveIt) is a... .
->
-> It is based on .
+> El [Tablero de Justicia](https://tablero.jusentrerios.gov.ar/) es el servicio en línea del Superior Tribunal de Justicia de Entre Ríos, Argentina, que permite acceder a datos primarios y estadísticas de justicia. Está basado en el software libre **R** y **Shiny** y sigue los estándares del *movimiento de datos abiertos*. La parte central del sistema, los scripts estadísticos, están accesibles en [operaciones](https://bitbucket.org/apgye/apgyeoperationsjuser), [procesamiento](https://bitbucket.org/apgye/apgyeprocesamiento/src/master/), [organización](https://bitbucket.org/apgye/apgyejuserorganization) e [investigación](https://bitbucket.org/apgye/apgyeinformes).
 
-![Hugo Theme LoveIt](/images/Apple-Devices-Preview.png "Hugo Theme LoveIt")
-
-## Features
-
-### Performance and SEO
-
-* :(fas fa-rocket fa-fw): Optimized for **performance**: [99]/[100] on mobile and [100]/[100] on desktop in [Google PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights)
-* :(fab fa-searchengin fa-fw): Optimized SEO performance with a correct **SEO SCHEMA** based on JSON-LD
-* :(fab fa-google fa-fw): **[Google Analytics](https://analytics.google.com/analytics)** supported
+\
+![Tablero de Justicia](/images/tablero1.png "Datos de Justicia")
 
 
+### Características
+
+* :(fas fa-rocket fa-fw): Optimizado para el acceso público y la reproducibilidad de las estadísticas.   
+* :(fab fa-searchengin fa-fw): Cumplimiento de los estándares nacionales e internacionales sobre información pública y datos sensibles.
+* :(fa fa-user-circle): Acceso completo del usuario a algoritmos y scripts.
+
+
+---
+
+## Aeropuertos en el Mundo
+
+> La aplicación [Aeropuertos en el Mundo](https://airportworlwide.herokuapp.com/) es un *proyecto-tarea* desarrollado para el seminario de Visualizaciones de la Universidad Tecnológica Nacional, que incorpora una base de datos de aeropuertos alrededor del mundo. Utilizando **Python** y **Dash**, presenta una interfaz interactiva y amigable para que los usuarios exploren los datos. Está hosteado en **Heroku**.
+
+\
+![Mapa de Aeropuertos](/images/airportmap.png "Aeropuertos")
+
+### Características
+
+* :(fas fa fa-globe fa-fw): Base de Datos Mundial: La aplicación proporciona información (no actualizada) sobre los aeropuertos del mundo. Los usuarios pueden acceder a información específica como ubicación, tamaño del aeropuerto y más. 
+* :(fa  fa-map): Interactivo: la aplicación es un mapa interactivo que permite visualizar la distribución geográfica de los aeropuertos en el mundo. Los usuarios pueden acercar y alejar para ver aeropuertos en regiones o países específicos, facilitando la comprensión de la infraestructura aeroportuaria global."

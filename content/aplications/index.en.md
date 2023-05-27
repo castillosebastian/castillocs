@@ -30,12 +30,12 @@ math:
 
 ## Airports Worldwide
 
-> The [Airports Worldwide](https://airportworlwide.herokuapp.com/) app is a *pet-project* conceptualized and developed for the UTN-Visualizations seminar, embodying a database of airports around the globe. Leveraging the power of **Python** and **Dash**, it presents an interactive and user-friendly interface for users to explore the data. It is deploy on **Heroku**.
+> The [Airports Worldwide](https://airportworlwide.herokuapp.com/) app is a *pet-project* developed for the *Universidad Tecnológica Nacional*, Visualizations seminar, embodying a database of airports around the globe. Build with **Python** and **Dash**, it presents an interactive and user-friendly interface for users to explore the data. It is deploy on **Heroku**.
 
 \
 ![Airportsmap](/images/airportmap.png "Airports")
 
 ### Features
 
-* :(fas fa fa-globe fa-fw): Worlwide Database: The application provides information about all airports worldwide. Users can access specifics information as location, airport size and more. 
-* :(fa  fa-map): Interactive: the application boasts an interactive map feature, enabling users to visualize the geographical distribution of airports across the world. Users can zoom in and out to view airports in specific regions or countries, making it easy to understand and analyze global airport infrastructure.
+* :(fas fa fa-globe fa-fw): Worlwide Database: The application provides information about airports worldwide. Users can access specifics information as location, airport size and more. 
+* :(fa  fa-map): Interactive: the application enabling users to visualize the geographical distribution of airports across the world. Users can zoom in and out to view airports in specific regions or countries, making it easy to understand global airport infrastructure.
