@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LLM - Etiqueta - CastilloCS</title>
+        <link>https://castillosebastian.github.io/castillocs/es/tags/llm/</link>
+        <description>LLM - Etiqueta - CastilloCS</description>
+        <generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/es/tags/llm/" rel="self" type="application/rss+xml" /><item>
+    <title>Modelos de Lenguaje</title>
+    <link>https://castillosebastian.github.io/castillocs/es/llm/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>CastilloCS</author>
+    <guid>https://castillosebastian.github.io/castillocs/es/llm/</guid>
+    <description><![CDATA[<p>Introducción a Modelos de Lenguaje.</p>]]></description>
+</item>
+</channel>
+</rss>

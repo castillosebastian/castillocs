@@ -2,16 +2,35 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/epistemolog%C3%ADa_formal/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/castillocs/es/llm/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/castillocs/epistemolog%C3%ADa_formal/"
+                        href="https://castillosebastian.github.io/castillocs/llm/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/castillocs/es/epistemolog%C3%ADa_formal/"
+                    href="https://castillosebastian.github.io/castillocs/es/llm/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://castillosebastian.github.io/castillocs/analitics_in_judiciary/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="es"
+                    href="https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/"
+                    /></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/formal_epistemology/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://castillosebastian.github.io/castillocs/formal_epistemology/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="es"
+                    href="https://castillosebastian.github.io/castillocs/es/formal_epistemology/"
+                    /></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/tags/aprendizaje-computacional/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://castillosebastian.github.io/castillocs/"
@@ -20,7 +39,7 @@
                     hreflang="es"
                     href="https://castillosebastian.github.io/castillocs/es/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/categories/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/castillocs/es/categories/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://castillosebastian.github.io/castillocs/categories/"
@@ -29,25 +48,17 @@
                     hreflang="es"
                     href="https://castillosebastian.github.io/castillocs/es/categories/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/categories/formal_epistemology/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/castillocs/es/categories/ia/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/tags/llm/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/castillocs/categories/formal_epistemology/"
+                        href="https://castillosebastian.github.io/castillocs/tags/llm/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/castillocs/es/categories/formal_epistemology/"
+                    href="https://castillosebastian.github.io/castillocs/es/tags/llm/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/tags/knowledge/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://castillosebastian.github.io/castillocs/tags/knowledge/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="es"
-                    href="https://castillosebastian.github.io/castillocs/es/tags/knowledge/"
-                    /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/posts/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/castillocs/es/posts/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://castillosebastian.github.io/castillocs/posts/"
@@ -56,7 +67,7 @@
                     hreflang="es"
                     href="https://castillosebastian.github.io/castillocs/es/posts/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/es/tags/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/castillocs/es/tags/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://castillosebastian.github.io/castillocs/tags/"
@@ -64,4 +75,19 @@
                     rel="alternate"
                     hreflang="es"
                     href="https://castillosebastian.github.io/castillocs/es/tags/"
-                    /></url></urlset>
+                    /></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://castillosebastian.github.io/castillocs/aplications/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="es"
+                    href="https://castillosebastian.github.io/castillocs/es/aplications/"
+                    /></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/tags/cultura-anal%C3%ADtica/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/categories/poder-judicial/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/categories/sector-p%C3%BAblico/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/tags/tableros/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/tags/conocimiento/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/castillocs/es/categories/epistemolog%C3%ADa-formal/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

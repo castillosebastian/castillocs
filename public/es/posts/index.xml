@@ -4,13 +4,29 @@
         <link>https://castillosebastian.github.io/castillocs/es/posts/</link>
         <description>Todos los Artículos | CastilloCS</description>
         <generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Wed, 25 Mar 2015 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/es/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/es/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Modelos de Lenguaje</title>
+    <link>https://castillosebastian.github.io/castillocs/es/llm/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>CastilloCS</author>
+    <guid>https://castillosebastian.github.io/castillocs/es/llm/</guid>
+    <description><![CDATA[<p>Introducción a Modelos de Lenguaje.</p>]]></description>
+</item>
+<item>
+    <title></title>
+    <link>https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/</link>
+    <pubDate>Wed, 01 Jun 2016 21:57:40 &#43;0800</pubDate>
+    <author>CastilloCS</author>
+    <guid>https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/</guid>
+    <description><![CDATA[<p>Este post es un recorrido de la transformación que en materia de estadística está llevando a cabo el Poder Judicial de Entre Ríos, Argentina, donde trabajo como Director.</p>]]></description>
+</item>
+<item>
     <title>Epistemología Formal</title>
-    <link>https://castillosebastian.github.io/castillocs/es/epistemolog%C3%ADa_formal/</link>
+    <link>https://castillosebastian.github.io/castillocs/es/formal_epistemology/</link>
     <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/es/epistemolog%C3%ADa_formal/</guid>
-    <description><![CDATA[Introducción En este comentario se presenta el campo de la epistemología formal como rama interdisciplinaria que reflexiona sobre el conocimiento y el aprendizaje empleando métodos formales. Estos métodos no solo incluyen herramientas que vienen de la lógica y la matemática,1 sino también -y hoy más que nunca- de la computación, particularmente de los desarrollos en el campo de la inteligencia artificial. Con todo, para avanzar en un análisis formal del conocimiento es secundario el dominio de origen de los dispositivos de análisis, basta con que asuman características formales.]]></description>
+    <guid>https://castillosebastian.github.io/castillocs/es/formal_epistemology/</guid>
+    <description><![CDATA[<p>La epistemología formal es un campo interdisciplinario que reflexiona sobre el conocimiento y el aprendizaje empleando métodos formales.</p>]]></description>
 </item>
 </channel>
 </rss>

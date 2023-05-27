@@ -4,12 +4,36 @@
         <link>https://castillosebastian.github.io/castillocs/categories/</link>
         <description>Categories - Category - CastilloCS</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Wed, 25 Mar 2015 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>formal_epistemology</title>
-    <link>https://castillosebastian.github.io/castillocs/categories/formal_epistemology/</link>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Dashboards</title>
+    <link>https://castillosebastian.github.io/castillocs/categories/dashboards/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/castillocs/categories/dashboards/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Data driven culture</title>
+    <link>https://castillosebastian.github.io/castillocs/categories/data-driven-culture/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/castillocs/categories/data-driven-culture/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>AI</title>
+    <link>https://castillosebastian.github.io/castillocs/categories/ai/</link>
+    <pubDate>Tue, 01 Jan 2019 21:57:40 &#43;0800</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/castillocs/categories/ai/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Formal Epistemology</title>
+    <link>https://castillosebastian.github.io/castillocs/categories/formal-epistemology/</link>
     <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/categories/formal_epistemology/</guid>
+    <guid>https://castillosebastian.github.io/castillocs/categories/formal-epistemology/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>
