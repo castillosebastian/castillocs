@@ -1,6 +1,6 @@
 ---
 weight: 1
-title: ""
+title: "Análisis y Justicia"
 date: 2016-06-01T21:57:40+08:00
 lastmod: 2022-01-01T16:45:40+08:00
 draft: false
