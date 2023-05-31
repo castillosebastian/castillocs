@@ -466,7 +466,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Disqus comment config
       [params.page.comment.disqus]
         # 
-        enable = true
+        enable = false
         # Disqus shortname to use Disqus in posts
         shortname = ""
       # Gitalk comment config
@@ -480,8 +480,8 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # Valine comment config
       [params.page.comment.valine]
         enable = false #true
-        appId =  "" #"CVUVgEPZCOSoo3Ni7CKn8wEh-MdYXbMMI"
-        appKey = "" #"ObiX9gDyuMZWtvzvrIwpZUoZ"
+        appId =  "" 
+        appKey = "" 
         placeholder = ""
         avatar = "mp"
         meta= ""
