@@ -1,9 +1,9 @@
 ---
-title: "Las aplicaciones que he construido"
+title: "Aplicaciones y Herramientas"
 date: 2019-08-02T11:04:49+08:00
 draft: false
 description: "Las aplicaciones que he construido"
-images: ["/Apple-Devices-Preview.png"]
+images: []
 
 lightgallery: true
 
@@ -39,3 +39,17 @@ math:
 
 * :(fas fa fa-globe fa-fw): Base de Datos Mundial: La aplicación proporciona información (no actualizada) sobre los aeropuertos del mundo. Los usuarios pueden acceder a información específica como ubicación, tamaño del aeropuerto y más. 
 * :(fa  fa-map): Interactivo: la aplicación es un mapa interactivo que permite visualizar la distribución geográfica de los aeropuertos en el mundo. Los usuarios pueden acercar y alejar para ver aeropuertos en regiones o países específicos, facilitando la comprensión de la infraestructura aeroportuaria global."
+  
+---
+
+## Modelado Predictivo en Justicia
+
+> La **Serie de Modelado Predictivo** (Partes: [1](https://medium.com/@castilloclaudiosebastian/modelos-predictivos-en-la-justicia-parte-1-f790df72cd38), [2](https://medium.com/@castilloclaudiosebastian/modelos-predictivos-en-la-justicia-parte-2-b97a9c24af81), [3](https://medium.com/@castilloclaudiosebastian/modelos-predictivos-en-la-justicia-parte-3-d871c71edcea) y [4](https://medium.com/@castilloclaudiosebastian/modelos-predictivos-en-la-justicia-parte-4-bb56f1c14072)) muestra nuestro desarrollo de modelos para datos de series temporales en servicios judiciales. Nuestro objetivo es predecir el número de fallos por materia en un período especificado. Para este proyecto, hemos utilizado exclusivamente **R**, aprovechando específicamente el paquete [tidymodels](https://www.tidymodels.org/).  
+
+\
+![Modelo de Series Temporales](/images/time.jpg "crédito:Aron Visuals")
+
+### Características
+
+* :(fas fa fa-universal-access fa-fw): Los scripts completos de esta implementación se pueden acceder [aquí](https://github.com/castillosebastian/jusmodels).
+
