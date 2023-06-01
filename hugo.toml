@@ -114,7 +114,7 @@ defaultContentLanguage = "en"
         [languages.en.params.home.profile]
           enable = true
           gravatarEmail = ""
-          avatarURL = "/images/avatar.png"
+          avatarURL = "/images/avatar.jpeg"
           title = ""
           subtitle = "learn, build, excel, share"
           typeit = true
@@ -192,7 +192,7 @@ defaultContentLanguage = "en"
         [languages.es.params.home.profile]
           enable = true
           gravatarEmail = ""
-          avatarURL = "/images/avatar.png"
+          avatarURL = "/images/avatar.jpeg"
           title = ""
           subtitle = "aprender, construir, superarse, compartir"
           typeit = true
