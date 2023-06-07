@@ -30,7 +30,7 @@ math:
 
 ## Airports Worldwide
 
-> The [Airports Worldwide](https://airportworlwide.herokuapp.com/) app is a *pet-project* developed for the *Universidad Tecnológica Nacional*, Visualizations seminar, embodying a database of airports around the globe. Build with **Python** and **Dash**, it presents an interactive and user-friendly interface for users to explore the data. It is deploy on **Heroku**.
+> The [Airports Worldwide](https://github.com/castillosebastian/airportmap) app is a *pet-project* developed for the *Universidad Tecnológica Nacional*, Visualizations seminar, embodying a database of airports around the globe. Build with **Python** and **Dash**, it presents an interactive and user-friendly interface for users to explore the data. It is deploy on **Heroku**.
 
 \
 ![Airportsmap](/images/airportmap.png "Airports")
