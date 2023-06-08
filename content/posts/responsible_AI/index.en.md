@@ -40,11 +40,11 @@ To achieve fairness-related goals, we can approach them through both *product* d
 
 It's important to note that the specifics of these 'products' and 'procedures' can vary significantly depending on the context, the specific AI application, and the definition of 'fairness' in use. Moreover, as *fairness* is time-bound and context-dependent moral concept, tools designed to ensure it must adapt to evolving standards of fairness. This means they must be flexible to changes in societal norms and expectations over time. That is why the pursuit of *fair AI tools* is a continuous and context-specific endeavor, which rules out the possibility of universally applicable or one-size-fits-all solutions. As stated in Fairlearn project (Microsoft): 'because there are many complex sources of unfairness—some societal and some technical—it is not possible to fully “debias” a system or to guarantee fairness; the goal is to mitigate fairness-related harms as much as possible.'
 
-## The InFairness proposal 
+## A fair tool: InFairness
 
-In this exploration, we will be testing the 'fair-ml' algorithms developed by IBM Research, available in their [inFairness package](https://github.com/IBM/inFairness). These algorithms are designed with a focus on fairness, guided by the fairness metric proposed by Dwork et al., 2011. The inFairness package provides tools to help ensure that machine learning models are fair and unbiased.   
+Now, let's turn into a practical application of fairness in AI. We will be testing the 'fair-ml' algorithms developed by IBM Research, available in their [inFairness package](https://github.com/IBM/inFairness). These algorithms are designed with a focus on fairness, guided by the fairness metric proposed by Dwork et al., 2011. The inFairness package provides tools to help ensure that machine learning models are fair and unbiased.   
 
-To explore these implementation we are going to work with *Adult* dataset (Dua & Graff, 2017) used to predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset Train dataset contains 13 features and 30178 observations. Test dataset contains 13 features and 15315 observations. Target column is "target": A binary factor where 1: <=50K and 2: >50K for annual income. The column "sex" is set as protected attribute.
+To explore these implementation we are going to work with *Adult* dataset (Dua & Graff, 2017) used to predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset Train dataset contains 13 features and 30178 observations. Test dataset contains 13 features and 15315 observations. Target column is a binary factor where 1: <=50K and 2: >50K for annual income. 
 
 ### Libraries
 
