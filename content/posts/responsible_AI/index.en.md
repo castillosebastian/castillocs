@@ -1,8 +1,8 @@
 ---
 weight: 1
 title: "Responsible AI Tools"
-date: 2015-03-25T10:49:29-03:00
-lastmod: 2015-03-06T21:29:01+08:00
+date: 2023-06-01T10:49:29-03:00
+lastmod: 2023-06-01T21:29:01+08:00
 draft: true
 images: []
 resources:
@@ -32,19 +32,33 @@ In this context, the concept of *responsible AI* has emerged as a crucial compon
 
 We can view the concept of *fair AI tools* as pointing to software that is free from unintentional algorithmic bias. Fairness, as defined by Mehrabi et al. (2021), is *the absence of any prejudice or favoritism toward an individual or a group based on their inherent or acquired characteristics.* 
 
+{{< admonition type=info title="Individual and Group Fairness" open=false >}}
+## Individual an Group Fairness
+
+A brief overview of the concepts of individual and group fairness as defined by Dwork et al. in their 2011 paper "Fairness Through Awareness."
+
+1. **Individual Fairness:** According to Dwork et al., individual fairness is the principle that similar individuals should be treated similarly. This means that an algorithm is individually fair if it gives similar outputs for similar inputs. The definition of "similarity" can vary depending on the context, but it is generally defined in terms of a metric or distance function over the input space. 
+
+   The formal definition of individual fairness is as follows: Given a metric space (X, d) and a function f: X → Y, we say that f is Lipschitz if for all x, x' ∈ X, d_Y(f(x), f(x')) ≤ d_X(x, x'). In the context of fairness, this means that the difference in the outputs of the function (i.e., the decisions made by the algorithm) should not be greater than the difference in the inputs (i.e., the individuals being considered).
+
+2. **Group Fairness:** Group fairness, on the other hand, is the principle that different groups should be treated similarly on average. This means that an algorithm is group-fair if it gives similar outcomes for different groups, even if the individuals within those groups are not similar. 
+
+   The formal definition of group fairness can vary depending on the specific notion of fairness being considered (e.g., demographic parity, equal opportunity, etc.). However, a common definition is that the decision rates (i.e., the proportion of positive outcomes) should be equal for different groups. For example, if we denote by P(Y=1|A=a) the probability of a positive outcome given group membership a, then demographic parity requires that P(Y=1|A=a) = P(Y=1|A=a') for all groups a, a'.
+{{< /admonition >}}
+
 To achieve fairness-related goals, we can approach them through both *product* development and the implementation of specific *procedures*:
 
 - **Products**: refers to AI software that is designed and developed with fairness in mind. This could involve algorithms that mitigate bias or tools that promote transparency in AI decision-making. Regarding solutions, Richardson asserts that fair AI consists of *strategies to combat algorithmic bias*. These often include top-tier solutions drawn from research in explainability, transparency, interpretability, and accountability (Richardson, 2021).
 
 - **Procedures**: refers to standardized activities or practices that ensure fairness. This could include ethical guidelines for AI development, rigorous testing for bias in AI systems, and policies for responsible AI use.
 
-It's important to note that the specifics of these 'products' and 'procedures' can vary significantly depending on the context, the specific AI application, and the definition of 'fairness' in use. Moreover, as *fairness* is time-bound and context-dependent moral concept, tools designed to ensure it must adapt to evolving standards of fairness. This means they must be flexible to changes in societal norms and expectations over time. That is why the pursuit of *fair AI tools* is a continuous and context-specific endeavor, which rules out the possibility of universally applicable or one-size-fits-all solutions. As stated in Fairlearn project (Microsoft): 'because there are many complex sources of unfairness—some societal and some technical—it is not possible to fully “debias” a system or to guarantee fairness; the goal is to mitigate fairness-related harms as much as possible.'
+It's important to note that the specifics of these 'products' and 'procedures' can vary significantly depending on the context, the specific AI application, and the definition of 'fairness' in use. *Fairness* is a time-bound and context-dependent moral concept, so tools designed to ensure it must adapt to evolving standards. This means they must be flexible to changes in societal values and expectations over time. That is why the pursuit of *fair AI tools* is a continuous and context-specific endeavor, which rules out the possibility of universally applicable or one-size-fits-all solutions. As stated in Fairlearn project (Microsoft): 'because there are many complex sources of unfairness—some societal and some technical—it is not possible to fully “debias” a system or to guarantee fairness; the goal is to mitigate fairness-related harms as much as possible.'
 
 ## A fair tool: InFairness
 
-Now, let's turn into a practical application of fairness in AI. We will be testing the 'fair-ml' algorithms developed by IBM Research, available in their [inFairness package](https://github.com/IBM/inFairness). These algorithms are designed with a focus on fairness, guided by the fairness metric proposed by Dwork et al., 2011. The inFairness package provides tools to help ensure that machine learning models are fair and unbiased.   
+Now, let's turn into a practical application of fairness in AI. We will be testing the 'fair-ml' algorithms developed by IBM Research, available in their [inFairness package](https://github.com/IBM/inFairness). These algorithms are designed with a focus on fairness, guided by the fairness metric proposed by Dwork et al., 2011.    
 
-To explore these implementation we are going to work with *Adult* dataset (Dua & Graff, 2017) used to predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset Train dataset contains 13 features and 30178 observations. Test dataset contains 13 features and 15315 observations. Target column is a binary factor where 1: <=50K and 2: >50K for annual income. 
+To explore these implementation we will follow the model [example](https://github.com/IBM/inFairness/tree/main/examples/adult-income-prediction) provided in the package. We are going to work with *Adult* dataset (Dua & Graff, 2017) used to predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset Train dataset contains 13 features and 30178 observations. Test dataset contains 13 features and 15315 observations. Target column is a binary factor where 1: <=50K and 2: >50K for annual income. 
 
 ### Libraries
 
@@ -61,7 +75,7 @@ from inFairness.auditor import SenSRAuditor, SenSeIAuditor
 import metrics
 ```
 
-### Some basic EDA
+### Bias exploration
 
 ```python
 import pandas as pd
@@ -396,9 +410,9 @@ The dataset is imbalanced: 25% make at least $50k per year. This imbalanced also
 </table>
 </div>
 
-### Simple Nural Network model folowing IBM Research
+### Simple neural network model 
 
-Source [inFairness](https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb)
+Folowing the IBM [example](https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb) in the income prediction task, we will test a simple neural network.
 
 
 ```python
@@ -501,11 +515,11 @@ X_train_df.head(1)
 <p>1 rows × 41 columns</p>
 </div>
 
-In the IBM-inFairness model [example](https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb) the protected attributes are droped from the training and test data. That is usually de case in fairness-aware machine learning when we deal with features that we know area biased. The idea is to prevent the model from directly learning to make decisions based on these sensitive attributes, which could lead to discriminatory outcomes.
+In the IBM-inFairness model [example](https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb) the protected attributes are dropped from the training and test data. That is usually the case in fairness-aware machine learning models,especially when dealing with known biased features. The aim is to prevent the model from directly using these sensitive attributes for decision-making, thereby avoiding potential discriminatory outcomes.
 
-However, this approach has some limitations. Even if you remove the protected attribute, other features in the dataset might act as proxies for it: meaning they may retaing a strong signal of the bias information. As an example certain occupations, neighborhoods, or education levels might be disproportionately associated with certain racial groups due to societal factors. So, even without explicit information about race, the model might still end up learning patterns that indirectly reflect racial biases.
+However, this approach has some limitations. Even when the protected attributes are removed, other features in the dataset might act as proxies for it, potentially retaining a strong signal of the biased information. As an example certain occupations, neighborhoods, or education levels might be disproportionately associated with certain racial groups due to societal factors. So, even without explicit information about race, the model might still end up learning patterns that indirectly reflect racial biases.
 
-On the odther hand, removing sensitives attributes makes it difficult to analyze the fairness of the model. If we don't know the race of the individuals in our dataset, we can't check whether our model is treating individuals of different races equally.
+On the other hand, removing sensitives attributes makes it difficult to analyze the fairness of the model. If we don't know the race of the individuals in our dataset, we can't check whether our model is treating individuals of different races equally.
 
 In some cases, it's important to consider sensitive attributes to ensure fairness. For example, in order to correct for historical biases or to achieve certain diversity and inclusion goals, it might be necessary to consider these attributes.
 
@@ -519,7 +533,7 @@ X_train_df = X_train_df.drop(columns=protected_vars)
 X_test_df = X_test_df.drop(columns=protected_vars)
 ```
 
-In the context of assessing individual fairness, the example we are working with implements a variable consistency measure using the 'spouse' attribute. This involves flipping the 'spouse' variable in the dataset, essentially simulating a scenario where individuals with the same characteristics but different 'spouse' values are compared. The goal is to ensure that the model's predictions are consistent for individuals who are similar except for their 'spouse' attribute, thereby upholding the principle of individual fairness. This approach provides a practical way to audit the model's fairness by checking if similar individuals are treated similarly.
+In assessing individual fairness, the example we are working with implements a variable consistency measure using the 'spouse' attribute. This involves flipping the 'spouse' variable in the dataset, essentially simulating a scenario where individuals with the same characteristics but different 'spouse' values are compared. The goal is to ensure that the model's predictions are consistent for individuals who are similar except for their 'spouse' attribute, thereby upholding the principle of individual fairness. This approach provides a practical way to audit the model's fairness by checking if similar individuals are treated similarly.
 
 
 ```python
@@ -569,7 +583,7 @@ test_dl = DataLoader(test_ds, batch_size=1000, shuffle=False)
 test_dl_flip = DataLoader(test_ds_flip, batch_size=1000, shuffle=False)
 ```
 
-We test a Multilayer neural network as proposed in the IBM implementation example.
+We test a multilayer neural network as proposed in the IBM implementation example.
 
 
 ```python
@@ -639,26 +653,23 @@ print(f'Spouse consistency: {spouse_consistency}')
     Spouse consistency: 0.9636222910216719
 
 
-The simple NN achieve .85 of accuracy. However, the inconsistency score of 0.04 on the 'spouse' variable suggests that the model is not treating similar individuals consistently, which is a violation of individual fairness. This inconsistency could be due to the model learning to differentiate based on gender, despite the intention to avoid such bias.
+The simple NN achieve .85 of accuracy. However, the inconsistency score of 0.04 on the 'spouse' variable suggests that the model is not treating similar individuals consistently, which is a violation of individual fairness. This inconsistency could be due to the fact that the model is learning to differentiate based on gender, despite the intention to avoid such bias.
 
-## Individually fair training with LogReg fair metric
+### Individually fair training with LogReg fair metric
 
 In the following section, a fair machine learning model is introduced. This model is said to be fair because its performance remains consistent under certain perturbations within a sensitive subspace, meaning it is robust to partial data variations.
 
-To illustrate the authors' approach, let us consider the process of evaluating the fairness of a resume screening system. An auditor might alter the names on resumes of Caucasian applicants to those more commonly found among the African-American population. If the system's performance declines upon reviewing the altered resumes (i.e., the evaluations become less favorable), one could infer that the model exhibits bias against African-American applicants.
+To illustrate the authors' approach, let's consider the process of evaluating the fairness of a resume screening system. An auditor might alter the names on resumes of applicants from the ethnic majority group to those more commonly found among the ethnic minority group. If the system's performance declines upon reviewing the altered resumes (i.e., the evaluations become less favorable), one could infer that the model exhibits bias against applicants from the ethnic minority group.
 
-To algorithmically address this issue, the authors propose a method to instill individual fairness during the training of ML models. This is achieved through *distributionally robust optimization* (DRO), an optimization technique that seeks the optimal solution while considering a fairness metric (inspired by Adversarial Robustness). The implementation is designed to ensure that the ML model maintains fairness not only with the training and testing data but also with new data from the same distribution."
+To algorithmically address this issue, the authors propose a method to instill individual fairness during the training of ML models. This is achieved through *distributionally robust optimization* (DRO), an optimization technique that seeks the optimal solution while considering a fairness metric (inspired by Adversarial Robustness). 
 
-## Learning fair metric from data and its hidden signals
+### Learning fair metric from data and its hidden signals
 
 The authors use Wasserstein distances to measure the similarity between individuals. Unlike Mahalanobis, Wasserstein distance can be used to compare two probability distributions and is defined as the minimum cost that must be paid to transform one distribution into the other.  The distances between data points are calculated in a way that takes into account protected attributes (in our example: gender or race). The goal is to ensure that similar individuals, as determined by Wasserstein distance, are treated similarly by the machine learning model.
 
 To achieve this, the algorithm learn 'sensitive directions' in the data. These are directions in the feature space along which changes are likely to correspond to changes in protected attributes. These is a clever approach to uncover hidden biases by identifying subtle patterns that may correspond to changes in protected attributes, even if those attributes are not present in our model inputs. This allows the model to account for potential biases that might otherwise go unnoticed. 
 
-For instance, to identify a sensitive direction associated with a particular attribute (e.g., gender), the algorithm use a logistic regression classifier to distinguish between classes (such as men and women in the data). The coefficients from this logistic regression model define a direction within the feature space. The algorithm then disregards these 'sensitive directions' while calculating the fair metric. This ensures that differences along sensitive directions are not factored into the distance computation between two individuals. The purpose of this approach is to prevent the machine learning model from discriminating based on protected attributes.
-
-So, by fitting the logistic regression model, the algorithm also learns which features are good predictors of the protected attribute (in this case, gender). This allows it to identify and avoid using features that could lead to unfair discrimination.
-
+For instance, to identify a sensitive direction associated with a particular attribute (e.g., gender), the algorithm use a logistic regression classifier to distinguish between classes (such as men and women in the data). The coefficients from this logistic regression model define a direction within the feature space. The performance of the machine learning model is assessed by its worst-case performance on hypothetical populations of users with perturbed sensitive attributes. By minimizing the loss function, the system is ensured to perform well on all such populations.
 
 ```python
 # Same architecture we found
@@ -688,7 +699,7 @@ auditor_lr = 1e-3
 fairalgo_LR = SenSeI(network_fair_LR, distance_x_LR, distance_y, lossfn, rho, eps, auditor_nsteps, auditor_lr)
 ```
 
-## A fair objective function
+### A fair objective function
 
 The objective function that is minimized during the training of a fair machine learning model as proposed in the inFairness package is composed of two parts: the loss function and the fair metric (see [SenSeI](https://ibm.github.io/inFairness/_modules/inFairness/fairalgo/sensei.html#SenSeI)): 
 
@@ -739,7 +750,7 @@ print(f'Spouse consistency: {spouse_consistency}')
     Spouse consistency: 0.9997788589119858
 
 
-#### Let's now audit the models and check for their individual fairness compliance
+### Results
 
 
 ```python
@@ -756,195 +767,30 @@ print("="*100)
 print("LR metric")
 print(f"Loss ratio (Standard model) : {audit_result_stdmodel.lower_bound}. Is model fair: {audit_result_stdmodel.is_model_fair}")
 print(f"Loss ratio (fair model - LogReg metric) : {audit_result_fairmodel_LR.lower_bound}. Is model fair: {audit_result_fairmodel_LR.is_model_fair}")
-print("-"*100)
-print("\t As signified by these numbers, the fair models are fairer than the standard model")
-print("="*100)
 ```
-
-    /home/sebacastillo/.castillosebastian_colabs/lib/python3.9/site-packages/inFairness/auditor/auditor.py:54: RuntimeWarning: invalid value encountered in divide
-      loss_ratio = np.divide(loss_vals_adversarial, loss_vals_original)
-
-
-    ====================================================================================================
+    
     LR metric
     Loss ratio (Standard model) : 2.1810670575586046. Is model fair: False
-    Loss ratio (fair model - LogReg metric) : 1.0531351204682995. Is model fair: True
-    ----------------------------------------------------------------------------------------------------
-    	 As signified by these numbers, the fair models are fairer than the standard model
-    ====================================================================================================
+    Loss ratio (fair model - LogReg metric) : 1.0531351204682995. Is model fair: True   
+    
 
 
-# Further explorations
-
-### Individually fair training with EXPLORE metric
-
-
-```python
-Y_gender = X_protected[:, -1]
-X1, X2, Y_pairs = data.create_data_pairs(X_train, y_train, Y_gender)
-
-distance_x_explore = distances.EXPLOREDistance()
-distance_x_explore.fit(X1, X2, Y_pairs, iters=1000, batchsize=10000)
-distance_x_explore.to(device)
-```
-
-    /home/sebacastillo/.castillosebastian_colabs/lib/python3.9/site-packages/inFairness/distances/explore_distance.py:76: RuntimeWarning: overflow encountered in exp
-      sclVec = 2.0 / (np.exp(diag) - 1)
-
-
-
-```python
-network_fair_explore = Model(input_size, output_size).to(device)
-optimizer = torch.optim.Adam(network_fair_explore.parameters(), lr=1e-3)
-lossfn = F.cross_entropy
-
-rho = 25.0
-eps = 0.1
-auditor_nsteps = 10
-auditor_lr = 1e-2
-
-fairalgo_explore = SenSeI(network_fair_explore, distance_x_explore, distance_y, lossfn, rho, eps, auditor_nsteps, auditor_lr)
-```
-
-
-```python
-fairalgo_explore.train()
-
-for epoch in tqdm(range(EPOCHS)):
-    for x, y in train_dl:
-        x, y = x.to(device), y.to(device)
-        optimizer.zero_grad()
-        result = fairalgo_explore(x, y)
-        result.loss.backward()
-        optimizer.step()
-```
-
-    100%|██████████| 10/10 [01:17<00:00,  7.71s/it]
-
-
-
-```python
-accuracy = metrics.accuracy(network_fair_explore, test_dl, device)
-balanced_acc = metrics.balanced_accuracy(network_fair_explore, test_dl, device)
-spouse_consistency = metrics.spouse_consistency(network_fair_explore, test_dl, test_dl_flip, device)
-
-print(f'Accuracy: {accuracy}')
-print(f'Balanced accuracy: {balanced_acc}')
-print(f'Spouse consistency: {spouse_consistency}')
-```
-
-    Accuracy: 0.8225342631340027
-    Balanced accuracy: 0.7034968962244807
-    Spouse consistency: 1.0
-
-
-#### Let's now audit the three models and check for their individual fairness compliance
-
-
-```python
-# Auditing using the SenSR Auditor + LR metric
-
-audit_nsteps = 1000
-audit_lr = 0.1
-
-auditor_LR = SenSRAuditor(loss_fn=loss_fn, distance_x=distance_x_LR, num_steps=audit_nsteps, lr=audit_lr, max_noise=0.5, min_noise=-0.5)
-
-audit_result_stdmodel = auditor_LR.audit(network_standard, X_test, y_test, lambda_param=10.0, audit_threshold=1.15)
-audit_result_fairmodel_LR = auditor_LR.audit(network_fair_LR, X_test, y_test, lambda_param=10.0, audit_threshold=1.15)
-audit_result_fairmodel_explore = auditor_LR.audit(network_fair_explore, X_test, y_test, lambda_param=10.0, audit_threshold=1.15)
-
-print("="*100)
-print("LR metric")
-print(f"Loss ratio (Standard model) : {audit_result_stdmodel.lower_bound}. Is model fair: {audit_result_stdmodel.is_model_fair}")
-print(f"Loss ratio (fair model - LogReg metric) : {audit_result_fairmodel_LR.lower_bound}. Is model fair: {audit_result_fairmodel_LR.is_model_fair}")
-print(f"Loss ratio (fair model - EXPLORE metric) : {audit_result_fairmodel_explore.lower_bound}. Is model fair: {audit_result_fairmodel_explore.is_model_fair}")
-print("-"*100)
-print("\t As signified by these numbers, the fair models are fairer than the standard model")
-print("="*100)
-```
-
-    /home/sebacastillo/.castillosebastian_colabs/lib/python3.9/site-packages/inFairness/auditor/auditor.py:54: RuntimeWarning: invalid value encountered in divide
-      loss_ratio = np.divide(loss_vals_adversarial, loss_vals_original)
-
-
-    ====================================================================================================
-    LR metric
-    Loss ratio (Standard model) : 2.660843321695338. Is model fair: False
-    Loss ratio (fair model - LogReg metric) : 1.0569381426130153. Is model fair: True
-    Loss ratio (fair model - EXPLORE metric) : 1.027237853086672. Is model fair: True
-    ----------------------------------------------------------------------------------------------------
-    	 As signified by these numbers, the fair models are fairer than the standard model
-    ====================================================================================================
-
-
-
-```python
-# Auditing using the SenSR Auditor + EXPLORE metric
-
-audit_nsteps = 1000
-audit_lr = 0.1
-
-auditor_explore = SenSRAuditor(loss_fn=loss_fn, distance_x=distance_x_explore, num_steps=audit_nsteps, lr=audit_lr, max_noise=0.5, min_noise=-0.5)
-
-audit_result_stdmodel = auditor_explore.audit(network_standard, X_test, y_test, lambda_param=10.0, audit_threshold=1.15)
-audit_result_fairmodel_LR = auditor_explore.audit(network_fair_LR, X_test, y_test, lambda_param=10.0, audit_threshold=1.15)
-audit_result_fairmodel_explore = auditor_explore.audit(network_fair_explore, X_test, y_test, lambda_param=10.0, audit_threshold=1.15)
-
-print("="*100)
-print("EXPLORE metric")
-print(f"Loss ratio (Standard model) : {audit_result_stdmodel.lower_bound}. Is model fair: {audit_result_stdmodel.is_model_fair}")
-print(f"Loss ratio (fair model - LogReg metric) : {audit_result_fairmodel_LR.lower_bound}. Is model fair: {audit_result_fairmodel_LR.is_model_fair}")
-print(f"Loss ratio (fair model - EXPLORE metric) : {audit_result_fairmodel_explore.lower_bound}. Is model fair: {audit_result_fairmodel_explore.is_model_fair}")
-print("-"*100)
-print("\t As signified by these numbers, the fair models are fairer than the standard model")
-print("="*100)
-```
-
-    ====================================================================================================
-    EXPLORE metric
-    Loss ratio (Standard model) : 4.319292031489292. Is model fair: False
-    Loss ratio (fair model - LogReg metric) : 1.13404923721215. Is model fair: True
-    Loss ratio (fair model - EXPLORE metric) : 1.0724120239938144. Is model fair: True
-    ----------------------------------------------------------------------------------------------------
-    	 As signified by these numbers, the fair models are fairer than the standard model
-    ====================================================================================================
-
-
-
-
-
-
-
-
-
-{{< admonition type=info title="Individual and Group Fairness" open=false >}}
-## Individual an Group Fairness
-
-A brief overview of the concepts of individual and group fairness as defined by Dwork et al. in their 2011 paper "Fairness Through Awareness."
-
-1. **Individual Fairness:** According to Dwork et al., individual fairness is the principle that similar individuals should be treated similarly. This means that an algorithm is individually fair if it gives similar outputs for similar inputs. The definition of "similarity" can vary depending on the context, but it is generally defined in terms of a metric or distance function over the input space. 
-
-   The formal definition of individual fairness is as follows: Given a metric space (X, d) and a function f: X → Y, we say that f is Lipschitz if for all x, x' ∈ X, d_Y(f(x), f(x')) ≤ d_X(x, x'). In the context of fairness, this means that the difference in the outputs of the function (i.e., the decisions made by the algorithm) should not be greater than the difference in the inputs (i.e., the individuals being considered).
-
-2. **Group Fairness:** Group fairness, on the other hand, is the principle that different groups should be treated similarly on average. This means that an algorithm is group-fair if it gives similar outcomes for different groups, even if the individuals within those groups are not similar. 
-
-   The formal definition of group fairness can vary depending on the specific notion of fairness being considered (e.g., demographic parity, equal opportunity, etc.). However, a common definition is that the decision rates (i.e., the proportion of positive outcomes) should be equal for different groups. For example, if we denote by P(Y=1|A=a) the probability of a positive outcome given group membership a, then demographic parity requires that P(Y=1|A=a) = P(Y=1|A=a') for all groups a, a'.
+{{< admonition type=success title="Findings">}}
+Upon reviewing the overall results, we see that with a minor decrease in accuracy of 0.01, we have successfully constructed a fair model that is debiased with respect to gender and race.
 {{< /admonition >}}
 
+## Conclusion
 
-{{< admonition type=info title="Challenges Fair AI tools" open=false >}}
-## Challenges for the implementation of Fair AI tools
+We've explored a specific example of a fair-ML model using the tools provided by the inFairness package. While the results are promising, it's important to contextualize them within the broader challenges of responsible AI, particularly given the rapid evolution of ML tools and the dynamic nature of societal values.
 
-In order to build fair AI tools, we must address numerous challenges. Following Richardson, we list some of the more prominent ones:
+Following Richardson, we can mention:
 
-- Conflicting Fairness Metrics: Measurement is always a political activity in the sense that we must select, define, and prioritize certain dimensions of reality, setting aside others. Friedler et al. (2021) argue that fairness experts must explicitly state the priorities of each fairness metric to ensure practitioners make informed choices.
-- Metric Robustness: Friedler et al. (2018) discovered that many fairness metrics lack robustness. Their study showed that by simply modifying dataset composition and changing train-test splits, many fairness criteria lacked stability.
-- Oversimplification of Fairness: A major concern in the literature is the emphasis on technical solutions to algorithmic bias, which is a socio-technical problem. Madaio et al. (2020) referred to the exclusive use of technical solutions as "ethics washing," and Selbst et al. (2019) describe the failure to recognize that fairness cannot be solely achieved through mathematical formulation as the "formalism trap."
-- Operationalization of Ethical Concepts: A significant challenge for fair AI is translating ethical reflections into actionable products and procedures that practitioners and institutions can implement. This difficulty is not unique to the AI field but affects every aspect of human activity where there is a need for ethical actions.
-{{< /admonition >}}
+- **Conflicting Fairness Metrics**: Measurement is always a political activity in the sense that we must select, define, and prioritize certain dimensions of reality, setting aside others. Friedler et al. (2021) argue that fairness experts must explicitly state the priorities of each fairness metric to ensure practitioners make informed choices.
+- **Metric Robustness**: Friedler et al. (2018) discovered that many fairness metrics lack robustness. Their study showed that by simply modifying dataset composition and changing train-test splits, many fairness criteria lacked stability.
+- **Oversimplification of Fairness**: A major concern in the literature is the emphasis on technical solutions to algorithmic bias, which is a socio-technical problem. Madaio et al. (2020) referred to the exclusive use of technical solutions as "ethics washing," and Selbst et al. (2019) describe the failure to recognize that fairness cannot be solely achieved through mathematical formulation as the "formalism trap."
+- **Operationalization of Ethical Concepts**: A significant challenge for fair AI is translating ethical reflections into actionable products and procedures that practitioners and institutions can implement. This difficulty is not unique to the AI field but affects every aspect of human activity where there is a need for ethical actions.
 
-
-{{< admonition type=info title="Bibliography" open=false >}}
+{{< admonition type=note title="Bibliography" open=false >}}
 ## Bibliography
 - Dwork, Cynthia, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Rich Zemel. “Fairness Through Awareness.” arXiv, November 28, 2011. https://doi.org/10.48550/arXiv.1104.3913.
 - Mehrabi, Ninareh, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. “A Survey on Bias and Fairness in Machine Learning.” arXiv, January 25, 2022. https://doi.org/10.48550/arXiv.1908.09635.
