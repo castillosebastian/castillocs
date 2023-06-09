@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 3
 title: "Justice Analitics"
 date: 2016-12-01T21:57:40+08:00
 lastmod: 2020-01-01T16:45:40+08:00

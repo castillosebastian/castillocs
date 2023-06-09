@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 2
 title: "Responsible AI Tools"
 date: 2023-06-01T10:49:29-03:00
 lastmod: 2023-06-01T21:29:01+08:00
@@ -11,7 +11,7 @@ resources:
 - name: "featured-image-preview"
   src: "featured-image-preview.jpg"
 
-tags: ["fairness", "bias", "fair neural networks"]
+tags: ["fairness", "bias", "neural networks"]
 categories: ["Responsible AI"]
 lightgallery: true
 toc:
@@ -32,7 +32,7 @@ In this context, the concept of *responsible AI* has emerged as a crucial compon
 
 We can view the concept of *fair AI tools* as pointing to software that is free from unintentional algorithmic bias. Fairness, as defined by Mehrabi et al. (2021), is *the absence of any prejudice or favoritism toward an individual or a group based on their inherent or acquired characteristics.* 
 
-{{< admonition type=info title="Individual and Group Fairness" open=false >}}
+{{< admonition type=info title="What is the difference between individual and group fairness?" open=false >}}
 ## Individual an Group Fairness
 
 A brief overview of the concepts of individual and group fairness as defined by Dwork et al. in their 2011 paper "Fairness Through Awareness."
@@ -90,6 +90,7 @@ names = [
 data = pd.read_csv(url, sep=',', names=names)
 ```
 
+{{< admonition type=info title="What are the 'Adult' dataset features?" open=false >}}
 ```python
 data.head()
 ```
@@ -223,7 +224,7 @@ data.head()
   </tbody>
 </table>
 </div>
-
+{{< /admonition >}}
 
 ```python
 data['annual-income'].value_counts()
@@ -438,9 +439,6 @@ import data
 train_df, test_df = data.load_data()
 X_train_df, Y_train_df = train_df
 X_test_df, Y_test_df = test_df
-```
-
-```python
 X_train_df.head(1)
 ```
 
@@ -512,7 +510,6 @@ X_train_df.head(1)
     </tr>
   </tbody>
 </table>
-<p>1 rows × 41 columns</p>
 </div>
 
 In the IBM-inFairness model [example](https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb) the protected attributes are dropped from the training and test data. That is usually the case in fairness-aware machine learning models,especially when dealing with known biased features. The aim is to prevent the model from directly using these sensitive attributes for decision-making, thereby avoiding potential discriminatory outcomes.
@@ -801,3 +798,6 @@ Following Richardson, we can mention:
 - Weerts, Hilde, Miroslav Dudík, Richard Edgar, Adrin Jalali, Roman Lutz, and Michael Madaio. “Fairlearn: Assessing and Improving Fairness of AI Systems.” arXiv, March 29, 2023. https://doi.org/10.48550/arXiv.2303.16626.
 - Yurochkin, Mikhail, Amanda Bower, and Yuekai Sun. “Training Individually Fair ML Models with Sensitive Subspace Robustness.” arXiv, March 13, 2020. http://arxiv.org/abs/1907.00020.
 {{< /admonition >}}
+
+Pic by <a href="https://unsplash.com/@patrickian4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Patrick Fore</a>, <a href="https://unsplash.com/es/s/fotos/balance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
