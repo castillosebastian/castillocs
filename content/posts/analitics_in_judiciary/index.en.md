@@ -9,7 +9,7 @@ resources:
 - name: "featured-image"
   src: "featured-image.jpg"
 tags: ["judiciary", "public service"]
-categories: ["Dashboards", "Data driven culture"]
+categories: ["Dashboards", "Data Driven Dulture"]
 
 lightgallery: true
 ---
