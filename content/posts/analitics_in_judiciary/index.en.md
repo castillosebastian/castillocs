@@ -4,12 +4,11 @@ title: "Justice Analitics"
 date: 2016-12-01T21:57:40+08:00
 lastmod: 2020-01-01T16:45:40+08:00
 draft: false
-author: "CastilloS"
 images: []
 resources:
 - name: "featured-image"
   src: "featured-image.jpg"
-tags: ["Judiciary", "Public Service"]
+tags: ["judiciary", "public service"]
 categories: ["Dashboards", "Data driven culture"]
 
 lightgallery: true
