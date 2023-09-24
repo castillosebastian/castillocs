@@ -2,92 +2,71 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://castillosebastian.github.io/castillocs/analitics_in_judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/variational_autoencoders/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://castillosebastian.github.io/responsible_ai/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/analitics_in_judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/"
+                        href="https://castillosebastian.github.io/es/analitics_in_judiciary/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/analitics_in_judiciary/"
+                    href="https://castillosebastian.github.io/analitics_in_judiciary/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/llm/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/llm/"
+                        href="https://castillosebastian.github.io/es/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/llm/"
+                    href="https://castillosebastian.github.io/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/formal_epistemology/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/categories/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/formal_epistemology/"
+                        href="https://castillosebastian.github.io/es/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/formal_epistemology/"
+                    href="https://castillosebastian.github.io/categories/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/tags/deep-neural-networks/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://castillosebastian.github.io/tags/expectation-maximization/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://castillosebastian.github.io/categories/generative-models/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://castillosebastian.github.io/posts/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/"
+                        href="https://castillosebastian.github.io/es/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/"
+                    href="https://castillosebastian.github.io/posts/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/categories/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/tags/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/categories/"
+                        href="https://castillosebastian.github.io/es/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/categories/"
+                    href="https://castillosebastian.github.io/tags/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/categories/dashboards/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/categories/data-driven-culture/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/tags/judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/posts/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://castillosebastian.github.io/tags/variational-autoencoders/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://castillosebastian.github.io/tags/bias/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/tags/fairness/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/tags/neural-networks/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/categories/responsible-ai/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/posts/"
+                        href="https://castillosebastian.github.io/es/aplications/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/posts/"
+                    href="https://castillosebastian.github.io/aplications/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/tags/public-service/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/tags/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/tags/"
-                    /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/aplications/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/aplications/"
-                    /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/categories/ai/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/tags/llm/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="es"
-                        href="https://castillosebastian.github.io/castillocs/es/tags/llm/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://castillosebastian.github.io/castillocs/tags/llm/"
-                    /></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/tags/machine-learning/</loc><lastmod>2019-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/categories/formal-epistemology/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/castillocs/tags/knowledge/</loc><lastmod>2015-03-06T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://castillosebastian.github.io/categories/dashboards/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/categories/data-driven-culture/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/tags/judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://castillosebastian.github.io/tags/public-service/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

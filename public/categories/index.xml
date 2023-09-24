@@ -1,39 +1,39 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Categories - Category - CastilloCS</title>
-        <link>https://castillosebastian.github.io/castillocs/categories/</link>
-        <description>Categories - Category - CastilloCS</description>
+        <title>Categories - Category - CastilloS</title>
+        <link>https://castillosebastian.github.io/categories/</link>
+        <description>Categories - Category - CastilloS</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>Dashboards</title>
-    <link>https://castillosebastian.github.io/castillocs/categories/dashboards/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://castillosebastian.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>Generative Models</title>
+    <link>https://castillosebastian.github.io/categories/generative-models/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/categories/dashboards/</guid>
+    <guid>https://castillosebastian.github.io/categories/generative-models/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Responsible AI</title>
+    <link>https://castillosebastian.github.io/categories/responsible-ai/</link>
+    <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/categories/responsible-ai/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Dashboards</title>
+    <link>https://castillosebastian.github.io/categories/dashboards/</link>
+    <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/categories/dashboards/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Data driven culture</title>
-    <link>https://castillosebastian.github.io/castillocs/categories/data-driven-culture/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <link>https://castillosebastian.github.io/categories/data-driven-culture/</link>
+    <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/categories/data-driven-culture/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>AI</title>
-    <link>https://castillosebastian.github.io/castillocs/categories/ai/</link>
-    <pubDate>Tue, 01 Jan 2019 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/categories/ai/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Formal Epistemology</title>
-    <link>https://castillosebastian.github.io/castillocs/categories/formal-epistemology/</link>
-    <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/categories/formal-epistemology/</guid>
+    <guid>https://castillosebastian.github.io/categories/data-driven-culture/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

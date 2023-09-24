@@ -1,47 +1,71 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - CastilloCS</title>
-        <link>https://castillosebastian.github.io/castillocs/tags/</link>
-        <description>Tags - Tag - CastilloCS</description>
+        <title>Tags - Tag - CastilloS</title>
+        <link>https://castillosebastian.github.io/tags/</link>
+        <description>Tags - Tag - CastilloS</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Judiciary</title>
-    <link>https://castillosebastian.github.io/castillocs/tags/judiciary/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://castillosebastian.github.io/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>deep neural networks</title>
+    <link>https://castillosebastian.github.io/tags/deep-neural-networks/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/tags/judiciary/</guid>
+    <guid>https://castillosebastian.github.io/tags/deep-neural-networks/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>expectation maximization</title>
+    <link>https://castillosebastian.github.io/tags/expectation-maximization/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/tags/expectation-maximization/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>variational autoencoders</title>
+    <link>https://castillosebastian.github.io/tags/variational-autoencoders/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/tags/variational-autoencoders/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>bias</title>
+    <link>https://castillosebastian.github.io/tags/bias/</link>
+    <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/tags/bias/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>fairness</title>
+    <link>https://castillosebastian.github.io/tags/fairness/</link>
+    <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/tags/fairness/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>neural networks</title>
+    <link>https://castillosebastian.github.io/tags/neural-networks/</link>
+    <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/tags/neural-networks/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Judiciary</title>
+    <link>https://castillosebastian.github.io/tags/judiciary/</link>
+    <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/tags/judiciary/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Public Service</title>
-    <link>https://castillosebastian.github.io/castillocs/tags/public-service/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
+    <link>https://castillosebastian.github.io/tags/public-service/</link>
+    <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/tags/public-service/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>LLM</title>
-    <link>https://castillosebastian.github.io/castillocs/tags/llm/</link>
-    <pubDate>Tue, 01 Jan 2019 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/tags/llm/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Machine Learning</title>
-    <link>https://castillosebastian.github.io/castillocs/tags/machine-learning/</link>
-    <pubDate>Tue, 01 Jan 2019 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/tags/machine-learning/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Knowledge</title>
-    <link>https://castillosebastian.github.io/castillocs/tags/knowledge/</link>
-    <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/tags/knowledge/</guid>
+    <guid>https://castillosebastian.github.io/tags/public-service/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

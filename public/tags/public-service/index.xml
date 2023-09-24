@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Public Service - Tag - CastilloCS</title>
-        <link>https://castillosebastian.github.io/castillocs/tags/public-service/</link>
-        <description>Public Service - Tag - CastilloCS</description>
+        <title>Public Service - Tag - CastilloS</title>
+        <link>https://castillosebastian.github.io/tags/public-service/</link>
+        <description>Public Service - Tag - CastilloS</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/tags/public-service/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/tags/public-service/" rel="self" type="application/rss+xml" /><item>
     <title>Justice Analitics</title>
-    <link>https://castillosebastian.github.io/castillocs/analitics_in_judiciary/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
-    <author>CastilloCS</author>
-    <guid>https://castillosebastian.github.io/castillocs/analitics_in_judiciary/</guid>
+    <link>https://castillosebastian.github.io/analitics_in_judiciary/</link>
+    <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
+    <author>CastilloS</author>
+    <guid>https://castillosebastian.github.io/analitics_in_judiciary/</guid>
     <description><![CDATA[<p>This post chronicles the transformative journey that the Judiciary of Entre Ríos, Argentina, where I serve as Director, is undertaking in the realm of statistics.</p>]]></description>
 </item>
 </channel>

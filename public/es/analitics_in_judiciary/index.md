@@ -1,4 +1,4 @@
-# 
+# Analisis Estadístico y Justicia
 
 
 Este post es un recorrido de la transformación que en materia de estadística está llevando a cabo el Poder Judicial de Entre Ríos, Argentina, donde trabajo como Director.

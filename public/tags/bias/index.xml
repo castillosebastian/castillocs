@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>bias - Tag - CastilloS</title>
+        <link>https://castillosebastian.github.io/tags/bias/</link>
+        <description>bias - Tag - CastilloS</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Thu, 01 Jun 2023 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/tags/bias/" rel="self" type="application/rss+xml" /><item>
+    <title>Responsible AI Tools</title>
+    <link>https://castillosebastian.github.io/responsible_ai/</link>
+    <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
+    <author>Castillo Claudio Sebastian</author>
+    <guid>https://castillosebastian.github.io/responsible_ai/</guid>
+    <description><![CDATA[<p>Responsible AI has become a crucial aspect of every Machine Learning project, underscoring the need for tools that promote the creation of fair and ethically sound models. In this post, we delve into some key concepts and replicate IBM&rsquo;s inFairness example solution to address bias in the &lsquo;Adult Income&rsquo; dataset. Beyond the technical configurations adopted, the intent to algorithmically address unfairness and the statistical pursuit of both overt and hidden bias in data are particularly noteworthy. These are the key insights we hope readers will take away from this post.</p>]]></description>
+</item>
+</channel>
+</rss>

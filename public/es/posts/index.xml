@@ -1,32 +1,31 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Todos los Artículos - CastilloCS</title>
-        <link>https://castillosebastian.github.io/castillocs/es/posts/</link>
-        <description>Todos los Artículos | CastilloCS</description>
+        <title>Todos los Artículos - CastilloS</title>
+        <link>https://castillosebastian.github.io/es/posts/</link>
+        <description>Todos los Artículos | CastilloS</description>
         <generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/castillocs/es/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Modelos de Lenguaje</title>
-    <link>https://castillosebastian.github.io/castillocs/es/llm/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
-    <author>CastilloCS</author>
-    <guid>https://castillosebastian.github.io/castillocs/es/llm/</guid>
-    <description><![CDATA[<p>Introducción a Modelos de Lenguaje.</p>]]></description>
-</item>
-<item>
-    <title></title>
-    <link>https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/</link>
+            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Thu, 01 Jun 2023 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/es/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Analisis Estadístico y Justicia</title>
+    <link>https://castillosebastian.github.io/es/analitics_in_judiciary/</link>
     <pubDate>Wed, 01 Jun 2016 21:57:40 &#43;0800</pubDate>
-    <author>CastilloCS</author>
-    <guid>https://castillosebastian.github.io/castillocs/es/analitics_in_judiciary/</guid>
+    <author>CastilloS</author>
+    <guid>https://castillosebastian.github.io/es/analitics_in_judiciary/</guid>
     <description><![CDATA[<p>Este post es un recorrido de la transformación que en materia de estadística está llevando a cabo el Poder Judicial de Entre Ríos, Argentina, donde trabajo como Director.</p>]]></description>
 </item>
 <item>
-    <title>Epistemología Formal</title>
-    <link>https://castillosebastian.github.io/castillocs/es/formal_epistemology/</link>
-    <pubDate>Wed, 25 Mar 2015 10:49:29 -0300</pubDate>
+    <title>Feature Selection: Intro</title>
+    <link>https://castillosebastian.github.io/es/feature_selection/</link>
+    <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
     <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/castillocs/es/formal_epistemology/</guid>
-    <description><![CDATA[<p>La epistemología formal es un campo interdisciplinario que reflexiona sobre el conocimiento y el aprendizaje empleando métodos formales.</p>]]></description>
+    <guid>https://castillosebastian.github.io/es/feature_selection/</guid>
+    <description><![CDATA[<p>La selección de características es un tema importante dentro del <strong>aprendizaje automático</strong> (<strong>marchine learning</strong>) debido a la dimensionalidad que presentan los datos dentro de este dominio. Frecuentemente los individuos con los que se trabaja están representados por vectores de N dimensiones (i.e.regularmente mediciones de un proceso o fenómeno), que se necesitan procesar para resolver un problema. Estas dimensiones muchas veces superan la cantidad de individuos disponibles planteando serios problemas a los algoritmos de aprendizaje, cuya complejidad (en términos de parámetros) crece conforme crece la dimensionalidad.</p>
+<p>Ante esta situación aparece la necesidad de buscar un subconjunto de características apropiado que permita atacar el problema de manera efectiva. Si los problemas en ML crecen exponencialmente con las dimensiones de los datos (tenemos la fórmula donde cada problema (2)N, si N = 50 el problema se vuelve intratable para búsquedas exhaustivas) se vuelven importante métodos que puedan abordar la dimensionalidad. Aparecen los métodos de optimización combinatoria.</p>
+<p>Podemos agrupar esos métodos siguiendo tres enfoques en el diseño de la solución:</p>
+<ul>
+<li>se determina un conjunto de dimensiones y se busca maximizar una métrica de desempeño (e.g. precisión),</li>
+<li>se busca el conjunto más pequeño de dimensiones que satisfaga cierto umbral de desempeño,</li>
+<li>se busca el compromiso óptimo entre dimensionalidad y desempeño,</li>
+</ul>]]></description>
 </item>
 </channel>
 </rss>

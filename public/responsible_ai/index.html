@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Responsible AI Tools - CastilloS</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Responsible AI Tools" />
+<meta property="og:description" content="Responsible AI has become a crucial aspect of every Machine Learning project, underscoring the need for tools that promote the creation of fair and ethically sound models. In this post, we delve into some key concepts and replicate IBM&rsquo;s inFairness example solution to address bias in the &lsquo;Adult Income&rsquo; dataset. Beyond the technical configurations adopted, the intent to algorithmically address unfairness and the statistical pursuit of both overt and hidden bias in data are particularly noteworthy. These are the key insights we hope readers will take away from this post." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://castillosebastian.github.io/responsible_ai/" /><meta property="og:image" content="https://castillosebastian.github.io/responsible_ai/featured-image.jpg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-01T10:49:29-03:00" />
+<meta property="article:modified_time" content="2023-06-01T21:29:01+08:00" /><meta property="og:site_name" content="CastilloS" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://castillosebastian.github.io/responsible_ai/featured-image.jpg"/>
+<meta name="twitter:title" content="Responsible AI Tools"/>
+<meta name="twitter:description" content="Responsible AI has become a crucial aspect of every Machine Learning project, underscoring the need for tools that promote the creation of fair and ethically sound models. In this post, we delve into some key concepts and replicate IBM&rsquo;s inFairness example solution to address bias in the &lsquo;Adult Income&rsquo; dataset. Beyond the technical configurations adopted, the intent to algorithmically address unfairness and the statistical pursuit of both overt and hidden bias in data are particularly noteworthy. These are the key insights we hope readers will take away from this post."/>
+<meta name="application-name" content="castillos">
+<meta name="apple-mobile-web-app-title" content="castillos"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://castillosebastian.github.io/responsible_ai/" /><link rel="prev" href="https://castillosebastian.github.io/analitics_in_judiciary/" /><link rel="next" href="https://castillosebastian.github.io/variational_autoencoders/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Responsible AI Tools",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/castillosebastian.github.io\/responsible_ai\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/castillosebastian.github.io\/responsible_ai\/featured-image.jpg",
+                            "width":  5472 ,
+                            "height":  2168 
+                        }],"genre": "posts","keywords": "fairness, bias, neural networks","wordcount":  3423 ,
+        "url": "https:\/\/castillosebastian.github.io\/responsible_ai\/","datePublished": "2023-06-01T10:49:29-03:00","dateModified": "2023-06-01T21:29:01+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Castillo Claudio Sebastian"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="CastilloS">CastilloS</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/aplications/"> Aplications </a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/responsible_ai/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="CastilloS">CastilloS</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/aplications/" title="">Aplications</a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/responsible_ai/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Responsible AI Tools</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Castillo Claudio Sebastian</a></span>&nbsp;<span class="post-category">included in <a href="/categories/responsible-ai/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Responsible AI</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-01">2023-06-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;3423 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;17 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/responsible_ai/featured-image.jpg"
+        data-srcset="/responsible_ai/featured-image.jpg, /responsible_ai/featured-image.jpg 1.5x, /responsible_ai/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/responsible_ai/featured-image.jpg"
+        title="/responsible_ai/featured-image.jpg" /></div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#unfearness-and-responsible-ai">Unfearness and Responsible AI</a></li>
+    <li><a href="#fair-ai-tools">Fair AI tools</a></li>
+    <li><a href="#a-fair-tool-infairness">A fair tool: InFairness</a>
+      <ul>
+        <li><a href="#libraries">Libraries</a></li>
+        <li><a href="#bias-exploration">Bias exploration</a></li>
+        <li><a href="#simple-neural-network-model">Simple neural network model</a></li>
+        <li><a href="#standard-training">Standard training</a></li>
+        <li><a href="#individually-fair-training-with-logreg-fair-metric">Individually fair training with LogReg fair metric</a></li>
+        <li><a href="#learning-fair-metric-from-data-and-its-hidden-signals">Learning fair metric from data and its hidden signals</a></li>
+        <li><a href="#a-fair-objective-function">A fair objective function</a></li>
+        <li><a href="#results">Results</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Responsible AI has become a crucial aspect of every Machine Learning project, underscoring the need for tools that promote the creation of fair and ethically sound models. In this post, we delve into some key concepts and replicate IBM&rsquo;s inFairness example solution to address bias in the &lsquo;Adult Income&rsquo; dataset. Beyond the technical configurations adopted, the intent to algorithmically address unfairness and the statistical pursuit of both overt and hidden bias in data are particularly noteworthy. These are the key insights we hope readers will take away from this post.</p>
+<h2 id="unfearness-and-responsible-ai">Unfearness and Responsible AI</h2>
+<p>The pervasive application of machine learning in many sensitive environments to make important and life-changing decisions, has heightened concerns about the fairness and ethical impact of these technologies.  More importantly, experiments that unveil biases and disparities inherent in these implementations (Mehrabi, 2022) have dismantled the idea of algorithmic &rsquo;neutrality&rsquo;, emphasizes the critical need for alignment with laws and values pertaining to human dignity.</p>
+<p>In this context, the concept of <em>responsible AI</em> has emerged as a crucial component of every AI project, underscoring the need for procedures that can facilitate the creation of safe, fair, and ethically grounded tools (Richardson, 2021).</p>
+<h2 id="fair-ai-tools">Fair AI tools</h2>
+<p>We can view the concept of <em>fair AI tools</em> as pointing to software that is free from unintentional algorithmic bias. Fairness, as defined by Mehrabi et al. (2021), is <em>the absence of any prejudice or favoritism toward an individual or a group based on their inherent or acquired characteristics.</em></p>
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>What is the difference between individual and group fairness?<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2 id="individual-an-group-fairness">Individual an Group Fairness</h2>
+<p>A brief overview of the concepts of individual and group fairness as defined by Dwork et al. in their 2011 paper &ldquo;Fairness Through Awareness.&rdquo;</p>
+<ol>
+<li>
+<p><strong>Individual Fairness:</strong> According to Dwork et al., individual fairness is the principle that similar individuals should be treated similarly. This means that an algorithm is individually fair if it gives similar outputs for similar inputs. The definition of &ldquo;similarity&rdquo; can vary depending on the context, but it is generally defined in terms of a metric or distance function over the input space.</p>
+<p>The formal definition of individual fairness is as follows: Given a metric space (X, d) and a function f: X → Y, we say that f is Lipschitz if for all x, x&rsquo; ∈ X, d_Y(f(x), f(x&rsquo;)) ≤ d_X(x, x&rsquo;). In the context of fairness, this means that the difference in the outputs of the function (i.e., the decisions made by the algorithm) should not be greater than the difference in the inputs (i.e., the individuals being considered).</p>
+</li>
+<li>
+<p><strong>Group Fairness:</strong> Group fairness, on the other hand, is the principle that different groups should be treated similarly on average. This means that an algorithm is group-fair if it gives similar outcomes for different groups, even if the individuals within those groups are not similar.</p>
+<p>The formal definition of group fairness can vary depending on the specific notion of fairness being considered (e.g., demographic parity, equal opportunity, etc.). However, a common definition is that the decision rates (i.e., the proportion of positive outcomes) should be equal for different groups. For example, if we denote by P(Y=1|A=a) the probability of a positive outcome given group membership a, then demographic parity requires that P(Y=1|A=a) = P(Y=1|A=a&rsquo;) for all groups a, a'.</p>
+</li>
+</ol>
+</div>
+        </div>
+    </div>
+<p>To achieve fairness-related goals, we can approach them through both <em>product</em> development and the implementation of specific <em>procedures</em>:</p>
+<ul>
+<li>
+<p><strong>Products</strong>: refers to AI software that is designed and developed with fairness in mind. This could involve algorithms that mitigate bias or tools that promote transparency in AI decision-making. Regarding solutions, Richardson asserts that fair AI consists of <em>strategies to combat algorithmic bias</em>. These often include top-tier solutions drawn from research in explainability, transparency, interpretability, and accountability (Richardson, 2021).</p>
+</li>
+<li>
+<p><strong>Procedures</strong>: refers to standardized activities or practices that ensure fairness. This could include ethical guidelines for AI development, rigorous testing for bias in AI systems, and policies for responsible AI use.</p>
+</li>
+</ul>
+<p>It&rsquo;s important to note that the specifics of these &lsquo;products&rsquo; and &lsquo;procedures&rsquo; can vary significantly depending on the context, the specific AI application, and the definition of &lsquo;fairness&rsquo; in use. <em>Fairness</em> is a time-bound and context-dependent moral concept, so tools designed to ensure it must adapt to evolving standards. This means they must be flexible to changes in societal values and expectations over time. That is why the pursuit of <em>fair AI tools</em> is a continuous and context-specific endeavor, which rules out the possibility of universally applicable or one-size-fits-all solutions. As stated in Fairlearn project (Microsoft): &lsquo;because there are many complex sources of unfairness—some societal and some technical—it is not possible to fully “debias” a system or to guarantee fairness; the goal is to mitigate fairness-related harms as much as possible.&rsquo;</p>
+<h2 id="a-fair-tool-infairness">A fair tool: InFairness</h2>
+<p>Now, let&rsquo;s turn into a practical application of fairness in AI. We will be testing the &lsquo;fair-ml&rsquo; algorithms developed by IBM Research, available in their <a href="https://github.com/IBM/inFairness" target="_blank" rel="noopener noreffer ">inFairness package</a>. These algorithms are designed with a focus on fairness, guided by the fairness metric proposed by Dwork et al., 2011.</p>
+<p>To explore these implementation we will follow the model <a href="https://github.com/IBM/inFairness/tree/main/examples/adult-income-prediction" target="_blank" rel="noopener noreffer ">example</a> provided in the package. We are going to work with <em>Adult</em> dataset (Dua &amp; Graff, 2017) used to predict whether income exceeds $50K/yr based on census data. Also known as &ldquo;Census Income&rdquo; dataset Train dataset contains 13 features and 30178 observations. Test dataset contains 13 features and 15315 observations. Target column is a binary factor where 1: &lt;=50K and 2: &gt;50K for annual income.</p>
+<h3 id="libraries">Libraries</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tqdm.auto</span> <span class="kn">import</span> <span class="n">tqdm</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">inFairness.fairalgo</span> <span class="kn">import</span> <span class="n">SenSeI</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">inFairness</span> <span class="kn">import</span> <span class="n">distances</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">inFairness.auditor</span> <span class="kn">import</span> <span class="n">SenSRAuditor</span><span class="p">,</span> <span class="n">SenSeIAuditor</span>
+</span></span><span class="line"><span class="cl"><span class="o">%</span><span class="n">load_ext</span> <span class="n">autoreload</span>
+</span></span><span class="line"><span class="cl"><span class="o">%</span><span class="n">autoreload</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">metrics</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="bias-exploration">Bias exploration</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">names</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;workclass&#39;</span><span class="p">,</span> <span class="s1">&#39;fnlwgt&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;education-num&#39;</span><span class="p">,</span> <span class="s1">&#39;marital-status&#39;</span><span class="p">,</span> <span class="s1">&#39;occupation&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;relationship&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">,</span> <span class="s1">&#39;capital-gain&#39;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;capital-loss&#39;</span><span class="p">,</span> <span class="s1">&#39;hours-per-week&#39;</span><span class="p">,</span> <span class="s1">&#39;native-country&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;annual-income&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>What are the &#39;Adult&#39; dataset features?<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>workclass</th>
+      <th>fnlwgt</th>
+      <th>education</th>
+      <th>education-num</th>
+      <th>marital-status</th>
+      <th>occupation</th>
+      <th>relationship</th>
+      <th>race</th>
+      <th>sex</th>
+      <th>capital-gain</th>
+      <th>capital-loss</th>
+      <th>hours-per-week</th>
+      <th>native-country</th>
+      <th>annual-income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>39</td>
+      <td>State-gov</td>
+      <td>77516</td>
+      <td>Bachelors</td>
+      <td>13</td>
+      <td>Never-married</td>
+      <td>Adm-clerical</td>
+      <td>Not-in-family</td>
+      <td>White</td>
+      <td>Male</td>
+      <td>2174</td>
+      <td>0</td>
+      <td>40</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>50</td>
+      <td>Self-emp-not-inc</td>
+      <td>83311</td>
+      <td>Bachelors</td>
+      <td>13</td>
+      <td>Married-civ-spouse</td>
+      <td>Exec-managerial</td>
+      <td>Husband</td>
+      <td>White</td>
+      <td>Male</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>38</td>
+      <td>Private</td>
+      <td>215646</td>
+      <td>HS-grad</td>
+      <td>9</td>
+      <td>Divorced</td>
+      <td>Handlers-cleaners</td>
+      <td>Not-in-family</td>
+      <td>White</td>
+      <td>Male</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>53</td>
+      <td>Private</td>
+      <td>234721</td>
+      <td>11th</td>
+      <td>7</td>
+      <td>Married-civ-spouse</td>
+      <td>Handlers-cleaners</td>
+      <td>Husband</td>
+      <td>Black</td>
+      <td>Male</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>United-States</td>
+      <td>&lt;=50K</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>28</td>
+      <td>Private</td>
+      <td>338409</td>
+      <td>Bachelors</td>
+      <td>13</td>
+      <td>Married-civ-spouse</td>
+      <td>Prof-specialty</td>
+      <td>Wife</td>
+      <td>Black</td>
+      <td>Female</td>
+      <td>0</td>
+      <td>0</td>
+      <td>40</td>
+      <td>Cuba</td>
+      <td>&lt;=50K</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span><span class="p">[</span><span class="s1">&#39;annual-income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>annual-income
+ &lt;=50K    24720
+ &gt;50K      7841
+Name: count, dtype: int64
+</code></pre>
+<p>The dataset is imbalanced: 25% make at least $50k per year. This imbalanced also appears in <em>sex</em> and <em>race</em> as shown here:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">(</span><span class="n">imbal_sex</span> <span class="o">:=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;annual-income&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">   <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">   <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">percentage</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">df</span><span class="p">:</span><span class="mi">100</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>   
+</span></span><span class="line"><span class="cl">   <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>annual-income</th>
+      <th>sex</th>
+      <th>count</th>
+      <th>percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&lt;=50K</td>
+      <td>Male</td>
+      <td>15128</td>
+      <td>46.460490</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>&lt;=50K</td>
+      <td>Female</td>
+      <td>9592</td>
+      <td>29.458555</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&gt;50K</td>
+      <td>Male</td>
+      <td>6662</td>
+      <td>20.460060</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&gt;50K</td>
+      <td>Female</td>
+      <td>1179</td>
+      <td>3.620896</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">(</span><span class="n">imbal_race</span> <span class="o">:=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;annual-income&#39;</span><span class="p">,</span> <span class="s1">&#39;race&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">   <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">   <span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">percentage</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">df</span><span class="p">:</span><span class="mi">100</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>   
+</span></span><span class="line"><span class="cl">   <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>annual-income</th>
+      <th>race</th>
+      <th>count</th>
+      <th>percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&lt;=50K</td>
+      <td>White</td>
+      <td>20699</td>
+      <td>63.569915</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>&gt;50K</td>
+      <td>White</td>
+      <td>7117</td>
+      <td>21.857437</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>&lt;=50K</td>
+      <td>Black</td>
+      <td>2737</td>
+      <td>8.405761</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>&lt;=50K</td>
+      <td>Asian-Pac-Islander</td>
+      <td>763</td>
+      <td>2.343294</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&gt;50K</td>
+      <td>Black</td>
+      <td>387</td>
+      <td>1.188538</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>&gt;50K</td>
+      <td>Asian-Pac-Islander</td>
+      <td>276</td>
+      <td>0.847640</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>&lt;=50K</td>
+      <td>Amer-Indian-Eskimo</td>
+      <td>275</td>
+      <td>0.844569</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>&lt;=50K</td>
+      <td>Other</td>
+      <td>246</td>
+      <td>0.755505</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>&gt;50K</td>
+      <td>Amer-Indian-Eskimo</td>
+      <td>36</td>
+      <td>0.110562</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>&gt;50K</td>
+      <td>Other</td>
+      <td>25</td>
+      <td>0.076779</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="simple-neural-network-model">Simple neural network model</h3>
+<p>Folowing the IBM <a href="https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb" target="_blank" rel="noopener noreffer ">example</a> in the income prediction task, we will test a simple neural network.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AdultDataset</span><span class="p">(</span><span class="n">Dataset</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">data</span><span class="p">,</span> <span class="n">label</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Note that the categorical variable are transformed into one-hot variables.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">data</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_df</span><span class="p">,</span> <span class="n">test_df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_train_df</span><span class="p">,</span> <span class="n">Y_train_df</span> <span class="o">=</span> <span class="n">train_df</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_test_df</span><span class="p">,</span> <span class="n">Y_test_df</span> <span class="o">=</span> <span class="n">test_df</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_train_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>capital-gain</th>
+      <th>capital-loss</th>
+      <th>education-num</th>
+      <th>hours-per-week</th>
+      <th>marital-status_Divorced</th>
+      <th>marital-status_Married-AF-spouse</th>
+      <th>marital-status_Married-civ-spouse</th>
+      <th>marital-status_Married-spouse-absent</th>
+      <th>marital-status_Never-married</th>
+      <th>...</th>
+      <th>relationship_Unmarried</th>
+      <th>relationship_Wife</th>
+      <th>sex_Male</th>
+      <th>workclass_Federal-gov</th>
+      <th>workclass_Local-gov</th>
+      <th>workclass_Private</th>
+      <th>workclass_Self-emp-inc</th>
+      <th>workclass_Self-emp-not-inc</th>
+      <th>workclass_State-gov</th>
+      <th>workclass_Without-pay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.409331</td>
+      <td>-0.14652</td>
+      <td>-0.218253</td>
+      <td>-1.613806</td>
+      <td>-0.49677</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>...</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p>In the IBM-inFairness model <a href="https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb" target="_blank" rel="noopener noreffer ">example</a> the protected attributes are dropped from the training and test data. That is usually the case in fairness-aware machine learning models,especially when dealing with known biased features. The aim is to prevent the model from directly using these sensitive attributes for decision-making, thereby avoiding potential discriminatory outcomes.</p>
+<p>However, this approach has some limitations. Even when the protected attributes are removed, other features in the dataset might act as proxies for it, potentially retaining a strong signal of the biased information. As an example certain occupations, neighborhoods, or education levels might be disproportionately associated with certain racial groups due to societal factors. So, even without explicit information about race, the model might still end up learning patterns that indirectly reflect racial biases.</p>
+<p>On the other hand, removing sensitives attributes makes it difficult to analyze the fairness of the model. If we don&rsquo;t know the race of the individuals in our dataset, we can&rsquo;t check whether our model is treating individuals of different races equally.</p>
+<p>In some cases, it&rsquo;s important to consider sensitive attributes to ensure fairness. For example, in order to correct for historical biases or to achieve certain diversity and inclusion goals, it might be necessary to consider these attributes.</p>
+<p>So, while removing sensitive attributes might seem like an easy fix, it doesn&rsquo;t necessarily solve the problem of bias and might introduce new problems. Instead, it&rsquo;s often better to use techniques that aim to ensure that the model treats similar individuals similarly (individual fairness), regardless of their sensitive attributes.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">protected_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;race_White&#39;</span><span class="p">,</span> <span class="s1">&#39;sex_Male&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_protected_df</span> <span class="o">=</span> <span class="n">X_train_df</span><span class="p">[</span><span class="n">protected_vars</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_train_df</span> <span class="o">=</span> <span class="n">X_train_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">protected_vars</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_test_df</span> <span class="o">=</span> <span class="n">X_test_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">protected_vars</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In assessing individual fairness, the example we are working with implements a variable consistency measure using the &lsquo;spouse&rsquo; attribute. This involves flipping the &lsquo;spouse&rsquo; variable in the dataset, essentially simulating a scenario where individuals with the same characteristics but different &lsquo;spouse&rsquo; values are compared. The goal is to ensure that the model&rsquo;s predictions are consistent for individuals who are similar except for their &lsquo;spouse&rsquo; attribute, thereby upholding the principle of individual fairness. This approach provides a practical way to audit the model&rsquo;s fairness by checking if similar individuals are treated similarly.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">X_test_df</span><span class="o">.</span><span class="n">relationship_Wife</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>array([0, 1, 0, ..., 0, 0, 0])
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">X_test_df_spouse_flipped</span> <span class="o">=</span> <span class="n">X_test_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_test_df_spouse_flipped</span><span class="o">.</span><span class="n">relationship_Wife</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">X_test_df_spouse_flipped</span><span class="o">.</span><span class="n">relationship_Wife</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_test_df_spouse_flipped</span><span class="o">.</span><span class="n">relationship_Wife</span><span class="o">.</span><span class="n">values</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>array([1, 0, 1, ..., 1, 1, 1])
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert all pandas dataframes to PyTorch tensors</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">convert_df_to_tensor</span><span class="p">(</span><span class="n">X_train_df</span><span class="p">,</span> <span class="n">Y_train_df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">convert_df_to_tensor</span><span class="p">(</span><span class="n">X_test_df</span><span class="p">,</span> <span class="n">Y_test_df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_test_flip</span><span class="p">,</span> <span class="n">y_test_flip</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">convert_df_to_tensor</span><span class="p">(</span><span class="n">X_test_df_spouse_flipped</span><span class="p">,</span> <span class="n">Y_test_df</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">X_protected</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">X_protected_df</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create the training and testing dataset</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_ds</span> <span class="o">=</span> <span class="n">AdultDataset</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_ds</span> <span class="o">=</span> <span class="n">AdultDataset</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_ds_flip</span> <span class="o">=</span> <span class="n">AdultDataset</span><span class="p">(</span><span class="n">X_test_flip</span><span class="p">,</span> <span class="n">y_test_flip</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create train and test dataloaders</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_dl_flip</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_ds_flip</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We test a multilayer neural network as proposed in the IBM implementation example.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Model</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">fcout</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fcout</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">x</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="standard-training">Standard training</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">input_size</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">output_size</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">network_standard</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">network_standard</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">10</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">network_standard</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">EPOCHS</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_dl</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">network_standard</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_fn</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>100%|██████████| 10/10 [00:08&lt;00:00,  1.24it/s]
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">accuracy</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy</span><span class="p">(</span><span class="n">network_standard</span><span class="p">,</span> <span class="n">test_dl</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">balanced_acc</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">balanced_accuracy</span><span class="p">(</span><span class="n">network_standard</span><span class="p">,</span> <span class="n">test_dl</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">spouse_consistency</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">spouse_consistency</span><span class="p">(</span><span class="n">network_standard</span><span class="p">,</span> <span class="n">test_dl</span><span class="p">,</span> <span class="n">test_dl_flip</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Balanced accuracy: </span><span class="si">{</span><span class="n">balanced_acc</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Spouse consistency: </span><span class="si">{</span><span class="n">spouse_consistency</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>Accuracy: 0.8555948734283447
+Balanced accuracy: 0.7764129391420478
+Spouse consistency: 0.9636222910216719
+</code></pre>
+<p>The simple NN achieve .85 of accuracy. However, the inconsistency score of 0.04 on the &lsquo;spouse&rsquo; variable suggests that the model is not treating similar individuals consistently, which is a violation of individual fairness. This inconsistency could be due to the fact that the model is learning to differentiate based on gender, despite the intention to avoid such bias.</p>
+<h3 id="individually-fair-training-with-logreg-fair-metric">Individually fair training with LogReg fair metric</h3>
+<p>In the following section, a fair machine learning model is introduced. This model is said to be fair because its performance remains consistent under certain perturbations within a sensitive subspace, meaning it is robust to partial data variations.</p>
+<p>To illustrate the authors&rsquo; approach, let&rsquo;s consider the process of evaluating the fairness of a resume screening system. An auditor might alter the names on resumes of applicants from the ethnic majority group to those more commonly found among the ethnic minority group. If the system&rsquo;s performance declines upon reviewing the altered resumes (i.e., the evaluations become less favorable), one could infer that the model exhibits bias against applicants from the ethnic minority group.</p>
+<p>To algorithmically address this issue, the authors propose a method to instill individual fairness during the training of ML models. This is achieved through <em>distributionally robust optimization</em> (DRO), an optimization technique that seeks the optimal solution while considering a fairness metric (inspired by Adversarial Robustness).</p>
+<h3 id="learning-fair-metric-from-data-and-its-hidden-signals">Learning fair metric from data and its hidden signals</h3>
+<p>The authors use Wasserstein distances to measure the similarity between individuals. Unlike Mahalanobis, Wasserstein distance can be used to compare two probability distributions and is defined as the minimum cost that must be paid to transform one distribution into the other.  The distances between data points are calculated in a way that takes into account protected attributes (in our example: gender or race). The goal is to ensure that similar individuals, as determined by Wasserstein distance, are treated similarly by the machine learning model.</p>
+<p>To achieve this, the algorithm learn &lsquo;sensitive directions&rsquo; in the data. These are directions in the feature space along which changes are likely to correspond to changes in protected attributes. These is a clever approach to uncover hidden biases by identifying subtle patterns that may correspond to changes in protected attributes, even if those attributes are not present in our model inputs. This allows the model to account for potential biases that might otherwise go unnoticed.</p>
+<p>For instance, to identify a sensitive direction associated with a particular attribute (e.g., gender), the algorithm use a logistic regression classifier to distinguish between classes (such as men and women in the data). The coefficients from this logistic regression model define a direction within the feature space. The performance of the machine learning model is assessed by its worst-case performance on hypothetical populations of users with perturbed sensitive attributes. By minimizing the loss function, the system is ensured to perform well on all such populations.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Same architecture we found</span>
+</span></span><span class="line"><span class="cl"><span class="n">network_fair_LR</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">network_fair_LR</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lossfn</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set the distance metric for instances similiraty detections</span>
+</span></span><span class="line"><span class="cl"><span class="n">distance_x_LR</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">LogisticRegSensitiveSubspace</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">distance_y</span> <span class="o">=</span> <span class="n">distances</span><span class="o">.</span><span class="n">SquaredEuclideanDistance</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># train fair metric</span>
+</span></span><span class="line"><span class="cl"><span class="n">distance_x_LR</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">data_SensitiveAttrs</span><span class="o">=</span><span class="n">X_protected</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">distance_y</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">num_dims</span><span class="o">=</span><span class="n">output_size</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">distance_x_LR</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">distance_y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">rho</span> <span class="o">=</span> <span class="mf">5.0</span>
+</span></span><span class="line"><span class="cl"><span class="n">eps</span> <span class="o">=</span> <span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">auditor_nsteps</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="n">auditor_lr</span> <span class="o">=</span> <span class="mf">1e-3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fairalgo_LR</span> <span class="o">=</span> <span class="n">SenSeI</span><span class="p">(</span><span class="n">network_fair_LR</span><span class="p">,</span> <span class="n">distance_x_LR</span><span class="p">,</span> <span class="n">distance_y</span><span class="p">,</span> <span class="n">lossfn</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">eps</span><span class="p">,</span> <span class="n">auditor_nsteps</span><span class="p">,</span> <span class="n">auditor_lr</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="a-fair-objective-function">A fair objective function</h3>
+<p>The objective function that is minimized during the training of a fair machine learning model as proposed in the inFairness package is composed of two parts: the loss function and the fair metric (see <a href="https://ibm.github.io/inFairness/_modules/inFairness/fairalgo/sensei.html#SenSeI" target="_blank" rel="noopener noreffer ">SenSeI</a>):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fair_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">#--------1------------- + -----------------2-----------------------------# </span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">loss_fn</span><span class="p">(</span><span class="n">Y_pred</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">rho</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">distance_y</span><span class="p">(</span><span class="n">Y_pred</span><span class="p">,</span> <span class="n">Y_pred_worst</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>Loss Function: a classical loss function that measure of how well the model&rsquo;s predictions match the actual data. The goal of this metric is to adjust the model&rsquo;s parameters to minimize the loss score, and</li>
+<li>Fair Metric (DIF): the fairness term is a measure of the difference between the model&rsquo;s predictions on the original data and its predictions on the worst-case examples.</li>
+</ol>
+<p>The model is trying to minimize this objective function, which means it&rsquo;s trying to make accurate and fair predictions.</p>
+<p>It&rsquo;s important to note that due to the computation of a complex loss score, the training process becomes more resource-intensive.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">fairalgo_LR</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">EPOCHS</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">train_dl</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="n">fairalgo_LR</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span><span class="o">.</span><span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>100%|██████████| 10/10 [10:09&lt;00:00, 60.90s/it]
+</code></pre>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">accuracy</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">accuracy</span><span class="p">(</span><span class="n">network_fair_LR</span><span class="p">,</span> <span class="n">test_dl</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">balanced_acc</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">balanced_accuracy</span><span class="p">(</span><span class="n">network_fair_LR</span><span class="p">,</span> <span class="n">test_dl</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">spouse_consistency</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">spouse_consistency</span><span class="p">(</span><span class="n">network_fair_LR</span><span class="p">,</span> <span class="n">test_dl</span><span class="p">,</span> <span class="n">test_dl_flip</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Balanced accuracy: </span><span class="si">{</span><span class="n">balanced_acc</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Spouse consistency: </span><span class="si">{</span><span class="n">spouse_consistency</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>Accuracy: 0.8401150107383728
+Balanced accuracy: 0.742399333699871
+Spouse consistency: 0.9997788589119858
+</code></pre>
+<h3 id="results">Results</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Auditing using the SenSR Auditor + LR metric</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">audit_nsteps</span> <span class="o">=</span> <span class="mi">1000</span>
+</span></span><span class="line"><span class="cl"><span class="n">audit_lr</span> <span class="o">=</span> <span class="mf">0.1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">auditor_LR</span> <span class="o">=</span> <span class="n">SenSRAuditor</span><span class="p">(</span><span class="n">loss_fn</span><span class="o">=</span><span class="n">loss_fn</span><span class="p">,</span> <span class="n">distance_x</span><span class="o">=</span><span class="n">distance_x_LR</span><span class="p">,</span> <span class="n">num_steps</span><span class="o">=</span><span class="n">audit_nsteps</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">audit_lr</span><span class="p">,</span> <span class="n">max_noise</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">min_noise</span><span class="o">=-</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">audit_result_stdmodel</span> <span class="o">=</span> <span class="n">auditor_LR</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="n">network_standard</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">lambda_param</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">audit_threshold</span><span class="o">=</span><span class="mf">1.15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">audit_result_fairmodel_LR</span> <span class="o">=</span> <span class="n">auditor_LR</span><span class="o">.</span><span class="n">audit</span><span class="p">(</span><span class="n">network_fair_LR</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">lambda_param</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">audit_threshold</span><span class="o">=</span><span class="mf">1.15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;=&#34;</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;LR metric&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Loss ratio (Standard model) : </span><span class="si">{</span><span class="n">audit_result_stdmodel</span><span class="o">.</span><span class="n">lower_bound</span><span class="si">}</span><span class="s2">. Is model fair: </span><span class="si">{</span><span class="n">audit_result_stdmodel</span><span class="o">.</span><span class="n">is_model_fair</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Loss ratio (fair model - LogReg metric) : </span><span class="si">{</span><span class="n">audit_result_fairmodel_LR</span><span class="o">.</span><span class="n">lower_bound</span><span class="si">}</span><span class="s2">. Is model fair: </span><span class="si">{</span><span class="n">audit_result_fairmodel_LR</span><span class="o">.</span><span class="n">is_model_fair</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><pre><code>LR metric
+Loss ratio (Standard model) : 2.1810670575586046. Is model fair: False
+Loss ratio (fair model - LogReg metric) : 1.0531351204682995. Is model fair: True   
+</code></pre>
+<div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw" aria-hidden="true"></i>Findings<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Upon reviewing the overall results, we see that with a minor decrease in accuracy of 0.01, we have successfully constructed a fair model that is debiased with respect to gender and race.</div>
+        </div>
+    </div>
+<h2 id="conclusion">Conclusion</h2>
+<p>We&rsquo;ve explored a specific example of a fair-ML model using the tools provided by the inFairness package. While the results are promising, it&rsquo;s important to contextualize them within the broader challenges of responsible AI, particularly given the rapid evolution of ML tools and the dynamic nature of societal values.</p>
+<p>Following Richardson, we can mention:</p>
+<ul>
+<li><strong>Conflicting Fairness Metrics</strong>: Measurement is always a political activity in the sense that we must select, define, and prioritize certain dimensions of reality, setting aside others. Friedler et al. (2021) argue that fairness experts must explicitly state the priorities of each fairness metric to ensure practitioners make informed choices.</li>
+<li><strong>Metric Robustness</strong>: Friedler et al. (2018) discovered that many fairness metrics lack robustness. Their study showed that by simply modifying dataset composition and changing train-test splits, many fairness criteria lacked stability.</li>
+<li><strong>Oversimplification of Fairness</strong>: A major concern in the literature is the emphasis on technical solutions to algorithmic bias, which is a socio-technical problem. Madaio et al. (2020) referred to the exclusive use of technical solutions as &ldquo;ethics washing,&rdquo; and Selbst et al. (2019) describe the failure to recognize that fairness cannot be solely achieved through mathematical formulation as the &ldquo;formalism trap.&rdquo;</li>
+<li><strong>Operationalization of Ethical Concepts</strong>: A significant challenge for fair AI is translating ethical reflections into actionable products and procedures that practitioners and institutions can implement. This difficulty is not unique to the AI field but affects every aspect of human activity where there is a need for ethical actions.</li>
+</ul>
+<div class="details admonition note">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Bibliography<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2 id="bibliography">Bibliography</h2>
+<ul>
+<li>Dwork, Cynthia, Moritz Hardt, Toniann Pitassi, Omer Reingold, and Rich Zemel. “Fairness Through Awareness.” arXiv, November 28, 2011. <a href="https://doi.org/10.48550/arXiv.1104.3913" target="_blank" rel="noopener noreffer ">https://doi.org/10.48550/arXiv.1104.3913</a>.</li>
+<li>Mehrabi, Ninareh, Fred Morstatter, Nripsuta Saxena, Kristina Lerman, and Aram Galstyan. “A Survey on Bias and Fairness in Machine Learning.” arXiv, January 25, 2022. <a href="https://doi.org/10.48550/arXiv.1908.09635" target="_blank" rel="noopener noreffer ">https://doi.org/10.48550/arXiv.1908.09635</a>.</li>
+<li>Richardson, Brianna, and Juan E. Gilbert. “A Framework for Fairness: A Systematic Review of Existing Fair AI Solutions.” arXiv, December 10, 2021. <a href="https://doi.org/10.48550/arXiv.2112.05700" target="_blank" rel="noopener noreffer ">https://doi.org/10.48550/arXiv.2112.05700</a>.</li>
+<li>Weerts, Hilde, Miroslav Dudík, Richard Edgar, Adrin Jalali, Roman Lutz, and Michael Madaio. “Fairlearn: Assessing and Improving Fairness of AI Systems.” arXiv, March 29, 2023. <a href="https://doi.org/10.48550/arXiv.2303.16626" target="_blank" rel="noopener noreffer ">https://doi.org/10.48550/arXiv.2303.16626</a>.</li>
+<li>Bird, Sarah., Dudík, Miro., Edgar, Richard., Horn, Brandon., Lutz, Roman., Milan, Vanessa., Sameki, Mehrnoosh., Wallach, Hanna., &amp; Walker, Kathleen. &ldquo;Fairlearn: A toolkit for assessing and improving fairness in AI.&rdquo; Microsoft, May 2020. <a href="https://www.microsoft.com/en-us/research/publication/fairlearn-a-toolkit-for-assessing-and-improving-fairness-in-ai" target="_blank" rel="noopener noreffer ">https://www.microsoft.com/en-us/research/publication/fairlearn-a-toolkit-for-assessing-and-improving-fairness-in-ai</a>.</li>
+<li>Floridi, Luciano., Cowls, Josh., Beltrametti, Monica., Chatila, Raja., Chazerand, Patrice., Dignum, Virginia., Luetge, Christoph., Madelin, Robert., Pagallo, Ugo., Rossi, Francesca., Schafer, Burkhard., Valcke, Peggy., &amp; Vayena, Effy. &ldquo;AI4People—An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations.&rdquo; Minds and Machines, December 1, 2018. <a href="https://doi.org/10.1007/s11023-018-9482-5" target="_blank" rel="noopener noreffer ">https://doi.org/10.1007/s11023-018-9482-5</a>.</li>
+<li>Weerts, Hilde, Miroslav Dudík, Richard Edgar, Adrin Jalali, Roman Lutz, and Michael Madaio. “Fairlearn: Assessing and Improving Fairness of AI Systems.” arXiv, March 29, 2023. <a href="https://doi.org/10.48550/arXiv.2303.16626" target="_blank" rel="noopener noreffer ">https://doi.org/10.48550/arXiv.2303.16626</a>.</li>
+<li>Yurochkin, Mikhail, Amanda Bower, and Yuekai Sun. “Training Individually Fair ML Models with Sensitive Subspace Robustness.” arXiv, March 13, 2020. <a href="http://arxiv.org/abs/1907.00020" target="_blank" rel="noopener noreffer ">http://arxiv.org/abs/1907.00020</a>.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p>Pic by <a href="https://unsplash.com/@patrickian4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Patrick Fore</a>, <a href="https://unsplash.com/es/s/fotos/balance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-06-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/responsible_ai/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://castillosebastian.github.io/responsible_ai/" data-title="Responsible AI Tools" data-via="clausecastillo" data-hashtags="fairness,bias,neural networks"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://castillosebastian.github.io/responsible_ai/" data-hashtag="fairness"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://castillosebastian.github.io/responsible_ai/" data-title="Responsible AI Tools"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://castillosebastian.github.io/responsible_ai/" data-title="Responsible AI Tools"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://castillosebastian.github.io/responsible_ai/" data-title="Responsible AI Tools"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/fairness/">fairness</a>,&nbsp;<a href="/tags/bias/">bias</a>,&nbsp;<a href="/tags/neural-networks/">neural networks</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/analitics_in_judiciary/" class="prev" rel="prev" title="Justice Analitics"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Justice Analitics</a>
+            <a href="/variational_autoencoders/" class="next" rel="next" title="Generative models: variational autoencoders">Generative models: variational autoencoders<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="commento" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.118.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Castillo Claudio Sebastian</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
