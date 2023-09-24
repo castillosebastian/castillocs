@@ -35,15 +35,11 @@ When training generative models, a natural objective is to optimize the model pa
 
 However, for many generative models, especially those that involve latent or unobserved variables, the likelihood term involves summing or integrating over all possible configurations of these latent variables. Mathematically, this turns into:
 
-> $$p_\theta(X) = \sum_{Z} p_\theta(X,Z)$$
-> $$or$$
-> $$p_\theta(X) = \int p_\theta(X,Z) dZ$$
+> $$p_\theta(X) = \sum_{Z} p_\theta(X,Z)$$ $$or$$ $$p_\theta(X) = \int p_\theta(X,Z) dZ$$
 
 Computing the log-likelihood, which is often used for numerical stability and optimization ease, leads to a log of summations (for discrete latent variables) or a log of integrals (for continuous latent variables):
 
-> $$log p_\theta(X) = \log \sum_{Z} p_\theta(X,Z)$$
-> $$or\$$
-> $$log p_\theta(X) = \log \int p_\theta(X,Z) dZ$$
+> $$log p_\theta(X) = \log \sum_{Z} p_\theta(X,Z)$$ $$or\$$ $$log p_\theta(X) = \log \int p_\theta(X,Z) dZ$$
 
 These expressions are typically intractable to optimize directly due to the presence of the log-sum or log-integral operations (see the info below).
 
@@ -56,11 +52,10 @@ When discussing the computation of the joint probability for observed and missin
 -   $Z$ is the missing data
 -   The joint probability for both is represented as $p(X,Z)$
 
-If your primary interest lies in the distribution of $X$ and you wish to eliminate the dependence on $Z$, you'll need to carry out marginalization for $Z$. For discrete variables, the marginalization involves the logarithm of summation, and for continuous variables, it pertains to integration. It's essential to note that these functions taht includes the log of a sum o integral defies direct optimization.
+If your primary interest lies in the distribution of $X$ and you wish to eliminate the dependence on $Z$, you'll need to carry out marginalization for $Z$. For discrete variables, the marginalization involves the logarithm of summation, and for continuous variables, it pertains to integration. It's essential to note that these functions that includes the log of a sum o integral defies direct optimization.
 {{< /admonition >}}
 
-
- Can we get an approximation to this that is more tractable (without a summation or integral within the log)?
+Can we get an approximation to this that is more tractable (without a summation or integral within the log)?
 
 ## Overcoming the Challenge with Expectation Maximization (EM)
 
@@ -73,26 +68,11 @@ The algorithm involves two main steps:
 
 By alternating between these two steps, EM ensures that the likelihood increases with each iteration until convergence, thus providing a practical method to fit generative models with latent variables.
 
-For E-step the **Variational Lower Bound** is used. Commonly referred to as the Empirical Lower BOund (ELBO), is a central concept in variational inference. This method is used to approximate complex distributions (typically posterior distributions) with simpler, more tractable ones. 
-The ELBO is an auxiliary function that provides a lower bound to the log likelihood of the observed data. By iteratively maximizing the ELBO with respect to variational parameters, we approximate the Maximum Likelihood Estimation (MLE) of the model parameters.
+For E-step the **Variational Lower Bound** is used. Commonly referred to as the Empirical Lower BOund (ELBO), is a central concept in variational inference. This method is used to approximate complex distributions (typically posterior distributions) with simpler, more tractable ones. The ELBO is an auxiliary function that provides a lower bound to the log likelihood of the observed data. By iteratively maximizing the ELBO with respect to variational parameters, we approximate the Maximum Likelihood Estimation (MLE) of the model parameters. 
 
-Variational inference is set up as an optimization problem where the objective is to find a distribution $q$ from a simpler family of distributions that is close to the target distribution $p$. The closeness is measured using the Kullback-Leibler (KL) divergence. The ELBO serves as the objective function to be maximized in this optimization.
+>$$\log p_\theta(x) = E_z[\log p_\theta(x,z)] + H(q_\phi(z|x))$$
 
-The ELBO can be derived from the logarithm of the marginal likelihood of the observed data. Given:
-
-> $p(\mathbf{x})$ is the marginal likelihood of the observed data $\mathbf{x}$,
->
-> $q(\mathbf{z})$ is the variational distribution over the latent variables $\mathbf{z}$,
->
-> $p(\mathbf{z} | \mathbf{x})$ is the true posterior distribution of $\mathbf{z}$.
-
-The ELBO is given by:
-
->$${ELBO}(q) = \mathbb{E}_q[\log p(\mathbf{x}, \mathbf{z})] - \mathbb{E}_q[\log q(\mathbf{z})]$$
-
-Where:
-
-$\mathbb{E}_q$ denotes the expectation with respect to the distribution $q$. The first term on the right-hand side measures how well the joint distribution $p(\mathbf{x}, \mathbf{z})$ is modeled by $q$. -The second term is the entropy of $q$, which acts as a regularizer. Maximizing the ELBO is equivalent to minimizing the KL divergence between the variational distribution $q$ and the true posterior $p(\mathbf{z} | \mathbf{x})$. Intuitively, by maximizing the ELBO, you're trying to find a balance between a distribution $q$ that closely matches the target distribution $p$ (as measured by the joint likelihood) and one that maintains uncertainty (as measured by its entropy).
+In the equation above, the term $H(\cdot)$ denotes the Shannon entropy. By definition, the term "evidence" is the value of a likelihood function evaluated with fixed parameters. With the definition of $L = E_z[\log p_\theta(x,z)] + H(q_\phi(z|x))$, it turns out that $L$ sets a lower bound for the evidence of observations and maximizes $L$ will push up the log-likelihood of $x$. 
 
 ## Variational Autoencoders (VAEs)
 
@@ -111,11 +91,11 @@ Let $x$ be the observed data and $z$ be the latent variables. The generative sto
 
 As discussed previously, direct inference for the posterior distribution $p(z|x)$ (i.e., the probability of the latent variables given the observed data) can be computationally challenging, especially when dealing with high-dimensional data or complex models. This is because:
 
->$$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$
+> $$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$
 
 Here, $p(x)$ is the evidence (or marginal likelihood) which is calculated as:
 
->$$ p(x) = \int p(x|z) p(z) dz $$
+> $$ p(x) = \int p(x|z) p(z) dz $$
 
 As we saw this integral is intractable for most interesting models.
 
@@ -330,6 +310,7 @@ Train Epoch: 10 [51200/60000 (85%)] Loss: 104.329590
 - Doersch, Carl. 2021. “Tutorial on Variational Autoencoders.” January 3, 2021. http://arxiv.org/abs/1606.05908.
 - Kingma, Diederik P., and Max Welling. 2019. “An Introduction to Variational Autoencoders.” Foundations and Trends® in Machine Learning 12 (4): 307–92. https://doi.org/10.1561/2200000056.
 - Ramchandran, Siddharth, Gleb Tikhonov, Otto Lönnroth, Pekka Tiikkainen, and Harri Lähdesmäki. 2022. “Learning Conditional Variational Autoencoders with Missing Covariates.” March 2, 2022. http://arxiv.org/abs/2203.01218.
+- Yunfan Jiang, ELBO — What & Why,Jan 11, 2021, in https://yunfanj.com/blog/2021/01/11/ELBO.html.
 {{< /admonition >}}
 
 Pic by <a href="https://www.freepik.es/foto-gratis/laboratorio-computacion-brillante-equipo-moderno-tecnologia-generada-ia_41451597.htm">@vecstock</a>, <a href="https://www.freepik.es/">Freepik</a>
