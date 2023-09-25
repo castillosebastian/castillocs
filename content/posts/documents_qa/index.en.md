@@ -27,9 +27,33 @@ In the advanced domain of Natural Language Processing (NLP), large pre-trained l
 
 In this context, I constructed a prototype to explore this technology. My goal was to integrate the capabilities of pre-trained parametric memory with the expansive nature of non-parametric one. Thus, I developed a chatbot with access to a knowledge base. Utilizing retrieval-augmented generation, this system incorporates a pre-trained seq2seq model as its parametric memory and a dense vector index of documents as its non-parametric counterpart.
 
+## Dataset Overview
+
+The chosen dataset come from the VAST 2014 Challenge *The Kronos Incident*. The 2014 IEEE Visual Analytics Science and Technology (VAST) Challenge researchers with a fictional scenario: the disappearance of staff members from the GASTech oil and gas company on Kronos Island. The dataset comprises:
+
+- **Geospatial Data**: Geographic coordinates, maps, event locations, trajectories of vehicles or individuals.
+- **Temporal Data**: Time series, timestamps, chronological events.
+- **Network Data**: Information on connections between entities, such as phone calls, social media interactions, data traffic flows.
+- **Textual Data**: Information in text form, like emails, chat logs, incident reports, etc.
+- **Numerical Data**: Numeric values that might be related to the incident, such as counts, measurements, quantities.
+
+A total of 845 emails, 39 Word documents, 2 Excel sheets, and 1 CSV text file were processed to construct a vector database comprising 887 documents.
+
 ## Solution's Architecture
 
 The project is challenging as it proposes the construction of a complex system, comprised of two textual data processing modules, each with its respective language models. The final system outcome is conditioned by the performance of both modules individually and their correct integration. Several experiments were conducted, adjusting the model composition and also switching the computing architecture from CPU to GPU. Two system versions were built, with a third variation for GPU processing.
+
+>**Architecture Overview**
+
+The architecture consists of two major components: 
+
+**1. Searcher**
+
+Its primary goal is to find fragments of text within the corpus that can be used to answer the user-generated question. For our searcher module, we utilized `all-MiniLM-L6-v2`, developed by Google AI. This language model, based on transformers, has 137 billion parameters and is an enhanced version of the `MiniLM-L6` model. It's smaller and lighter than the BERT model. It's trained on a massive dataset that includes books, articles, code, and other forms of text.
+
+**2. Generator**
+
+Focused on text construction.The generation module is built using `Llama 2`, developed by Meta AI. This LLM (Language Learning Model) is a pre-trained transformer model that can be used for various tasks, including translation, summarization, crafting different types of creative content, and informatively answering questions. Due to the model's size, we used a quantized version of `Llama 2` for our application. Quantization is the technique that reduces the number of bits used to represent a number or value. In the context of LLMs, this means decreasing the precision of the model's parameters by storing the weights in lower precision data types. Specifically, the original values, encoded in 16 bits, were converted to 8 bits.
 
 >**Question-Answering Solution Process**
 
@@ -41,7 +65,7 @@ The project is challenging as it proposes the construction of a complex system, 
 | **4. Identify Relevant Documents** | Select Documents `[d1,d2]`` | Based on the similarity scores, the system identifies the most relevant documents from the corpus that might contain the answer. |
 | **5. Generate Answer** | Provide Response | The system generates an answer based on the content of the most similar documents. |
 
-The solution addresses the Question-Answering problem in two steps. It first operates on a vectorized database of our corpus 'C', where each 500-character document has its associated embedding. The search is performed based on similarity between the vectorized question 'p' and the corpus documents [d1,...,dN] using their respective indices. For similarity calculation, we use the Euclidean distance between vectors with the L2 norm (vector subtraction, where the resulting vector's L2 norm gives us the distance between them: the smaller the distance, the greater the similarity). 
+The solution addresses the Question-Answering problem in two steps. It first operates on a vectorized database of our corpus `C`, where each 500-character document has its associated embedding. The search is performed based on similarity between the vectorized question `p` and the corpus documents `[d1,...,dN]` using their respective indices. For similarity calculation, we use the Euclidean distance between vectors with the L2 norm (vector subtraction, where the resulting vector's L2 norm gives us the distance between them: the smaller the distance, the greater the similarity). 
 
 {{< admonition type=info title="Embeddings" open=false >}}
 ### Embeddings
@@ -50,7 +74,7 @@ Embeddings are a type of word representation that captures the semantic meaning 
 
 Mathematically, an embedding for a word $w$ can be represented as:
 
-$e(w) = [e_1, e_2, ..., e_n]$
+>$$e(w) = [e_1, e_2, ..., e_n]$$
 
 Where:
 - $e(w)$ is the embedding of the word $w$.
@@ -62,13 +86,13 @@ Euclidean distance is a measure of the straight-line distance between two points
 
 Given two points $P$ and $Q$ with coordinates $(p_1, p_2, ..., p_n)$ and $(q_1, q_2, ..., q_n)$ respectively in an $n$-dimensional space, the Euclidean distance $d$ between them is given by:
 
-$d(P, Q) = \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2 + ... + (p_n - q_n)^2}$
+>$$d(P, Q) = \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2 + ... + (p_n - q_n)^2}$$
 
 In the context of similarity search, smaller Euclidean distances indicate higher similarity. When using embeddings for similarity search, the embeddings of two words or documents are compared using the Euclidean distance to determine how semantically similar they are.
 
 {{< /admonition >}}
 
-After this stage, we proceed to a second step which involves generating an answer 'r' conditioned on the retrieved information. The generation takes the question 'p' and the 2 most similar documents (smallest distance), combines them into a single 'question-context' (prompt) document, and passes it to a language generation model to formulate the answer 'r'. In this final step, we are using Llama2 with 7 billion parameters, optimized for Question-Answering (chat).
+After this stage, we proceed to a second step which involves generating an answer `r` conditioned on the retrieved information. The generation takes the question `p` and the 2 most similar documents (smallest distance), combines them into a single `question-context` (prompt) document, and passes it to a language generation model to formulate the answer `r`. In this final step, we are using Llama2 with 7 billion parameters, optimized for Question-Answering (chat).
 
 
 {{< admonition type=info title="Large Language Models" open=false >}}
@@ -78,7 +102,7 @@ Large Language Models (LLMs) are a type of deep learning model designed to under
 
 Mathematically, an LLM can be represented as a function $f$ that maps an input sequence of tokens $x_1, x_2, ..., x_n$ to an output sequence of tokens $y_1, y_2, ..., y_m$:
 
-$f: (x_1, x_2, ..., x_n) \rightarrow (y_1, y_2, ..., y_m)$
+>$$f: (x_1, x_2, ..., x_n) \rightarrow (y_1, y_2, ..., y_m)$$
 
 Where:
 - $(x_1, x_2, ..., x_n)$ is the input sequence.
@@ -99,7 +123,7 @@ Key features of Llama 2 include:
 In essence, Llama 2 represents a significant step forward in the development of LLMs, especially for chat and dialogue applications. The emphasis on safety and the detailed documentation provided aim to ensure that the community can use and further develop these models responsibly. More details in: https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/
 {{< /admonition >}}
 
-A primary challenge in implementing the described solution on a personal-type CPU (4 processors and 12GB of RAM) is the size of the models. For this reason, in Version 1 of our solution, we worked with the following specifications: for embedding operations (on 'C' and 'p') we used the all-MiniLM-L6-v2 model that produces a dense 384-dimensional vector space. For the 'r' answer generation operation, we worked with a quantized version of Llama 2, 7b, 8-bit (an exploratory attempt was made with the 13 billion parameter model, thwarted by lack of RAM). Similarity operations are performed using the FAISS library for efficient similarity search among dense vectors.
+A primary challenge in implementing the described solution on a personal-type CPU (4 processors and 12GB of RAM) is the size of the models. For this reason, in Version 1 of our solution, we worked with the following specifications: for embedding operations (on `C` and `p`) we used the all-MiniLM-L6-v2 model that produces a dense 384-dimensional vector space. For the `r` answer generation operation, we worked with a quantized version of Llama 2, 7b, 8-bit (an exploratory attempt was made with the 13 billion parameter model, thwarted by lack of RAM). Similarity operations are performed using the FAISS library for efficient similarity search among dense vectors.
 
 ## Evaluation
 
@@ -257,6 +281,8 @@ if __name__ == "__main__":
 {{< admonition type=note title="Bib" open=false >}}
 - Touvron, H. et al. (2023). Llama 2: Open Foundation and Fine-Tuned Chat Models. arXiv:2307.09288. https://arxiv.org/abs/2307.09288. 
 - Lewis, P. et al. (2021). Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. arXiv:2005.11401 https://arxiv.org/abs/2005.11401. 
+- Faiss is a library for efficient similarity search and clustering of dense vectors, https://github.com/facebookresearch/faiss. 
+-  HuggingFace, https://huggingface.co/.
 {{< /admonition >}}
 
 Pic by <a href="https://unsplash.com/es/fotos/yEQ9TOaL5FM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">@Luke Tanis</a>
