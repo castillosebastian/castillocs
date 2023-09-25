@@ -1,6 +1,6 @@
 ---
 weight: 1
-title: "Chatbot + Knowledge Data Base"
+title: "Retrieval-augmented generation for Chatbot"
 date: 2023-09-01
 lastmod: 2023-09-01
 draft: false
@@ -21,7 +21,7 @@ I developed a chatbot-like agent, using retrieval-augmented generation that comb
 
 <!--more-->
 
-## Chatbot and Knowledge Base
+## Chatbot and Data Base
 
 In the advanced domain of Natural Language Processing (NLP), large pre-trained language models have become pivotal tools, showcasing superior performance in embedding factual knowledge and achieving state-of-the-art outcomes on various downstream tasks. However, these models exhibit constraints, particularly in their ability to accurately access and manipulate knowledge. Such limitations become evident in knowledge-intensive tasks, where their efficacy can be surpassed by specialized architectures.
 
