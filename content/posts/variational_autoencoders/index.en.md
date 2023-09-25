@@ -70,9 +70,20 @@ By alternating between these two steps, EM ensures that the likelihood increases
 
 For E-step the **Variational Lower Bound** is used. Commonly referred to as the Empirical Lower BOund (ELBO), is a central concept in variational inference. This method is used to approximate complex distributions (typically posterior distributions) with simpler, more tractable ones. The ELBO is an auxiliary function that provides a lower bound to the log likelihood of the observed data. By iteratively maximizing the ELBO with respect to variational parameters, we approximate the Maximum Likelihood Estimation (MLE) of the model parameters. 
 
->$$\log p_\theta(x) = E_z[\log p_\theta(x,z)] + H(q_\phi(z|x))$$
+Let's reconsider our aim to maximize the log-likelihood of observations $x$ in terms of $q_\phi(z|x)$.
 
-In the equation above, the term $H(\cdot)$ denotes the Shannon entropy. By definition, the term "evidence" is the value of a likelihood function evaluated with fixed parameters. With the definition of $L = E_z[\log p_\theta(x,z)] + H(q_\phi(z|x))$, it turns out that $L$ sets a lower bound for the evidence of observations and maximizes $L$ will push up the log-likelihood of $x$. 
+>$$\log p_\theta(x) = \log \int z p_\theta(x,z)dz$$
+>$$ = \log \int z \frac{p_\theta(x,z)q_\phi(z|x)}{q_\phi(z|x)}dz$$
+>$$= \log E_{z \sim q_\phi(z|x)} \left[ \frac{p_\theta(x,z)}{q_\phi(z|x)} \right]$$
+>$$\geq E_z \left[ \log \frac{p_\theta(x,z)}{q_\phi(z|x)} \right] \quad \text{(by Jensen's inequality)}$$
+>$$= E_z[\log p_\theta(x,z)] + \int z q_\phi(z|x) \log \frac{1}{q_\phi(z|x)} dz$$
+>$$= E_z[\log p_\theta(x,z)] + H(q_\phi(z|x))$$
+
+In the equation above, the term $H(\cdot)$ denotes the Shannon entropy. By definition, the term "evidence" is the value of a likelihood function evaluated with fixed parameters. With the definition of:
+
+>$$L = E_z[\log p_\theta(x,z)] + H(q_\phi(z|x)),$$
+
+it turns out that $L$ sets a lower bound for the evidence of observations and maximizes $L$ will push up the log-likelihood of $x$. 
 
 ## Variational Autoencoders (VAEs)
 
