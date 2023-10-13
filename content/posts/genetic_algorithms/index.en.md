@@ -141,327 +141,314 @@ Elitism is an approach where the best chromosome(s) are directly transferred to 
 
 # Implementing GA
 
-This example will help to illustrate the potential of evolutionary algorithms in general and a quick overview of the DEAP framework's possibilities. The problem is simple and widely used in the evolutionary computational community: we will create a population of individuals consisting of integer vectors randomly filled with 0 and 1. Then we let our population evolve until one of its members contains only 1 and no 0 anymore.
+This example will help to illustrate the potential of evolutionary algorithms in general and a quick overview of the [DEAP](https://deap.readthedocs.io/en/master/) framework's possibilities. The problem is simple: find the minimum of the function presented in the following cell, within the interval (\[-33, 33\]).
 
-## Setting Things Up
+``` python
+def F(x,y):
+    '''
+    Función a optimizar.
+    '''
+    z=-20.0*np.exp(-0.2*np.sqrt(0.5*(x**2+y**2)))-np.exp(0.5*(np.cos(2* np.pi*x)+np.cos(2*np.pi*y)))+np.e+20
 
-In order to solve the One Max problem, we need a bunch of ingredients. First we have to define our individuals, which will be lists of integer values, and to generate a population using them. Then we will add some functions and operators taking care of the evaluation and evolution of our population and finally put everything together in script.
+    return z
+```
+
+This function gives the following output evaluated in the range \[-33, 33\].
+
+![](function.png)
+
+As we can see, the function is simple and has a global minimum within the specified range, with no local minima. The evolutionary algorithm should solve it without difficulty.
+
+In order to solve this problem, we need a bunch of ingredients. First we have to define our individuals and to generate a population using them. Then we will add some functions and operators taking care of the evaluation and evolution of our population and finally put everything together in script.
 
 But first of all, we need to import some modules.
 
-```         
+``` python
 import random
-
 !pip install deap
 from deap import base
 from deap import creator
 from deap import tools
 ```
 
-```         
-Collecting deap
-  Downloading deap-1.4.1-cp310-cp310-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl (135 kB)
-[2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m135.4/135.4 kB[0m [31m2.5 MB/s[0m eta [36m0:00:00[0m
-[?25hRequirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from deap) (1.23.5)
-Installing collected packages: deap
-Successfully installed deap-1.4.1
+Then we will define some auxiliary functions:
+
+``` python
+def bin(p=0.5):
+    '''
+    Generate random bit
+    '''
+    if random.random() < p:
+        return 1
+    else:
+        return 0
+
+def mutation(ind, p):
+    '''
+    This function iterates through the chromosome and evaluates, for each gene,
+    whether to apply the mutation operator. 
+    '''    
+    return [abs(i-1) if random.random() < p else i for i in ind]
 ```
 
-## Creator
+We implement the genotype-to-phenotype mapping function. We will represent the variables x and y using 12 and 24 bits, respectively.
+
+``` python
+def bin2dec(ind, low, high, lengths):
+
+    length_x, length_y = lengths
+    
+    ind_x = ind[:length_x]
+    ind_y = ind[length_x:length_x+length_y]
+
+    x = 0
+    for k,i in enumerate(ind_x[::-1]):
+        x += (i * 2**k)
+
+    x = low + ((high-low)/ (2**length_x - 1)) * x #Evolutionary Computation 1, p.169 and 2, p.39
+
+    y = 0
+    for k,i in enumerate(ind_y[::-1]):
+        y += (i * 2**k)
+
+    y = low + ((high-low)/ (2**length_y - 1)) * y
+
+    return x, y
+```
+
+Finally, we create a fitness function:
+
+``` python
+def fitness(ind, low, high):
+    '''
+    Fitness function for our problem      
+    '''    
+    dec = bin2dec(ind, low=low, high=high, lengths=(12,24))    
+    z = F(dec[0], dec[1])    
+    return z
+```
+
+Now let's begin our evolutionary experiment.
+
+### Set the parameters
+
+Before we go on, is time to define some constants we will use later on.
+
+``` python
+IND_SIZE = 36  # cromosome
+LB = -33       # lower and upper bound
+UB = 33     
+POP_SIZE = 100  # populations 
+PM = 1./IND_SIZE # probability of mutation
+N_PARENTS = POP_SIZE - 1 
+PX = 0.9        # probabiltiy of crossover
+GMAX = 100      
+```
+
+### Creator
 
 Since the actual structure of the required individuals in genetic algorithms does strongly depend on the task at hand, DEAP does not contain any explicit structure. It will rather provide a convenient method for creating containers of attributes, associated with fitnesses, called the deap.creator. Using this method we can create custom individuals in a very simple way.
 
 The creator is a class factory that can build new classes at run-time. It will be called with first the desired name of the new class, second the base class it will inherit, and in addition any subsequent arguments you want to become attributes of your class. This allows us to build new and complex structures of any type of container from lists to n-ary trees.
 
-```         
-creator.create("FitnessMax", base.Fitness, weights=(1.0,))
-creator.create("Individual", list, fitness=creator.FitnessMax)
+``` python
+creator.create("Fitness",  
+               base.Fitness,  
+               weights=(-1.0,))
+
+creator.create("Individual",
+               list,  
+               fitness=creator.Fitness)
 ```
 
-First we will define the class FitnessMax. It will inherit the Fitness class of the deap.base module and contain an additional attribute called weights. Please mind the value of weights to be the tuple (1.0,). This way we will be maximizing a single objective fitness. We can't repeat it enough, in DEAP single objectives is a special case of multi objectives.
+First we will define the class Fitness. It will inherit the Fitness class of the deap.base module and contain an additional attribute called weights. Please mind the value of weights to be the tuple (-1.0,). This way we will be minimizing a single objective fitness. In DEAP single objectives is a special case of multi objectives.
 
-Next we will create the class Individual, which will inherit the class list and contain our previously defined FitnessMax class in its fitness attribute. Note that upon creation all our defined classes will be part of the creator container and can be called directly.
+Next we will create the class Individual, which will inherit the class list and contain our previously defined Fitness class in its fitness attribute. Note that upon creation all our defined classes will be part of the creator container and can be called directly.
 
-## Toolbox
+### Toolbox
 
 Now we will use our custom classes to create types representing our individuals as well as our whole population.
 
 All the objects we will use on our way, an individual, the population, as well as all functions, operators, and arguments will be stored in a DEAP container called Toolbox. It contains two methods for adding and removing content, register() and unregister().
 
-```         
+``` python
 toolbox = base.Toolbox()
-# Attribute generator
-toolbox.register("attr_bool", random.randint, 0, 1)
-# Structure initializers
-toolbox.register("individual", tools.initRepeat, creator.Individual,
-    toolbox.attr_bool, 100)
+
+toolbox.register("attribute", bin, p=0.5)
+toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attribute, n=IND_SIZE)
 toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 ```
 
-In this code block we register a generation function toolbox.attr_bool() and two initialization ones individual() and population(). toolbox.attr_bool(), when called, will draw a random integer between 0 and 1. The two initializers, on the other hand, will instantiate an individual or population.
+In this code block we register a generation function toolbox.attribute() and two initialization ones individual() and population(). toolbox.attr_bool(), when called, will draw a random bits (0 or 1). The two initializers, on the other hand, will instantiate an individual or population.
 
-The registration of the tools to the toolbox only associates aliases to the already existing functions and freezes part of their arguments. This allows us to fix an arbitrary amount of argument at certain values so we only have to specify the remaining ones when calling the method. For example, the attr_bool() generator is made from the randint() function that takes two arguments a and b, with a \<= n \<= b, where n is the returned integer. Here, we fix a = 0 and b = 1.
+The registration of the tools to the toolbox only associates aliases to the already existing functions and freezes part of their arguments. This allows us to fix an arbitrary amount of argument at certain values so we only have to specify the remaining ones when calling the method.
 
-Our individuals will be generated using the function initRepeat(). Its first argument is a container class, in our example the Individual one we defined in the previous section. This container will be filled using the method attr_bool(), provided as second argument, and will contain 100 integers, as specified using the third argument. When called, the individual() method will thus return an individual initialized with what would be returned by calling the attr_bool() method 100 times. Finally, the population() method uses the same paradigm, but we don't fix the number of individuals that it should contain.
+Our individuals will be generated using the function initRepeat(). Its first argument is a container class, in our example the Individual one we defined in the previous section. This container will be filled using the method attritubte(), provided as second argument, and will contain `N` bit, as specified using the third argument. When called, the individual() method will thus return an individual initialized with what would be returned by calling the attribute() method `N` times. Finally, the population() method uses the same paradigm, but we don't fix the number of individuals that it should contain.
 
-##The Evaluation Function The evaluation function is pretty simple in our example. We just need to count the number of ones in an individual.
+### The Evaluation Function
 
-```         
-def evalOneMax(individual):
-    return sum(individual),
+The evaluation function in our example is given by the $F$ functions presented above.
 
-print(evalOneMax([0,0,0,0]))
-print(evalOneMax([0,1,0,1]))
-print(evalOneMax([1,1,1,1]))
-```
+### The Genetic Operators
 
-```         
-(0,)
-(2,)
-(4,)
-```
+Within DEAP there are two ways of using operators. We can either simply call a function from the tools module or register it with its arguments in a toolbox, as we have already seen for our initialization methods. The most convenient way, however, is to register them in the toolbox, because this allows us to easily switch between the operators if desired. The toolbox method is also used when working with the algorithms module.
 
-## The Genetic Operators
+Registering the genetic operators required for the evolution in our minimization problem and their default arguments in the toolbox is done as follows.
 
-Within DEAP there are two ways of using operators. We can either simply call a function from the tools module or register it with its arguments in a toolbox, as we have already seen for our initialization methods. The most convenient way, however, is to register them in the toolbox, because this allows us to easily switch between the operators if desired. The toolbox method is also used when working with the algorithms module. See the [One Max Problem: Short Version](https://deap.readthedocs.io/en/master/examples/ga_onemax_short.html#short-ga-onemax) for an example.
-
-Registering the genetic operators required for the evolution in our One Max problem and their default arguments in the toolbox is done as follows.
-
-```         
-toolbox.register("evaluate", evalOneMax)
+``` python
+toolbox.register("evaluate", fitness)
 toolbox.register("mate", tools.cxTwoPoint)
-toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
-toolbox.register("select", tools.selTournament, tournsize=3)
+toolbox.register("mutate", mutation, p=PM)
+toolbox.register("select", tools.selTournament, tournsize=5)
 ```
 
-The evaluation will be performed by calling the alias evaluate. It is important to not fix its argument in here. We will need it later on to apply the function to each separate individual in our population. The mutation, on the other hand, needs an argument to be fixed (the independent probability of each attribute to be mutated indpb).
+The evaluation will be performed by calling the alias fitness. It is important to not fix its argument in here. We will need it later on to apply the function to each separate individual in our population. The mutation, on the other hand, needs an argument to be fixed (the independent probability of each attribute to be mutated).
 
 ## Evolving the Population
 
-Once the representation and the genetic operators are chosen, we will define an algorithm combining all the individual parts and performing the evolution of our population until the One Max problem is solved.
+Once the representation and the genetic operators are chosen, we will define an algorithm combining all the individual parts and performing the evolution of our population until the minimization problem is solved.
 
 ## Creating the Population
 
 First of all, we need to actually instantiate our population. But this step is effortlessly done using the population() method we registered in our toolbox earlier on.
 
-```         
-pop = toolbox.population(n=300)
+``` python
+pop = toolbox.population(n=POP_SIZE)  
+```
 
+**pop** will be a list composed of 100 individuals. Since we left the parameter **n** open during the registration of the population() method in our toolbox, we are free to create populations of arbitrary size.
+
+## Evaluating the Population
+
+The next thing to do is to evaluate our brand new population. We map() the evaluation function to every individual and then assign their respective fitness. Note that the order in fitnesses and population is the same.
+
+``` python
 # Evaluate the entire population
 fitnesses = list(map(toolbox.evaluate, pop))
 for ind, fit in zip(pop, fitnesses):
     ind.fitness.values = fit
 ```
 
-**pop** will be a list composed of 300 individuals. Since we left the parameter **n** open during the registration of the population() method in our toolbox, we are free to create populations of arbitrary size.
+The evolution of the population is the final step we need to complete. Recall that our individuals are represented by 36-bit chromosomes, and our goal is to evolve the population until we reach the minimum of the target function.
 
-Before we go on, this is the time to define some constants we will use later on.
+To check the performance of the evolution, we will calculate some statistics in our population.
 
-```         
-# CXPB  is the probability with which two individuals
-#       are crossed
-#
-# MUTPB is the probability for mutating an individual
-CXPB, MUTPB = 0.5, 0.2
-```
+``` python
+# Fitness of individuals
+stats_fit = tools.Statistics(key=lambda ind: ind.fitness.values)
 
-## Evaluating the Population
+# Lenght of individual 
+stats_size = tools.Statistics(key=len)
 
-The next thing to do is to evaluate our brand new population. We map() the evaluation function to every individual and then assign their respective fitness. Note that the order in fitnesses and population is the same.
+stats_active_genes = tools.Statistics(key=lambda ind: np.sum(ind))
 
-The evolution of the population is the final step we have to accomplish. Recall, our individuals consist of 100 integer numbers and we want to evolve our population until we got at least one individual consisting of only 1s and no 0s. So all we have to do is to obtain the fitness values of the individuals!
+mstats = tools.MultiStatistics(fitness=stats_fit,
+                               size=stats_size,
+                               genes=stats_active_genes)
 
-To check the performance of the evolution, we will calculate and print the minimal, maximal, and mean values of the fitnesses of all individuals in our population as well as their standard deviations.
+mstats.register("avg", np.mean)
+mstats.register("std", np.std)
+mstats.register("min", np.min)
+mstats.register("max", np.max)
 
-```         
-def findFitness():
-    fits = [ind.fitness.values[0] for ind in pop]
-
-    length = len(pop)
-    mean = sum(fits) / length
-    sum2 = sum(x*x for x in fits)
-    std = abs(sum2 / length - mean**2)**0.5
-
-    print("  Min %s" % min(fits))
-    print("  Max %s" % max(fits))
-    print("  Avg %s" % mean)
-    print("  Std %s" % std)
-    return fits
-
-fits=findFitness()
-```
-
-```         
-  Min 34.0
-  Max 64.0
-  Avg 49.986666666666665
-  Std 5.0139627264492495
-```
-
-## Mating and Mutation
-
-In genetic algorithms, evolution occurs via either mutation or crossover, both of which happen (or don't happen) randomly. In mutation, we change one or more of the genes of one of our individuals. In cross-over, two individuals are mated to mix their genes.
-
-The crossover (or mating) and mutation operators, provided within DEAP, usually take respectively 2 or 1 individual(s) as input and return 2 or 1 modified individual(s). In addition they modify those individuals within the toolbox container and we do not need to reassign their results.
-
-We will perform both the crossover (mating) and the mutation of the produced children with a certain probability of CXPB and MUTPB. The del statement will invalidate the fitness of the modified offspring.
-
-```         
-def mateAndMutate(offspring):
-    for child1, child2 in zip(offspring[::2], offspring[1::2]):
-        if random.random() < CXPB:
-            toolbox.mate(child1, child2)
-            del child1.fitness.values
-            del child2.fitness.values
-
-    for mutant in offspring:
-        if random.random() < MUTPB:
-            toolbox.mutate(mutant)
-            del mutant.fitness.values
-
+logbook = tools.Logbook()
 ```
 
 ## The Main Loop
 
-This will creates an offspring list, which is an exact copy of the selected individuals. The toolbox.clone() method ensure that we don't use a reference to the individuals but an completely independent instance. This is of utter importance since the genetic operators in toolbox will modify the provided objects in-place.
+In genetic algorithms, evolution occurs via either mutation or crossover, both of which happen (or don't happen) randomly. In mutation, we change one or more of the genes of one of our individuals. In cross-over, two individuals are mated to mix their genes. The crossover (or mating) and mutation operators, provided within DEAP, usually take respectively 2 or 1 individual(s) as input and return 2 or 1 modified individual(s). In addition they modify those individuals within the toolbox container and we do not need to reassign their results.
 
-We then mutate and mate the individuals to find the next generation of individuals. We evaluate them, and continue until one of our individuals evolves to be the perfect organism (fitness of 100 or more), or until the number of generations reaches 1000.
+We will perform both the crossover (mating) and the mutation of the produced children with a certain probability. The del statement will invalidate the fitness of the modified offspring.
 
-At each generation, we output some statistics about that generation's population, as well as a graph of the genetic material for an arbitrary individual. A 0 in the genetic material is drawn in red, and a 1 is drawn in blue.
+In the following script we will creates an offspring list, which is an exact copy of the selected individuals. The toolbox.clone() method ensure that we don't use a reference to the individuals but an completely independent instance. This is of utter importance since the genetic operators in toolbox will modify the provided objects in-place.
 
-```         
-import numpy as np
-# Variable keeping track of the number of generations
-g = 0
+We then mutate and mate the individuals to find the next generation of individuals. We evaluate them, and continue until one of our individuals evolves to be the perfect organism (minimum), or until the number of generations reaches 100.
 
-# Begin the evolution
-while max(fits) < 100 and g < 1000:
-    # A new generation
-    g = g + 1
-    print("-- Generation %i --" % g)
-    # Select the next generation individuals
-    offspring = toolbox.select(pop, len(pop))
-    # Clone the selected individuals
-    offspring = list(map(toolbox.clone, offspring))
+At each generation, we output some statistics about that generation's population, as well as a graph of the genetic material for an arbitrary individual.
 
-    # Apply crossover and mutation on the offspring
-    mateAndMutate(offspring)
+``` python
+records = mstats.compile(pop)
+logbook.record(gen=0, **records)
 
-    # Evaluate the individuals with an invalid fitness
-    invalid_ind = [ind for ind in offspring if not ind.fitness.valid]
-    fitnesses = map(toolbox.evaluate, invalid_ind)
-    for ind, fit in zip(invalid_ind, fitnesses):
-        ind.fitness.values = fit
-    pop[:] = offspring
+for g in range(1,GMAX):
+    idx_elite = np.argmin(fitnesses)
+    elite = toolbox.clone(pop[idx_elite])
+    del elite.fitness.values
+    parents = toolbox.select(pop, POP_SIZE)
+    offspring = list(map(toolbox.clone, pop))
+    for i in range(POP_SIZE//2):
+        parent1 = toolbox.clone(parents[random.randint(0,POP_SIZE-1)])
+        parent2 = toolbox.clone(parents[random.randint(0,POP_SIZE-1)])
+        if random.random() < PX:
+            childs = toolbox.mate(parent1, parent2)
+        else:
+            childs = (parent1, parent2)
+        offspring[2*i] = childs[0]
+        offspring[2*i+1] = childs[1]
+    for mutant in offspring:
+        toolbox.mutate(mutant)
+        del mutant.fitness.values
+    offspring[0] = elite
+    fitnesses = Parallel(n_jobs=6, backend='multiprocessing')(delayed(fitness)(ind, LB, UB) for ind in offspring)
+    for ind, fit in zip(offspring, fitnesses):
+        ind.fitness.values = (fit,)
+    pop = toolbox.clone(offspring)
+    records = mstats.compile(pop)
+    logbook.record(gen=g, **records)
+    if (g%10 == 0):
+        print('='*10)
+        print(f'GENERATION: {g}')
+        print(f'ELITE -- Fitness: {elite.fitness.values[0]:.4}')
+        print('FITNES: ', records['fitness'])
 
-    # print statistics on our updated population
-    fits=findFitness()
-
-    # plot an arbitrary organism
-    x = [i/100 for i in range(len(pop[0]))]
-    y = [1 for i in x]
-    colors = ['r' if pop[0][i]==0 else 'b' for i in range(len(pop[0]))]
-    plt.scatter(x, y, c=colors, alpha=0.5)
-    plt.show()
+    
 ```
 
-```         
--- Generation 1 --
-  Min 45.0
-  Max 68.0
-  Avg 54.11666666666667
-  Std 4.260249079833473
-```
-
-![png](Untitled0_files/Untitled0_24_1.png)
+Results:
 
 ```         
--- Generation 2 --
-  Min 48.0
-  Max 68.0
-  Avg 57.58
-  Std 3.579143286691223
+    ===
+    GENERATION: 10
+    ELITE -- Fitness: 0.5722
+    FITNES:  {'avg': 1.2363773729277125, 'std': 0.6934457474019109, 'min': 0.5671581279089928, 'max': 2.512008838665629}
+    ===
+    GENERATION: 20
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 30
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 40
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 50
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 60
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 70
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 80
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+    ===
+    GENERATION: 90
+    ELITE -- Fitness: 0.5671
+    FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
+
 ```
 
-![png](Untitled0_files/Untitled0_24_3.png)
+Solution:
 
-```         
--- Generation 3 --
-  Min 50.0
-  Max 68.0
-  Avg 60.406666666666666
-  Std 3.3943024156502473
-```
-
-![png](Untitled0_files/Untitled0_24_5.png)
-
-```         
--- Generation 4 --
-  Min 56.0
-  Max 71.0
-  Avg 62.86
-  Std 2.897194044818846
-```
-
-![png](Untitled0_files/Untitled0_24_7.png)
-
-```         
--- Generation 5 --
-  Min 58.0
-  Max 74.0
-  Avg 64.91666666666667
-  Std 2.60954444725938
-```
-
-![png](Untitled0_files/Untitled0_24_9.png)
-
-```         
--- Generation 6 --
-  Min 59.0
-  Max 75.0
-  Avg 66.61666666666666
-  Std 2.6374967087922037
-```
-
-![png](Untitled0_files/Untitled0_24_11.png)
-
-```         
--- Generation 7 --
-  Min 57.0
-  Max 78.0
-  Avg 68.42333333333333
-  Std 2.609748817202331
-```
-
-![png](Untitled0_files/Untitled0_24_13.png)
-
-```         
--- Generation 8 --
-  Min 62.0
-  Max 78.0
-  Avg 70.19666666666667
-  Std 2.655432586645862
-```
-
-![png](Untitled0_files/Untitled0_24_15.png)
-
-```         
--- Generation 9 --
-  Min 63.0
-  Max 79.0
-  Avg 71.91
-  Std 2.832295888497641
-```
-
-![png](Untitled0_files/Untitled0_24_17.png)
-
-```         
--- Generation 10 --
-  Min 66.0
-  Max 80.0
-  Avg 73.69666666666667
-  Std 2.669205041872086
-```
+![Optimal point for minimization problem with GA](output.png)
 
 {{< admonition type=note title="Bibliography" open=false >}}
 
