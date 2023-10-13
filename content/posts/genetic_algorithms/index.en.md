@@ -141,7 +141,7 @@ Elitism is an approach where the best chromosome(s) are directly transferred to 
 
 ## Quick example of GA
 
-The following example aims to showcase the capabilities of genetic algorithms and provide a quick overview of the Distributed Evolutionary Algorithms in Python [DEAP](https://deap.readthedocs.io/en/master/) framework. DEAP is a Python library specifically designed for evolutionary computing. In this toy example, our objective is straightforward: we aim to find the minimum value of a function, which will be presented in the subsequent code cell, within the range [−33,33]\[−33,33\]. This example is adapted from the excellent 'Neural Network' seminar course offered at UTN-Paraná 2023, which is taught by the distinguished Dr. Matías Gerard.
+The following example aims to showcase the capabilities of genetic algorithms and provide a quick overview of the Distributed Evolutionary Algorithms in Python [DEAP](https://deap.readthedocs.io/en/master/) framework. DEAP is a Python library specifically designed for evolutionary computing. In this toy example, our objective is straightforward: we aim to find the minimum value of a function, which will be presented in the subsequent code cell, within the range [−33,33]. This example is adapted from the excellent 'Neural Network' seminar course offered at UTN-Paraná 2023, which is taught by the distinguished [Dr.Matías Gerard](http://sinc.unl.edu.ar/staff/matias-gerard/).
 
 ``` python
 def F(x,y):
