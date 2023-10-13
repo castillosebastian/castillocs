@@ -141,7 +141,7 @@ Elitism is an approach where the best chromosome(s) are directly transferred to 
 
 ## Quick example of GA
 
-This example will help to illustrate the potential of evolutionary algorithms in general and a quick overview of the [DEAP](https://deap.readthedocs.io/en/master/) framework's possibilities. The problem is simple: find the minimum of the function presented in the following cell, within the interval (\[-33, 33\]).
+The following example aims to showcase the capabilities of genetic algorithms and provide a quick overview of the Distributed Evolutionary Algorithms in Python [DEAP](https://deap.readthedocs.io/en/master/) framework. DEAP is a Python library specifically designed for evolutionary computing. In this toy example, our objective is straightforward: we aim to find the minimum value of a function, which will be presented in the subsequent code cell, within the range [−33,33]\[−33,33\]. This example is adapted from the excellent 'Neural Network' seminar course offered at UTN-Paraná 2023, which is taught by the distinguished Dr. Matías Gerard.
 
 ``` python
 def F(x,y):
@@ -191,7 +191,7 @@ def mutation(ind, p):
     return [abs(i-1) if random.random() < p else i for i in ind]
 ```
 
-We implement the genotype-to-phenotype mapping function. We will represent the variables x and y using 12 and 24 bits, respectively.
+We implement the genotype-to-phenotype mapping function. We will represent the variables $x$ and $y$ using 12 and 24 bits, respectively.
 
 ``` python
 def bin2dec(ind, low, high, lengths):
@@ -216,7 +216,7 @@ def bin2dec(ind, low, high, lengths):
     return x, y
 ```
 
-Finally, we create a fitness function:
+Finally, we create a fitness function based on the objective function given above:
 
 ``` python
 def fitness(ind, low, high):
@@ -261,7 +261,7 @@ creator.create("Individual",
                fitness=creator.Fitness)
 ```
 
-First we will define the class Fitness. It will inherit the Fitness class of the deap.base module and contain an additional attribute called weights. Please mind the value of weights to be the tuple (-1.0,). This way we will be minimizing a single objective fitness. In DEAP single objectives is a special case of multi objectives.
+First we will define the class Fitness. It will inherit the Fitness class of the deap.base module and contain an additional attribute called weights. Please mind the value of weights to be the tuple (-1.0,), this way we will be minimizing a single objective fitness. In DEAP single objectives is a special case of multi-objectives.
 
 Next we will create the class Individual, which will inherit the class list and contain our previously defined Fitness class in its fitness attribute. Note that upon creation all our defined classes will be part of the creator container and can be called directly.
 
@@ -310,17 +310,17 @@ Once the representation and the genetic operators are chosen, we will define an 
 
 ### Creating the Population
 
-First of all, we need to actually instantiate our population. But this step is effortlessly done using the population() method we registered in our toolbox earlier on.
+First of all, we need to actually instantiate our population. But this step is effortlessly done using the `population()` method we registered in our toolbox earlier on.
 
 ``` python
 pop = toolbox.population(n=POP_SIZE)  
 ```
 
-**pop** will be a list composed of 100 individuals. Since we left the parameter **n** open during the registration of the population() method in our toolbox, we are free to create populations of arbitrary size.
+**pop** will be a list composed of 100 individuals. Since we left the parameter **n** open during the registration of the `population()` method in our toolbox, we are free to create populations of arbitrary size.
 
 ### Evaluating the Population
 
-The next thing to do is to evaluate our brand new population. We map() the evaluation function to every individual and then assign their respective fitness. Note that the order in fitnesses and population is the same.
+The next thing to do is to evaluate our brand new population. We `map()` the evaluation function to every individual and then assign their respective fitness. Note that the order in fitnesses and population is the same.
 
 ``` python
 # Evaluate the entire population
@@ -329,7 +329,7 @@ for ind, fit in zip(pop, fitnesses):
     ind.fitness.values = fit
 ```
 
-The evolution of the population is the final step we need to complete. Recall that our individuals are represented by 36-bit chromosomes, and our goal is to evolve the population until we reach the minimum of the target function.
+The evolution of the population is the final step we need to complete. Recall that our individuals are represented by 36-bit chromosomes, and our goal is to evolve the population until we reach the minimum of the objective function.
 
 To check the performance of the evolution, we will calculate some statistics in our population.
 
@@ -358,13 +358,13 @@ logbook = tools.Logbook()
 
 In genetic algorithms, evolution occurs via either mutation or crossover, both of which happen (or don't happen) randomly. In mutation, we change one or more of the genes of one of our individuals. In cross-over, two individuals are mated to mix their genes. The crossover (or mating) and mutation operators, provided within DEAP, usually take respectively 2 or 1 individual(s) as input and return 2 or 1 modified individual(s). In addition they modify those individuals within the toolbox container and we do not need to reassign their results.
 
-We will perform both the crossover (mating) and the mutation of the produced children with a certain probability. The del statement will invalidate the fitness of the modified offspring.
+We will perform both the crossover (mating) and the mutation of the produced children with a certain probability. The `del` statement will invalidate the fitness of the modified offspring.
 
-In the following script we will creates an offspring list, which is an exact copy of the selected individuals. The toolbox.clone() method ensure that we don't use a reference to the individuals but an completely independent instance. This is of utter importance since the genetic operators in toolbox will modify the provided objects in-place.
+In the following script we will creates an offspring list, which is an exact copy of the selected individuals. The `toolbox.clone()` method ensure that we don't use a reference to the individuals but an completely independent instance. This is of utter importance since the genetic operators in toolbox will modify the provided objects in-place.
 
 We then mutate and mate the individuals to find the next generation of individuals. We evaluate them, and continue until one of our individuals evolves to be the perfect organism (minimum), or until the number of generations reaches 100.
 
-At each generation, we output some statistics about that generation's population, as well as a graph of the genetic material for an arbitrary individual.
+At each generation, we output some statistics about that generation's population and the best individual.
 
 ``` python
 records = mstats.compile(pop)
@@ -404,7 +404,7 @@ for g in range(1,GMAX):
     
 ```
 
-### Results:
+### Evolution process:
 
 ```         
     ===
@@ -451,11 +451,17 @@ for g in range(1,GMAX):
 
 ## Conclusion
 
+Genetic Algorithms showcase the robustness and versatility of bio-inspired computing. Their ability to explore complex, high-dimensional search spaces makes them invaluable in situations where traditional, exhaustive search methods fall short. Whether it's optimization challenges in machine learning, route planning in logistics, or even simulating natural processes in biology, Genetic Algorithms have demonstrated their effectiveness across a diverse range of domains.
+
+While originally designed for the study of adaptation in natural systems (J. Holland, 1975), most GAs have been developed for optimization purposes (Whitley, 1994). They have been applied in a large variety of research domains: biology (Street and Mayo, 1999), economics (Chatterjee et al., 2018, Waheeb and Ghazali, 2019), finance (Lwin et al., 2014, Han et al., 2019), operational research (Della Croce et al., 1995, Baker and Ayechew, 2003), game theory (Axelrod et al., 1987, Vi ́e, 2020b), deep learning and neural networks (Stanley et al., 2019, Chung and Shin, 2020), forecasting (Packard, 1988, C. Ahn and Ramakrishna, 2003), optimisation (Wiransky, 2020, Dhunny et al., 2020), computer science and algorithms (Koza, 1992), healthcare (Tao et al., 2019, Devarriya et al., 2020) or data science (Yang and Honavar, 1998, Maulik and Bandyopadhyay, 2000, Raymer et al., 2000).
+
+As we continue to deepen our understanding of these algorithms, their range of applications is likely to expand, further cementing their status as a reliable tool for solving intricate problems.
+
 {{< admonition type=note title="Bibliography" open=false >}}
 
-\## Bibliography
-
 -   Goldberg, David E. 1989. Genetic Algorithms in Search, Optimization, and Machine Learning. New York, NY, USA: Addison-Wesley.
+-   Kramer, Oliver. 2017. Genetic Algorithm Essentials. Vol. 679. Studies in Computational Intelligence. Cham: Springer International Publishing.
+-   Vignolo, Leandro D., and Matias F. Gerard. 2017. \"Evolutionary Local Improvement on Genetic Algorithms for Feature Selection.\" In 2017 XLIII Latin American Computer Conference (CLEI), 1--8. Cordoba: IEEE. <https://doi.org/10.1109/CLEI.2017.8226467>.
 
 {{< /admonition >}}
 
