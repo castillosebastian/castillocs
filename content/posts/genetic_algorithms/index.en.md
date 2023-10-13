@@ -10,7 +10,7 @@ resources:
   src: "featured-image.jpg"
 - name: "featured-image-preview"
   src: "featured-image-preview.jpg"
-tags: ["evolutionary algorithms", "heuristic search", "machine learning"]
+tags: ["evolutionary algorithms", "heuristic search", "machine learning", "optimization"]
 categories: ["Genetic Algorithms"]
 lightgallery: true
 toc:
