@@ -21,11 +21,11 @@ In the rich theatre of Nature, few creatures exemplify the power of evolutionary
 
 <!--more-->
 
-# GENETIC ALGORITHMS
+## GENETIC ALGORITHMS
 
 Few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. With its astonishing ability to hover in place and dart with unparalleled agility, this little bird serves as a living testament to the power of natural selection in fine-tuning species for specific ecological niches. Much like this remarkable creature, Genetic Algorithms (GA) stand as a testament to the ingenuity of artificial intelligence. These algorithms, part of the broader field of evolutionary computing, harness the principles of natural evolution to find optimal or near-optimal solutions to complex problems. Just as the hummingbird has evolved to become a master of aerodynamic efficiency, Genetic Algorithms evolve candidate solutions to arrive at the best possible answer, making them invaluable tools in various sectors from engineering to data science.
 
-## Some biological context related to GA
+### Some biological context related to GA
 
 Genetic algorithms, a subset of the field of evolutionary computing in artificial intelligence, draw their inspiration from Darwin's theory of evolution to find the most fit solutions to complex problems. The concept of evolutionary computing itself dates back to the 1960s, initiated by Rechenberg's work on 'Evolution Strategies.' It was further advanced by John Holland, who not only conceptualized Genetic Algorithms but also enriched the domain through his seminal book 'Adaption in Natural and Artificial Systems' published in 1975. Adding another layer to this, John Koza in 1992 employed genetic algorithms to evolve LISP programs for specific tasks, coining the term 'genetic programming' for his approach.
 
@@ -35,7 +35,7 @@ Evolution chiefly involves generational changes, making reproduction another cor
 
 Lastly, an organism's fitness is gauged by its ability to survive and thrive throughout its lifetime, which -in the contexto of an optimization problems- means that the "fitness" of a particular solution is measured by how well it satisfies the set criteria or objectives of the problem at hand.
 
-## The essence of human-like optimization
+### The essence of human-like optimization
 
 When we talk about optimization, whether in business decisions or algorithmic computations, the ultimate aim is to enhance performance. As Goldberg (1989) explains:
 
@@ -47,7 +47,7 @@ Applying this more nuanced understanding of optimization to Genetic Algorithms m
 
 In sum, when using Genetic Algorithms for optimization, the objective extends beyond mere convergence to an optimal point. The focus is also on the quality of interim solutions, which is essential for handling complex systems where 'good enough' often suffices. It's not merely about finding the best solution but about consistently striving for better ones."
 
-## Search for solutions
+### Search for solutions
 
 In genetic algorithms, the search for a solution is carried on through an evolutionary process that begins with a collection of individuals, commonly referred to as a 'population'. Each individual in this population is represented by its own unique chromosome, which is essentially an encoded set of attributes. Initially, this population is often generated randomly, representing a diverse range of potential solutions to the problem at hand.
 
@@ -68,7 +68,7 @@ This evolutionary cycle continues until a certain condition is met, such as reac
 5.  **\[Test\]** If the end condition is satisfied, stop, and return the best solution in the current population.
 6.  **\[Loop\]** Go to step 2.
 
-## Encoding of a Chromosome
+### Encoding of a Chromosome
 
 A chromosome encapsulates the information of the solution it represents. The most common form of encoding is a binary string. For instance:
 
@@ -77,7 +77,7 @@ A chromosome encapsulates the information of the solution it represents. The mos
 
 In this binary encoding, each bit could signify certain characteristics of the solution. Alternatively, the entire string could represent a numerical value, an approach often employed in basic GA implementations. However, encoding can vary depending on the problem at hand. For example, one could use integer or real numbers, or even encode permutations.
 
-## Crossover
+### Crossover
 
 Once the encoding method is chosen, the next step is the crossover operation. Crossover blends genes from parent chromosomes to produce new offspring. The simplest method involves picking a random crossover point and merging parts of the two parent chromosomes. Here's a quick illustration (where `|` indicates the crossover point):
 
@@ -95,7 +95,7 @@ The crossover probability dictates the frequency of crossover operations. If cro
 
 The objective of crossover is to combine the advantageous traits from each parent, thereby generating improved offspring. However, it's often beneficial to allow a portion of the older population to continue into the next generation.
 
-## Mutation
+### Mutation
 
 Following crossover, mutation comes into play. The purpose of mutation is to avoid convergence of the entire population to a local optimum. It involves making random changes to the offspring generated by the crossover. In the case of binary encoding, this could mean flipping random bits from 1 to 0 or vice versa. For example:
 
@@ -113,7 +113,7 @@ Mutation probability determines how frequently mutations will occur within a chr
 
 Mutation serves as a mechanism to prevent the genetic algorithm from converging to local optima. However, excessive mutation is counterproductive, as the algorithm may essentially devolve into a random search.
 
-## Selection
+### Selection
 
 As outlined early, chromosomes are selected from the population to serve as parents for the crossover operation. The challenge lies in deciding which chromosomes to select. Darwin's theory of evolution suggests that the fittest individuals are more likely to survive and produce offspring. There are several methods for selecting these "fit" chromosomes, such as roulette wheel selection, Boltzmann selection, tournament selection, rank selection, steady-state selection, and others. This sections will describe some of these methods.
 
@@ -139,7 +139,7 @@ This isn't a specific method of selecting parents, but rather an approach to pop
 
 Elitism is an approach where the best chromosome(s) are directly transferred to the next generation to ensure that the optimal solutions found so far are not lost. This can significantly improve the performance of a GA.
 
-# Implementing GA
+## Quick example of GA
 
 This example will help to illustrate the potential of evolutionary algorithms in general and a quick overview of the [DEAP](https://deap.readthedocs.io/en/master/) framework's possibilities. The problem is simple: find the minimum of the function presented in the following cell, within the interval (\[-33, 33\]).
 
@@ -304,11 +304,11 @@ toolbox.register("select", tools.selTournament, tournsize=5)
 
 The evaluation will be performed by calling the alias fitness. It is important to not fix its argument in here. We will need it later on to apply the function to each separate individual in our population. The mutation, on the other hand, needs an argument to be fixed (the independent probability of each attribute to be mutated).
 
-## Evolving the Population
+### Evolving the Population
 
 Once the representation and the genetic operators are chosen, we will define an algorithm combining all the individual parts and performing the evolution of our population until the minimization problem is solved.
 
-## Creating the Population
+### Creating the Population
 
 First of all, we need to actually instantiate our population. But this step is effortlessly done using the population() method we registered in our toolbox earlier on.
 
@@ -318,7 +318,7 @@ pop = toolbox.population(n=POP_SIZE)
 
 **pop** will be a list composed of 100 individuals. Since we left the parameter **n** open during the registration of the population() method in our toolbox, we are free to create populations of arbitrary size.
 
-## Evaluating the Population
+### Evaluating the Population
 
 The next thing to do is to evaluate our brand new population. We map() the evaluation function to every individual and then assign their respective fitness. Note that the order in fitnesses and population is the same.
 
@@ -354,7 +354,7 @@ mstats.register("max", np.max)
 logbook = tools.Logbook()
 ```
 
-## The Main Loop
+### The Main Loop
 
 In genetic algorithms, evolution occurs via either mutation or crossover, both of which happen (or don't happen) randomly. In mutation, we change one or more of the genes of one of our individuals. In cross-over, two individuals are mated to mix their genes. The crossover (or mating) and mutation operators, provided within DEAP, usually take respectively 2 or 1 individual(s) as input and return 2 or 1 modified individual(s). In addition they modify those individuals within the toolbox container and we do not need to reassign their results.
 
@@ -404,7 +404,7 @@ for g in range(1,GMAX):
     
 ```
 
-Results:
+### Results:
 
 ```         
     ===
@@ -443,12 +443,13 @@ Results:
     GENERATION: 90
     ELITE -- Fitness: 0.5671
     FITNES:  {'avg': 0.5670580268782999, 'std': 0.0, 'min': 0.5670580268782999, 'max': 0.5670580268782999}
-
 ```
 
-Solution:
+### Solution
 
 ![Optimal point for minimization problem with GA](output.png)
+
+## Conclusion
 
 {{< admonition type=note title="Bibliography" open=false >}}
 
