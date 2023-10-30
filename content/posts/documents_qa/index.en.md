@@ -17,7 +17,7 @@ toc:
   auto: false
 ---
 
-I developed a chatbot-like agent, using retrieval-augmented generation that combines a pre-trained seq2seq model with a dense document index.
+I developed a chatbot-like agent that utilizes Retrieval-Augmented Generation, integrating a pre-trained sequence-to-sequence model with a document database. This innovative synergy facilitates the creation of a question-answering application, which is capable of delivering contextually relevant and accurate responses by querying specific information.
 
 <!--more-->
 
