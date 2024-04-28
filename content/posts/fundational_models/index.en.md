@@ -98,18 +98,25 @@ The RAG model thus operates as a feedback loop between retrieval and generation,
 
 ## Notes on building RAG-type assistants
 
-Here are some notes on building RAG-type assistants:
-
 1. Core Reasoning Engine:        
-   At the heart of RAG-type systems is the core reasoning engine, typically a Large Language Model (LLM), which is enhanced by various modules. These modules provide the engine with the necessary tools and information to function effectively. This setup positions the LLM as more than just a generator of text; it serves as a dynamic reasoning unit capable of complex thought processes when supplemented with the right tools.
+
+At the heart of RAG-type systems are Large Language Models (LLMs) that acts as reasoning engines. This engines are enhanced by various modules that provides the necessary tools and factual information to function effectively. This setup positions the LLMs as more than just text generators; they serve as a dynamic reasoning units capable of complex generation processes when supplemented with the right tools. In this way, RAGs can be seen as a bridge between the vast knowledge stored in external databases and the reasoning capabilities of LLMs.
+
 2. Iterative Development Approach:     
-   It is critical to start with a basic design and then progressively advance to more sophisticated levels. This approach allows for full control over the application's execution initially. Over time, as the system's capabilities are proven and its reliability is established, you can allow the LLM to take more autonomous decisions. This gradual transition is crucial to ensuring the system remains robust and dependable.
-3. Orchestration of Responses:     
-    Effective orchestration involves ensuring seamless integration of parametric information derived from the LLM’s inherent capabilities with the knowledge retrieved during the execution. In many scenarios, the LLM alone can handle responses effectively; however, the challenge lies in integrating this capability with dynamically retrieved external data to enhance the relevance and accuracy of responses.    
-4. Handling API Unreliability:    
-    APIs, which often serve as bridges to external data for retrieval processes, do not always perform as expected. Planning for unexpected outcomes and incorporating fallback mechanisms or alternative data retrieval strategies is essential. This foresight helps maintain the system's performance and ensures consistent user experiences despite external failures.    
+
+It is critical to start with a basic design and then progressively advance to more sophisticated levels. This approach allows for full control over the application's execution. Over time, as the system's capabilities are proven and its reliability is established, you can allow the RAG to take more autonomous decisions. This gradual transition is important for ensuring the system remains robust and the project's constraints (regarding response time) are met.
+
+3. Orchestration of Responses:   
+     
+Effective orchestration involves ensuring seamless integration of parametric information derived from the LLM’s inherent capabilities with the knowledge retrieved during the execution. In many scenarios, the LLM alone can handle responses effectively; however, the challenge lies in integrating this capability with dynamically retrieved external data to enhance the relevance and factual groundedness of responses.    
+
+4. Handling API Unreliability:
+
+APIs, which serves as bridges to external data for retrieval and completion in the generation process, do not always perform as expected (or documented). Planning for unexpected outcomes and incorporating fallback mechanisms or alternatives strategies are essential. This foresight helps maintain the system's performance and ensures consistent user experiences despite external failures.    
+
 5. Building Effective Retrievers:     
-   The success of a RAG-type system heavily relies on the quality of the retrieval strategy. An effective retriever is essential to provide high-quality, relevant information to the LLM. This is akin to the adage "garbage in, garbage out" —feeding the LLM poor quality or irrelevant data will lead to poor quality outputs. Therefore, developing sophisticated retrieval mechanisms that can accurately discern and fetch pertinent information is crucial for generating high-quality responses.
+
+The success of a RAG-type system heavily relies on the quality of the retrieval strategy. An effective retriever is essential to provide high-quality, relevant information to the LLM. This is akin to the adage "garbage in, garbage out" —feeding the LLM with poor quality or irrelevant data will lead to poor quality outputs. Therefore, developing sophisticated retrieval mechanisms that can accurately discern and fetch pertinent information is crucial for generating high-quality responses.
 
 {{< admonition type=note title="Bibliography" open=false >}}
 - Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. In Advances in Neural Information Processing Systems 25 (NIPS 2012).
