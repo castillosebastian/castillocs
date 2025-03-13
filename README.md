@@ -11,3 +11,4 @@ hugo server
 ## Upload to web page
 
 - GitHub Actions, 'Run workflow'
+- Check actions in https://gohugo.io/host-and-deploy/host-on-github-pages/

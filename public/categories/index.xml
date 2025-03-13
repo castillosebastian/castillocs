@@ -1,39 +1,62 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Categories - Category - CastilloS</title>
-        <link>https://castillosebastian.github.io/categories/</link>
+        <link>http://localhost:1313/categories/</link>
         <description>Categories - Category - CastilloS</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://castillosebastian.github.io/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>Generative Models</title>
-    <link>https://castillosebastian.github.io/categories/generative-models/</link>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>AI</title>
+    <link>http://localhost:1313/categories/ai/</link>
+    <pubDate>Thu, 13 Mar 2025 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/ai/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Genetic Algorithms</title>
+    <link>http://localhost:1313/categories/genetic-algorithms/</link>
+    <pubDate>Sun, 01 Oct 2023 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/genetic-algorithms/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Chatbot&#43;</title>
+    <link>http://localhost:1313/categories/chatbot&#43;/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/categories/generative-models/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/chatbot&#43;/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Generative Models</title>
+    <link>http://localhost:1313/categories/generative-models/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/generative-models/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Responsible AI</title>
-    <link>https://castillosebastian.github.io/categories/responsible-ai/</link>
+    <link>http://localhost:1313/categories/responsible-ai/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/categories/responsible-ai/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/responsible-ai/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Dashboards</title>
-    <link>https://castillosebastian.github.io/categories/dashboards/</link>
+    <link>http://localhost:1313/categories/dashboards/</link>
     <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/categories/dashboards/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/dashboards/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Data driven culture</title>
-    <link>https://castillosebastian.github.io/categories/data-driven-culture/</link>
+    <title>Data Driven Dulture</title>
+    <link>http://localhost:1313/categories/data-driven-dulture/</link>
     <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/categories/data-driven-culture/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/categories/data-driven-dulture/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

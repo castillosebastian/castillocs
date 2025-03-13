@@ -1,31 +1,62 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>All Posts - CastilloS</title>
-        <link>https://castillosebastian.github.io/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>All Posts | CastilloS</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://castillosebastian.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>Generative models: variational autoencoders</title>
-    <link>https://castillosebastian.github.io/variational_autoencoders/</link>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Synthetic Data and Feature Selection</title>
+    <link>http://localhost:1313/syntheticdata_and_featureselection/</link>
+    <pubDate>Thu, 13 Mar 2025 00:00:00 &#43;0000</pubDate>
+    <author>CastilloCS</author>
+    <guid>http://localhost:1313/syntheticdata_and_featureselection/</guid>
+    <description><![CDATA[<p>Synthetic data is a type of data that is created by an algorithm, rather than collected from the real world. It is a powerful tool for training machine learning models, but it can also be used to create realistic data for testing and validation.</p>]]></description>
+</item>
+<item>
+    <title>Large Language Models and Expert Assistants</title>
+    <link>http://localhost:1313/fundational_models/</link>
+    <pubDate>Mon, 01 Apr 2024 00:00:00 &#43;0000</pubDate>
+    <author>CastilloCS</author>
+    <guid>http://localhost:1313/fundational_models/</guid>
+    <description><![CDATA[<p>In the ever-evolving landscape of Artificial Intelligence, a groundbreaking category of technologies known as <strong>foundation models</strong> is reshaping our interaction with the digital world. These models, which encompass the broad and powerful class of Large Language Models (LLMs), are built on expansive datasets, enabling them to perform an astonishing array of tasks. From engaging in human-like dialogues and answering complex questions to composing music and generating video content, LLMs are rapidly becoming specialized powerhouses in AI. Their versatility allows for remarkable applications that stretch the bounds of creativity and problem-solving. Through this series of posts, we will embark on a journey to uncover the myriad applications of LLMs across different domains, showcasing their transformative potential in reshaping industries and enhancing human capabilities.</p>]]></description>
+</item>
+<item>
+    <title>Can we imitate Nature&#39;s evolutionary abilities? </title>
+    <link>http://localhost:1313/genetic_algorithms/</link>
+    <pubDate>Sun, 01 Oct 2023 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/genetic_algorithms/</guid>
+    <description><![CDATA[<p>In the rich theatre of Nature, few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. Similarly, in the field of artificial intelligence, Genetic Algorithms stand among the select few that have successfully harnessed the principles of evolution for optimization. In this post, I will discuss these techniques that solve complex problems through an evolutionary process, leading to optimal or near-optimal solutions.</p>]]></description>
+</item>
+<item>
+    <title>Generative Models: Variational Autoencoders</title>
+    <link>http://localhost:1313/variational_autoencoders/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/variational_autoencoders/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/variational_autoencoders/</guid>
     <description><![CDATA[<p>Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery.</p>]]></description>
 </item>
 <item>
+    <title>Retrieval-augmented generation for Chatbot</title>
+    <link>http://localhost:1313/documents_qa/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/documents_qa/</guid>
+    <description><![CDATA[<p>I developed a chatbot-like agent that utilizes Retrieval-Augmented Generation, integrating a pre-trained sequence-to-sequence model with a document database. This innovative synergy facilitates the creation of a question-answering application, which is capable of delivering contextually relevant and accurate responses by querying specific information.</p>]]></description>
+</item>
+<item>
     <title>Responsible AI Tools</title>
-    <link>https://castillosebastian.github.io/responsible_ai/</link>
+    <link>http://localhost:1313/responsible_ai/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/responsible_ai/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/responsible_ai/</guid>
     <description><![CDATA[<p>Responsible AI has become a crucial aspect of every Machine Learning project, underscoring the need for tools that promote the creation of fair and ethically sound models. In this post, we delve into some key concepts and replicate IBM&rsquo;s inFairness example solution to address bias in the &lsquo;Adult Income&rsquo; dataset. Beyond the technical configurations adopted, the intent to algorithmically address unfairness and the statistical pursuit of both overt and hidden bias in data are particularly noteworthy. These are the key insights we hope readers will take away from this post.</p>]]></description>
 </item>
 <item>
     <title>Justice Analitics</title>
-    <link>https://castillosebastian.github.io/analitics_in_judiciary/</link>
+    <link>http://localhost:1313/analitics_in_judiciary/</link>
     <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
-    <author>CastilloS</author>
-    <guid>https://castillosebastian.github.io/analitics_in_judiciary/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/analitics_in_judiciary/</guid>
     <description><![CDATA[<p>This post chronicles the transformative journey that the Judiciary of Entre Ríos, Argentina, where I serve as Director, is undertaking in the realm of statistics.</p>]]></description>
 </item>
 </channel>

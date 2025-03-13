@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Generative models: variational autoencoders - CastilloS</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Generative models: variational autoencoders" />
-<meta property="og:description" content="Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://castillosebastian.github.io/variational_autoencoders/" /><meta property="og:image" content="https://castillosebastian.github.io/variational_autoencoders/featured-image.jpg"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-09-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-09-01T00:00:00+00:00" /><meta property="og:site_name" content="CastilloS" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://castillosebastian.github.io/variational_autoencoders/featured-image.jpg"/>
-<meta name="twitter:title" content="Generative models: variational autoencoders"/>
-<meta name="twitter:description" content="Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery."/>
+        <title>Generative Models: Variational Autoencoders - CastilloS</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://localhost:1313/variational_autoencoders/">
+  <meta property="og:site_name" content="CastilloS">
+  <meta property="og:title" content="Generative Models: Variational Autoencoders">
+  <meta property="og:description" content="Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-09-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-09-01T00:00:00+00:00">
+    <meta property="article:tag" content="Expectation Maximization">
+    <meta property="article:tag" content="Variational Autoencoders">
+    <meta property="article:tag" content="Deep Neural Networks">
+    <meta property="og:image" content="http://localhost:1313/variational_autoencoders/featured-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/variational_autoencoders/featured-image.jpg">
+  <meta name="twitter:title" content="Generative Models: Variational Autoencoders">
+  <meta name="twitter:description" content="Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery.">
+      <meta name="twitter:site" content="@clausecastillo">
 <meta name="application-name" content="castillos">
 <meta name="apple-mobile-web-app-title" content="castillos"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://castillosebastian.github.io/variational_autoencoders/" /><link rel="prev" href="https://castillosebastian.github.io/responsible_ai/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/variational_autoencoders/" /><link rel="prev" href="http://localhost:1313/documents_qa/" /><link rel="next" href="http://localhost:1313/genetic_algorithms/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Generative models: variational autoencoders",
+        "headline": "Generative Models: Variational Autoencoders",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/castillosebastian.github.io\/variational_autoencoders\/"
+            "@id": "http:\/\/localhost:1313\/variational_autoencoders\/"
         },"image": [{
                             "@type": "ImageObject",
-                            "url": "https:\/\/castillosebastian.github.io\/variational_autoencoders\/featured-image.jpg",
+                            "url": "http:\/\/localhost:1313\/variational_autoencoders\/featured-image.jpg",
                             "width":  6067 ,
                             "height":  3467 
-                        }],"genre": "posts","keywords": "expectation maximization, variational autoencoders, deep neural networks","wordcount":  1952 ,
-        "url": "https:\/\/castillosebastian.github.io\/variational_autoencoders\/","datePublished": "2023-09-01T00:00:00+00:00","dateModified": "2023-09-01T00:00:00+00:00","publisher": {
+                        }],"genre": "posts","keywords": "expectation maximization, variational autoencoders, deep neural networks","wordcount":  2234 ,
+        "url": "http:\/\/localhost:1313\/variational_autoencoders\/","datePublished": "2023-09-01T00:00:00+00:00","dateModified": "2023-09-01T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Castillo Claudio Sebastian"
+                "name": "xxxx"
             },"description": ""
     }
     </script></head>
-    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
@@ -64,7 +73,7 @@
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
-                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>                      
                     <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/variational_autoencoders/" selected>English</option></select>
                 </a></div>
         </div>
@@ -97,7 +106,7 @@
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/aplications/" title="">Aplications</a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+            </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/variational_autoencoders/" selected>English</option></select>
                 </a></div>
@@ -111,10 +120,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Generative models: variational autoencoders</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Castillo Claudio Sebastian</a></span>&nbsp;<span class="post-category">included in <a href="/categories/generative-models/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Generative Models</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-01">2023-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1952 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Generative Models: Variational Autoencoders</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">included in <a href="/categories/generative-models/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Generative Models</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-01">2023-09-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2234 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -129,57 +138,46 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#generative-model">Generative Model</a></li>
-        <li><a href="#the-challenge-of-maximum-likelihood-estimates-mle-for-unseen-observations">The Challenge of Maximum Likelihood Estimates (MLE) for Unseen Observations</a></li>
-        <li><a href="#marginalization-in-the-context-of-joint-probability">Marginalization in the Context of Joint Probability</a></li>
-        <li><a href="#overcoming-the-challenge-with-expectation-maximization-em">Overcoming the Challenge with Expectation Maximization (EM)</a></li>
-        <li><a href="#variational-autoencoders-vaes">Variational Autoencoders (VAEs)</a></li>
-        <li><a href="#variational-encoders-with-pytorch">Variational Encoders with Pytorch</a></li>
-      </ul>
-    </li>
+    <li><a href="#generative-model">Generative Model</a></li>
+    <li><a href="#the-challenge-of-maximum-likelihood-estimates-mle-for-unseen-observations">The Challenge of Maximum Likelihood Estimates (MLE) for Unseen Observations</a></li>
+    <li><a href="#overcoming-the-challenge-with-expectation-maximization-em">Overcoming the Challenge with Expectation Maximization (EM)</a></li>
+    <li><a href="#variational-autoencoders-vaes">Variational Autoencoders (VAEs)</a></li>
+    <li><a href="#variational-encoders-with-pytorch">Variational Encoders with Pytorch</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery.</p>
-<h3 id="generative-model">Generative Model</h3>
+<h2 id="generative-model">Generative Model</h2>
 <p>Generative models are a class of statistical models that aim to learn the underlying data distribution. Given a dataset of observed samples, one starts by selecting a distributional model parameterized by $(\theta)$. The objective is to estimate $(\theta)$ such that it aligns optimally with the observed samples.The anticipation is that it can also generalize to samples outside the training set.</p>
-<p>The optimal distribution is hence the one that maximizes the likelihood of producing the observed data, giving lower probabilities to infrequent observations and higher probabilities to the more common ones (the principle underlying this assumption is: &rsquo;the world is a boring place&rsquo; Bhiksha Raj).</p>
-<h3 id="the-challenge-of-maximum-likelihood-estimates-mle-for-unseen-observations">The Challenge of Maximum Likelihood Estimates (MLE) for Unseen Observations</h3>
+<p>The optimal distribution is hence the one that maximizes the likelihood of producing the observed data, giving lower probabilities to infrequent observations and higher probabilities to the more common ones (the principle underlying this assumption is that &rsquo;the world is a boring place&rsquo; -in words of Bhiksha Raj-).</p>
+<h2 id="the-challenge-of-maximum-likelihood-estimates-mle-for-unseen-observations">The Challenge of Maximum Likelihood Estimates (MLE) for Unseen Observations</h2>
 <p>When training generative models, a natural objective is to optimize the model parameters such that the likelihood of the observed data under the model is maximized. This method is known as <strong>Maximum Likelihood Estimation (MLE)</strong>. In mathematical terms, given observed data $X$, the MLE seeks parameters $\theta$ that maximize:</p>
 <blockquote>
-<p>$p_\theta(X)$</p>
-</blockquote>
+<p>$$p_\theta(X)$$</p></blockquote>
 <p>However, for many generative models, especially those that involve latent or unobserved variables, the likelihood term involves summing or integrating over all possible configurations of these latent variables. Mathematically, this turns into:</p>
 <blockquote>
-<p>$p_\theta(X) = \sum_{Z} p_\theta(X,Z)$<br>
-or<br>
-$p_\theta(X) = \int p_\theta(X,Z) dZ$</p>
-</blockquote>
+<p>$$p_\theta(X) = \sum_{Z} p_\theta(X,Z)$$ $$or$$ $$p_\theta(X) = \int p_\theta(X,Z) dZ$$</p></blockquote>
 <p>Computing the log-likelihood, which is often used for numerical stability and optimization ease, leads to a log of summations (for discrete latent variables) or a log of integrals (for continuous latent variables):</p>
 <blockquote>
-<p>$log p_\theta(X) = \log \sum_{Z} p_\theta(X,Z)$<br>
-or<br>
-$log p_\theta(X) = \log \int p_\theta(X,Z) dZ$</p>
-</blockquote>
-<p>These expressions are typically intractable to optimize directly due to the presence of the log-sum or log-integral operations. Where do these formulas come frome? They come forom <em>marginalization</em> in the context of joint probability.</p>
-<h3 id="marginalization-in-the-context-of-joint-probability">Marginalization in the Context of Joint Probability</h3>
+<p>$$log p_\theta(X) = \log \sum_{Z} p_\theta(X,Z)$$ $$or$$ $$log p_\theta(X) = \log \int p_\theta(X,Z) dZ$$</p></blockquote>
+<p>These expressions are typically intractable to optimize directly due to the presence of the log-sum or log-integral operations (see the info below).</p>
+<div class="details admonition info">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw" aria-hidden="true"></i>Marginalization in Joint Probability<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2 id="marginalization-in-the-context-of-joint-probability">Marginalization in the Context of Joint Probability</h2>
 <p>When discussing the computation of the joint probability for observed and missing data, the term &ldquo;marginalizing&rdquo; refers to summing or integrating over all possible outcomes of the missing data. This process provides a probability distribution based solely on the observed data. For example, let&rsquo;s assume:</p>
 <ul>
 <li>$X$ is the observed data</li>
 <li>$Z$ is the missing data</li>
 <li>The joint probability for both is represented as $p(X,Z)$</li>
 </ul>
-<p>If your primary interest lies in the distribution of $X$ and you wish to eliminate the dependence on $Z$, you&rsquo;ll need to carry out marginalization for $Z$. For discrete variables, the marginalization involves the logarithm of summation:</p>
-<blockquote>
-<p>$$ \log \left( \sum_{z} p(X,Z=z) \right),$$</p>
-</blockquote>
-<p>for continuous variables, it pertains to integration:</p>
-<blockquote>
-<p>$$ \int p(X,Z) dZ $$</p>
-</blockquote>
-<p>However, it&rsquo;s essential to note that these functions includes the log of a sum, which defies direct optimization. Can we get an approximation to this that is more tractable (without a summation or integral within the log)?</p>
-<h3 id="overcoming-the-challenge-with-expectation-maximization-em">Overcoming the Challenge with Expectation Maximization (EM)</h3>
+<p>If your primary interest lies in the distribution of $X$ and you wish to eliminate the dependence on $Z$, you&rsquo;ll need to carry out marginalization for $Z$. For discrete variables, the marginalization involves the logarithm of summation, and for continuous variables, it pertains to integration. In any case, functions that includes the log of a sum o integral defies direct optimization.</p>
+</div>
+        </div>
+    </div>
+<p>Can we get an approximation to this that is more tractable (without a summation or integral within the log)?</p>
+<h2 id="overcoming-the-challenge-with-expectation-maximization-em">Overcoming the Challenge with Expectation Maximization (EM)</h2>
 <p>To address the optimization challenge in MLE with latent variables, the <strong>Expectation Maximization (EM)</strong> algorithm is employed. The EM algorithm offers a systematic approach to iteratively estimate both the model parameters and the latent variables.</p>
 <p>The algorithm involves two main steps:</p>
 <ol>
@@ -187,22 +185,15 @@ $log p_\theta(X) = \log \int p_\theta(X,Z) dZ$</p>
 <li><strong>M-step (Maximization step)</strong>: Update the model parameters to maximize this expected log-likelihood from the E-step.</li>
 </ol>
 <p>By alternating between these two steps, EM ensures that the likelihood increases with each iteration until convergence, thus providing a practical method to fit generative models with latent variables.</p>
-<p>For E-step the <strong>Variational Lower Bound</strong> is used. Commonly referred to as the Empirical Lower BOund (ELBO), is a central concept in variational inference. This method is used to approximate complex distributions (typically posterior distributions) with simpler, more tractable ones. The ELBO is an auxiliary function that models MLE by iteratibly maximize a &rsquo;lower bound&rsquo; function</p>
-<p>Variational inference is set up as an optimization problem where the objective is to find a distribution $q$ from a simpler family of distributions that is close to the target distribution $p$. The closeness is measured using the Kullback-Leibler (KL) divergence. The ELBO serves as the objective function to be maximized in this optimization.</p>
-<p>The ELBO can be derived from the logarithm of the marginal likelihood of the observed data. Given:</p>
+<p>For E-step the <strong>Variational Lower Bound</strong> is used. Commonly referred to as the Empirical Lower BOund (ELBO), is a central concept in variational inference. This method is used to approximate complex distributions (typically posterior distributions) with simpler, more tractable ones. The ELBO is an auxiliary function that provides a lower bound to the log likelihood of the observed data. By iteratively maximizing the ELBO with respect to variational parameters, we approximate the Maximum Likelihood Estimation (MLE) of the model parameters.</p>
+<p>Let&rsquo;s reconsider our aim to maximize the log-likelihood of observations $x$ in terms of $q_\phi(z|x)$.</p>
 <blockquote>
-<p>$p(\mathbf{x})$ is the marginal likelihood of the observed data $\mathbf{x}$,</p>
-<p>$q(\mathbf{z})$ is the variational distribution over the latent variables $\mathbf{z}$,</p>
-<p>$p(\mathbf{z} | \mathbf{x})$ is the true posterior distribution of $\mathbf{z}$.</p>
-</blockquote>
-<p>The ELBO is given by:</p>
+<p>$$\log p_\theta(x) = \log \int z p_\theta(x,z)dz$$ $$ = \log \int z \frac{p_\theta(x,z)q_\phi(z|x)}{q_\phi(z|x)}dz$$ $$= \log E_{z \sim q_\phi(z|x)} \left[ \frac{p_\theta(x,z)}{q_\phi(z|x)} \right]$$ $$\geq E_z \left[ \log \frac{p_\theta(x,z)}{q_\phi(z|x)} \right] \quad \text{(by Jensen&rsquo;s inequality)}$$ $$= E_z[\log p_\theta(x,z)] + \int z q_\phi(z|x) \log \frac{1}{q_\phi(z|x)} dz$$ $$= E_z[\log p_\theta(x,z)] + H(q_\phi(z|x))$$</p></blockquote>
+<p>In the equation above, the term $H(\cdot)$ denotes the Shannon entropy. By definition, the term &ldquo;evidence&rdquo; is the value of a likelihood function evaluated with fixed parameters. With the definition of:</p>
 <blockquote>
-<p>${ELBO}(q) = \mathbb{E}_q[\log p(\mathbf{x}, \mathbf{z})] - \mathbb{E}_q[\log q(\mathbf{z})]$</p>
-</blockquote>
-<p>Where:</p>
-<p>$\mathbb{E}_q$ denotes the expectation with respect to the distribution $q$. The first term on the right-hand side measures how well the joint distribution $p(\mathbf{x}, \mathbf{z})$ is modeled by $q$. -The second term is the entropy of $q$, which acts as a regularizer. Maximizing the ELBO is equivalent to minimizing the KL divergence between the variational distribution $q$ and the true posterior $p(\mathbf{z} | \mathbf{x})$. Intuitively, by maximizing the ELBO, you&rsquo;re trying to find a balance between a distribution $q$ that closely matches the target distribution $p$ (as measured by the joint likelihood) and one that maintains uncertainty (as measured by its entropy).</p>
-<p>In SUMMARY, generative models offer a powerful approach to understanding and generating data. The challenges posed by the MLE in the presence of latent variables are effectively addressed by the EM algorithm, making it a cornerstone method in the training of many generative models.</p>
-<h3 id="variational-autoencoders-vaes">Variational Autoencoders (VAEs)</h3>
+<p>$$L = E_z[\log p_\theta(x,z)] + H(q_\phi(z|x)),$$</p></blockquote>
+<p>it turns out that $L$ sets a lower bound for the evidence of observations and maximizes $L$ will push up the log-likelihood of $x$.</p>
+<h2 id="variational-autoencoders-vaes">Variational Autoencoders (VAEs)</h2>
 <p>Variational Autoencoders are a specific type of generative model that brings together ideas from deep learning and Bayesian inference. VAEs are especially known for their application in generating new, similar data to the input data (like images or texts) and for their ability to learn latent representations of data.</p>
 <p><strong>1. Generative Models and Latent Variables</strong></p>
 <p>In generative modeling, our goal is to learn a model of the probability distribution from which a dataset is drawn. The model can then be used to generate new samples. A VAE makes a specific assumption that there exist some <em>latent variables</em> (or hidden variables) that when transformed give rise to the observed data.</p>
@@ -213,18 +204,15 @@ $log p_\theta(X) = \log \int p_\theta(X,Z) dZ$</p>
 </ol>
 <p><strong>2. Problem of Direct Inference</strong></p>
 <p>As discussed previously, direct inference for the posterior distribution $p(z|x)$ (i.e., the probability of the latent variables given the observed data) can be computationally challenging, especially when dealing with high-dimensional data or complex models. This is because:</p>
-<p>$$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$</p>
+<blockquote>
+<p>$$ p(z|x) = \frac{p(x|z) p(z)}{p(x)} $$</p></blockquote>
 <p>Here, $p(x)$ is the evidence (or marginal likelihood) which is calculated as:</p>
-<p>$$ p(x) = \int p(x|z) p(z) dz $$</p>
-<p>This integral is intractable for most interesting models.</p>
+<blockquote>
+<p>$$ p(x) = \int p(x|z) p(z) dz $$</p></blockquote>
+<p>As we saw this integral is intractable for most interesting models.</p>
 <p><strong>3. Variational Inference and ELBO</strong></p>
 <p>To sidestep the intractability of the posterior, VAEs employ <em>variational inference</em>. Instead of computing the posterior directly, we introduce a parametric approximate posterior distribution, $q_{\phi}(z|x)$, with its own parameters $\phi$.</p>
-<p>The goal now shifts to making this approximation as close as possible to the true posterior. This is done by minimizing the <em>Kullback-Leibler divergence</em> between the approximate and true posterior.</p>
-<p>The optimization objective, known as the <strong>Evidence Lower BOund (ELBO)</strong>, can be written as:</p>
-<blockquote>
-<p>$$ \text{ELBO}(\phi) = \mathbb{E}<em>{q</em>{\phi}(z|x)}[\log p(x|z)] - \text{KL}(q_{\phi}(z|x) || p(z)) $$</p>
-</blockquote>
-<p>Where KL represents the Kullback-Leibler divergence.</p>
+<p>The goal now shifts to making this approximation as close as possible to the true posterior. This is done by minimizing the <em>Kullback-Leibler divergence</em> between the approximate and true posterior using the ELBO function.</p>
 <p><strong>4. Neural Networks and Autoencoding Structure</strong></p>
 <p>In VAEs, neural networks are employed to parameterize the complex functions. Specifically:</p>
 <ol>
@@ -243,110 +231,14 @@ $log p_\theta(X) = \log \int p_\theta(X,Z) dZ$</p>
 </ol>
 <p>By the end of the training, you&rsquo;ll have a model that can generate new samples resembling your input data by simply sampling from the latent space and decoding the samples.</p>
 <p>VAEs are a powerful tools, that stay in the intersection of deep learning and probabilistic modeling, and they have a plethora of applications, especially in unsupervised learning tasks.</p>
-<h3 id="variational-encoders-with-pytorch">Variational Encoders with Pytorch</h3>
+<h2 id="variational-encoders-with-pytorch">Variational Encoders with Pytorch</h2>
 <p>Let create a basic implementation of a Variational Autoencoder (VAE) using PyTorch. The VAE will be designed to work on simple image data, such as the MNIST dataset.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span><span class="lnt">82
-</span><span class="lnt">83
-</span><span class="lnt">84
-</span><span class="lnt">85
-</span><span class="lnt">86
-</span><span class="lnt">87
-</span><span class="lnt">88
-</span><span class="lnt">89
-</span><span class="lnt">90
-</span><span class="lnt">91
-</span><span class="lnt">92
-</span><span class="lnt">93
-</span><span class="lnt">94
-</span><span class="lnt">95
-</span><span class="lnt">96
-</span><span class="lnt">97
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">torch.optim</span> <span class="k">as</span> <span class="nn">optim</span>
@@ -442,10 +334,98 @@ $log p_\theta(X) = \log \int p_\theta(X,Z) dZ$</p>
 </span></span><span class="line"><span class="cl"><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">epochs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="n">train</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">    <span class="n">test</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl">    <span class="n">test</span><span class="p">()</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Train Epoch: 1 [0/60000 (0%)]   Loss: 547.095459
+</span></span><span class="line"><span class="cl">Train Epoch: 1 [12800/60000 (21%)]  Loss: 177.320297
+</span></span><span class="line"><span class="cl">Train Epoch: 1 [25600/60000 (43%)]  Loss: 156.426804
+</span></span><span class="line"><span class="cl">Train Epoch: 1 [38400/60000 (64%)]  Loss: 137.500916
+</span></span><span class="line"><span class="cl">Train Epoch: 1 [51200/60000 (85%)]  Loss: 130.676682
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 1 Average loss: 164.3802
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 127.3049
+</span></span><span class="line"><span class="cl">Train Epoch: 2 [0/60000 (0%)]   Loss: 129.183395
+</span></span><span class="line"><span class="cl">Train Epoch: 2 [12800/60000 (21%)]  Loss: 124.367867
+</span></span><span class="line"><span class="cl">Train Epoch: 2 [25600/60000 (43%)]  Loss: 119.659966
+</span></span><span class="line"><span class="cl">Train Epoch: 2 [38400/60000 (64%)]  Loss: 120.912560
+</span></span><span class="line"><span class="cl">Train Epoch: 2 [51200/60000 (85%)]  Loss: 114.011864
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 2 Average loss: 121.6398
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 115.7936
+</span></span><span class="line"><span class="cl">Train Epoch: 3 [0/60000 (0%)]   Loss: 114.913048
+</span></span><span class="line"><span class="cl">Train Epoch: 3 [12800/60000 (21%)]  Loss: 117.442482
+</span></span><span class="line"><span class="cl">Train Epoch: 3 [25600/60000 (43%)]  Loss: 111.994392
+</span></span><span class="line"><span class="cl">Train Epoch: 3 [38400/60000 (64%)]  Loss: 112.240242
+</span></span><span class="line"><span class="cl">Train Epoch: 3 [51200/60000 (85%)]  Loss: 114.725128
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 3 Average loss: 114.6564
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 112.2248
+</span></span><span class="line"><span class="cl">Train Epoch: 4 [0/60000 (0%)]   Loss: 110.638550
+</span></span><span class="line"><span class="cl">Train Epoch: 4 [12800/60000 (21%)]  Loss: 114.595108
+</span></span><span class="line"><span class="cl">Train Epoch: 4 [25600/60000 (43%)]  Loss: 109.188904
+</span></span><span class="line"><span class="cl">Train Epoch: 4 [38400/60000 (64%)]  Loss: 111.060234
+</span></span><span class="line"><span class="cl">Train Epoch: 4 [51200/60000 (85%)]  Loss: 114.594086
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 4 Average loss: 111.6810
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 109.6389
+</span></span><span class="line"><span class="cl">Train Epoch: 5 [0/60000 (0%)]   Loss: 110.394012
+</span></span><span class="line"><span class="cl">Train Epoch: 5 [12800/60000 (21%)]  Loss: 106.082031
+</span></span><span class="line"><span class="cl">Train Epoch: 5 [25600/60000 (43%)]  Loss: 107.659363
+</span></span><span class="line"><span class="cl">Train Epoch: 5 [38400/60000 (64%)]  Loss: 107.294495
+</span></span><span class="line"><span class="cl">Train Epoch: 5 [51200/60000 (85%)]  Loss: 110.049332
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 5 Average loss: 109.9291
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 108.5438
+</span></span><span class="line"><span class="cl">Train Epoch: 6 [0/60000 (0%)]   Loss: 106.701828
+</span></span><span class="line"><span class="cl">Train Epoch: 6 [12800/60000 (21%)]  Loss: 109.286430
+</span></span><span class="line"><span class="cl">Train Epoch: 6 [25600/60000 (43%)]  Loss: 110.426498
+</span></span><span class="line"><span class="cl">Train Epoch: 6 [38400/60000 (64%)]  Loss: 106.086746
+</span></span><span class="line"><span class="cl">Train Epoch: 6 [51200/60000 (85%)]  Loss: 106.020401
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 6 Average loss: 108.7957
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 107.6961
+</span></span><span class="line"><span class="cl">Train Epoch: 7 [0/60000 (0%)]   Loss: 109.973251
+</span></span><span class="line"><span class="cl">Train Epoch: 7 [12800/60000 (21%)]  Loss: 108.430046
+</span></span><span class="line"><span class="cl">Train Epoch: 7 [25600/60000 (43%)]  Loss: 109.439484
+</span></span><span class="line"><span class="cl">Train Epoch: 7 [38400/60000 (64%)]  Loss: 110.635895
+</span></span><span class="line"><span class="cl">Train Epoch: 7 [51200/60000 (85%)]  Loss: 110.213860
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 7 Average loss: 107.9552
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 107.0711
+</span></span><span class="line"><span class="cl">Train Epoch: 8 [0/60000 (0%)]   Loss: 108.046188
+</span></span><span class="line"><span class="cl">Train Epoch: 8 [12800/60000 (21%)]  Loss: 105.081818
+</span></span><span class="line"><span class="cl">Train Epoch: 8 [25600/60000 (43%)]  Loss: 106.430084
+</span></span><span class="line"><span class="cl">Train Epoch: 8 [38400/60000 (64%)]  Loss: 106.380074
+</span></span><span class="line"><span class="cl">Train Epoch: 8 [51200/60000 (85%)]  Loss: 103.021561
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 8 Average loss: 107.3205
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 106.6568
+</span></span><span class="line"><span class="cl">Train Epoch: 9 [0/60000 (0%)]   Loss: 106.435928
+</span></span><span class="line"><span class="cl">Train Epoch: 9 [12800/60000 (21%)]  Loss: 105.544891
+</span></span><span class="line"><span class="cl">Train Epoch: 9 [25600/60000 (43%)]  Loss: 102.952591
+</span></span><span class="line"><span class="cl">Train Epoch: 9 [38400/60000 (64%)]  Loss: 103.070465
+</span></span><span class="line"><span class="cl">Train Epoch: 9 [51200/60000 (85%)]  Loss: 105.689209
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 9 Average loss: 106.7969
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 106.0421
+</span></span><span class="line"><span class="cl">Train Epoch: 10 [0/60000 (0%)]  Loss: 106.396545
+</span></span><span class="line"><span class="cl">Train Epoch: 10 [12800/60000 (21%)] Loss: 105.038795
+</span></span><span class="line"><span class="cl">Train Epoch: 10 [25600/60000 (43%)] Loss: 105.274765
+</span></span><span class="line"><span class="cl">Train Epoch: 10 [38400/60000 (64%)] Loss: 104.411789
+</span></span><span class="line"><span class="cl">Train Epoch: 10 [51200/60000 (85%)] Loss: 104.329590
+</span></span><span class="line"><span class="cl">====&gt; Epoch: 10 Average loss: 106.3689
+</span></span><span class="line"><span class="cl">====&gt; Test set loss: 105.5585</span></span></code></pre></div></div>
+<div class="details admonition note">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Bibliography<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2 id="bibliography">Bibliography</h2>
+<ul>
+<li>Doersch, Carl. 2021. “Tutorial on Variational Autoencoders.” January 3, 2021. <a href="http://arxiv.org/abs/1606.05908" target="_blank" rel="noopener noreffer ">http://arxiv.org/abs/1606.05908</a>.</li>
+<li>Kingma, Diederik P., and Max Welling. 2019. “An Introduction to Variational Autoencoders.” Foundations and Trends® in Machine Learning 12 (4): 307–92. <a href="https://doi.org/10.1561/2200000056" target="_blank" rel="noopener noreffer ">https://doi.org/10.1561/2200000056</a>.</li>
+<li>Ramchandran, Siddharth, Gleb Tikhonov, Otto Lönnroth, Pekka Tiikkainen, and Harri Lähdesmäki. 2022. “Learning Conditional Variational Autoencoders with Missing Covariates.” March 2, 2022. <a href="http://arxiv.org/abs/2203.01218" target="_blank" rel="noopener noreffer ">http://arxiv.org/abs/2203.01218</a>.</li>
+<li>Yunfan Jiang, ELBO — What &amp; Why,Jan 11, 2021, in <a href="https://yunfanj.com/blog/2021/01/11/ELBO.html" target="_blank" rel="noopener noreffer ">https://yunfanj.com/blog/2021/01/11/ELBO.html</a>.</li>
+</ul>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+        </div>
+    </div>
+<p>Pic by <a href="https://www.freepik.es/foto-gratis/laboratorio-computacion-brillante-equipo-moderno-tecnologia-generada-ia_41451597.htm">@vecstock</a>, <a href="https://www.freepik.es/">Freepik</a></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -456,33 +436,35 @@ $log p_\theta(X) = \log \int p_\theta(X,Z) dZ$</p>
                             <a class="link-to-markdown" href="/variational_autoencoders/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://castillosebastian.github.io/variational_autoencoders/" data-title="Generative models: variational autoencoders" data-via="clausecastillo" data-hashtags="expectation maximization,variational autoencoders,deep neural networks"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://castillosebastian.github.io/variational_autoencoders/" data-hashtag="expectation maximization"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://castillosebastian.github.io/variational_autoencoders/" data-title="Generative models: variational autoencoders"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://castillosebastian.github.io/variational_autoencoders/" data-title="Generative models: variational autoencoders"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://castillosebastian.github.io/variational_autoencoders/" data-title="Generative models: variational autoencoders"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:1313/variational_autoencoders/" data-title="Generative Models: Variational Autoencoders" data-via="clausecastillo" data-hashtags="expectation maximization,variational autoencoders,deep neural networks"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:1313/variational_autoencoders/" data-title="Generative Models: Variational Autoencoders"><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/variational_autoencoders/" data-hashtag="expectation maximization"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/variational_autoencoders/" data-title="Generative Models: Variational Autoencoders"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/variational_autoencoders/" data-title="Generative Models: Variational Autoencoders"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/variational_autoencoders/" data-title="Generative Models: Variational Autoencoders"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/variational_autoencoders/" data-title="Generative Models: Variational Autoencoders" data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fvariational_autoencoders%2f&amp;text=Generative%20Models%3a%20Variational%20Autoencoders" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/expectation-maximization/">expectation maximization</a>,&nbsp;<a href="/tags/variational-autoencoders/">variational autoencoders</a>,&nbsp;<a href="/tags/deep-neural-networks/">deep neural networks</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/expectation-maximization/">Expectation Maximization</a>,&nbsp;<a href="/tags/variational-autoencoders/">Variational Autoencoders</a>,&nbsp;<a href="/tags/deep-neural-networks/">Deep Neural Networks</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/responsible_ai/" class="prev" rel="prev" title="Responsible AI Tools"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Responsible AI Tools</a></div>
+    <div class="post-nav"><a href="/documents_qa/" class="prev" rel="prev" title="Retrieval-augmented generation for Chatbot"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Retrieval-augmented generation for Chatbot</a>
+            <a href="/genetic_algorithms/" class="next" rel="next" title="Can we imitate Nature&#39;s evolutionary abilities? ">Can we imitate Nature's evolutionary abilities? <i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
-<div id="comments"><div id="commento" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
-            </noscript></div></article></div>
+</article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.118.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Castillo Claudio Sebastian</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
         <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
                 <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
-            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/algoliasearch/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/algoliasearch/lite/browser.umd.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/contrib/auto-render.min.js"></script><script src="/lib/katex/contrib/copy-tex.min.js"></script><script src="/lib/katex/contrib/mhchem.min.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script></body>
 </html>

@@ -1,25 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>CastilloS</title>
-        <link>https://castillosebastian.github.io/es/</link>
+        <link>http://localhost:1313/es/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Thu, 01 Jun 2023 10:49:29 -0300</lastBuildDate>
-            <atom:link href="https://castillosebastian.github.io/es/index.xml" rel="self" type="application/rss+xml" />
+        <generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 01 Jun 2023 10:49:29 -0300</lastBuildDate>
+            <atom:link href="http://localhost:1313/es/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Analisis Estadístico y Justicia</title>
-    <link>https://castillosebastian.github.io/es/analitics_in_judiciary/</link>
+    <link>http://localhost:1313/es/analitics_in_judiciary/</link>
     <pubDate>Wed, 01 Jun 2016 21:57:40 &#43;0800</pubDate>
     <author>CastilloS</author>
-    <guid>https://castillosebastian.github.io/es/analitics_in_judiciary/</guid>
+    <guid>http://localhost:1313/es/analitics_in_judiciary/</guid>
     <description><![CDATA[<p>Este post es un recorrido de la transformación que en materia de estadística está llevando a cabo el Poder Judicial de Entre Ríos, Argentina, donde trabajo como Director.</p>]]></description>
 </item>
 <item>
     <title>Feature Selection: Intro</title>
-    <link>https://castillosebastian.github.io/es/feature_selection/</link>
+    <link>http://localhost:1313/es/feature_selection/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/es/feature_selection/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/es/feature_selection/</guid>
     <description><![CDATA[<p>La selección de características es un tema importante dentro del <strong>aprendizaje automático</strong> (<strong>marchine learning</strong>) debido a la dimensionalidad que presentan los datos dentro de este dominio. Frecuentemente los individuos con los que se trabaja están representados por vectores de N dimensiones (i.e.regularmente mediciones de un proceso o fenómeno), que se necesitan procesar para resolver un problema. Estas dimensiones muchas veces superan la cantidad de individuos disponibles planteando serios problemas a los algoritmos de aprendizaje, cuya complejidad (en términos de parámetros) crece conforme crece la dimensionalidad.</p>
 <p>Ante esta situación aparece la necesidad de buscar un subconjunto de características apropiado que permita atacar el problema de manera efectiva. Si los problemas en ML crecen exponencialmente con las dimensiones de los datos (tenemos la fórmula donde cada problema (2)N, si N = 50 el problema se vuelve intratable para búsquedas exhaustivas) se vuelven importante métodos que puedan abordar la dimensionalidad. Aparecen los métodos de optimización combinatoria.</p>
 <p>Podemos agrupar esos métodos siguiendo tres enfoques en el diseño de la solución:</p>

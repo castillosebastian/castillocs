@@ -2,71 +2,108 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://castillosebastian.github.io/variational_autoencoders/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://castillosebastian.github.io/responsible_ai/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/analitics_in_judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/syntheticdata_and_featureselection/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/fundational_models/</loc><lastmod>2024-04-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/genetic_algorithms/</loc><lastmod>2023-10-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/variational_autoencoders/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/documents_qa/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/responsible_ai/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/analitics_in_judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/es/analitics_in_judiciary/"
+                        href="http://localhost:1313/es/analitics_in_judiciary/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/analitics_in_judiciary/"
+                    href="http://localhost:1313/analitics_in_judiciary/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>http://localhost:1313/categories/ai/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/es/"
+                        href="http://localhost:1313/es/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/"
+                    href="http://localhost:1313/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/categories/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>http://localhost:1313/categories/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/es/categories/"
+                        href="http://localhost:1313/es/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/categories/"
+                    href="http://localhost:1313/categories/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/tags/deep-neural-networks/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://castillosebastian.github.io/tags/expectation-maximization/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://castillosebastian.github.io/categories/generative-models/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://castillosebastian.github.io/posts/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>http://localhost:1313/tags/feature-selection/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/es/posts/"
+                        href="http://localhost:1313/es/tags/feature-selection/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/posts/"
+                    href="http://localhost:1313/tags/feature-selection/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/tags/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>http://localhost:1313/tags/generative-ai/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/machine-learning/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/es/tags/"
+                        href="http://localhost:1313/es/tags/machine-learning/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/tags/"
+                    href="http://localhost:1313/tags/machine-learning/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/tags/variational-autoencoders/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://castillosebastian.github.io/tags/bias/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/tags/fairness/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/tags/neural-networks/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/categories/responsible-ai/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/posts/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="es"
-                        href="https://castillosebastian.github.io/es/aplications/"
+                        href="http://localhost:1313/es/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://castillosebastian.github.io/aplications/"
+                    href="http://localhost:1313/posts/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/categories/dashboards/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/categories/data-driven-culture/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/tags/judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/tags/public-service/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>http://localhost:1313/tags/synthetic-data/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://localhost:1313/tags/</loc><lastmod>2025-03-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="es"
+                        href="http://localhost:1313/es/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/tags/"
+                    /></url><url>
+            <loc>http://localhost:1313/tags/fundational-models/</loc><lastmod>2024-04-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/generativeai/</loc><lastmod>2024-04-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/llm/</loc><lastmod>2024-04-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/nlp/</loc><lastmod>2024-04-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/transformer/</loc><lastmod>2024-04-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/evolutionary-algorithms/</loc><lastmod>2023-10-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/categories/genetic-algorithms/</loc><lastmod>2023-10-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/heuristic-search/</loc><lastmod>2023-10-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/optimization/</loc><lastmod>2023-10-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/chatbot/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/categories/chatbot&#43;/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/deep-neural-networks/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/expectation-maximization/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/categories/generative-models/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/question-answering/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/variational-autoencoders/</loc><lastmod>2023-09-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/bias/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/fairness/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/neural-networks/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/categories/responsible-ai/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="es"
+                        href="http://localhost:1313/es/aplications/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://localhost:1313/aplications/"
+                    /></url><url>
+            <loc>http://localhost:1313/categories/dashboards/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/categories/data-driven-dulture/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/judiciary/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/tags/public-service/</loc><lastmod>2020-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

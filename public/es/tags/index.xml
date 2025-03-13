@@ -1,47 +1,46 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Tags - Etiqueta - CastilloS</title>
-        <link>https://castillosebastian.github.io/es/tags/</link>
+        <link>http://localhost:1313/es/tags/</link>
         <description>Tags - Etiqueta - CastilloS</description>
-        <generator>Hugo -- gohugo.io</generator><language>es</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Thu, 01 Jun 2023 10:49:29 -0300</lastBuildDate><atom:link href="https://castillosebastian.github.io/es/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>feature selection</title>
-    <link>https://castillosebastian.github.io/es/tags/feature-selection/</link>
+        <generator>Hugo -- gohugo.io</generator><language>es</language><lastBuildDate>Thu, 01 Jun 2023 10:49:29 -0300</lastBuildDate><atom:link href="http://localhost:1313/es/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Feature Selection</title>
+    <link>http://localhost:1313/es/tags/feature-selection/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/es/tags/feature-selection/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/es/tags/feature-selection/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>machine learning</title>
-    <link>https://castillosebastian.github.io/es/tags/machine-learning/</link>
+    <title>Machine Learning</title>
+    <link>http://localhost:1313/es/tags/machine-learning/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/es/tags/machine-learning/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/es/tags/machine-learning/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>metaheuristic</title>
-    <link>https://castillosebastian.github.io/es/tags/metaheuristic/</link>
+    <title>Metaheuristic</title>
+    <link>http://localhost:1313/es/tags/metaheuristic/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/es/tags/metaheuristic/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/es/tags/metaheuristic/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Cultura Analítica</title>
-    <link>https://castillosebastian.github.io/es/tags/cultura-anal%C3%ADtica/</link>
+    <link>http://localhost:1313/es/tags/cultura-anal%C3%ADtica/</link>
     <pubDate>Wed, 01 Jun 2016 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/es/tags/cultura-anal%C3%ADtica/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/es/tags/cultura-anal%C3%ADtica/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Tableros</title>
-    <link>https://castillosebastian.github.io/es/tags/tableros/</link>
+    <link>http://localhost:1313/es/tags/tableros/</link>
     <pubDate>Wed, 01 Jun 2016 21:57:40 &#43;0800</pubDate>
-    <author>Castillo Claudio Sebastian</author>
-    <guid>https://castillosebastian.github.io/es/tags/tableros/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/es/tags/tableros/</guid>
     <description><![CDATA[]]></description>
 </item>
 </channel>

@@ -2,66 +2,82 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://castillosebastian.github.io/es/analitics_in_judiciary/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/es/analitics_in_judiciary/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/analitics_in_judiciary/"
+                        href="http://localhost:1313/analitics_in_judiciary/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/es/analitics_in_judiciary/"
+                    href="http://localhost:1313/es/analitics_in_judiciary/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/es/feature_selection/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/es/feature_selection/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/es/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/"
+                        href="http://localhost:1313/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/es/"
+                    href="http://localhost:1313/es/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/es/categories/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/es/categories/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/categories/"
+                        href="http://localhost:1313/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/es/categories/"
+                    href="http://localhost:1313/es/categories/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/es/categories/evolutionary-algorithms/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/tags/feature-selection/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/tags/machine-learning/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/tags/metaheuristic/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/posts/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/es/categories/evolutionary-algorithms/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/es/tags/feature-selection/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/posts/"
+                        href="http://localhost:1313/tags/feature-selection/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/es/posts/"
+                    href="http://localhost:1313/es/tags/feature-selection/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/es/tags/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/es/tags/machine-learning/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/tags/"
+                        href="http://localhost:1313/tags/machine-learning/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/es/tags/"
+                    href="http://localhost:1313/es/tags/machine-learning/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/es/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://localhost:1313/es/tags/metaheuristic/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/es/posts/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://castillosebastian.github.io/aplications/"
+                        href="http://localhost:1313/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="es"
-                    href="https://castillosebastian.github.io/es/aplications/"
+                    href="http://localhost:1313/es/posts/"
                     /></url><url>
-            <loc>https://castillosebastian.github.io/es/tags/cultura-anal%C3%ADtica/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/categories/poder-judicial/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/categories/sector-p%C3%BAblico/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://castillosebastian.github.io/es/tags/tableros/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>http://localhost:1313/es/tags/</loc><lastmod>2023-06-01T21:29:01&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="es"
+                    href="http://localhost:1313/es/tags/"
+                    /></url><url>
+            <loc>http://localhost:1313/es/aplications/</loc><lastmod>2019-08-02T11:04:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="http://localhost:1313/aplications/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="es"
+                    href="http://localhost:1313/es/aplications/"
+                    /></url><url>
+            <loc>http://localhost:1313/es/tags/cultura-anal%C3%ADtica/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/es/categories/poder-judicial/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/es/categories/sector-p%C3%BAblico/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://localhost:1313/es/tags/tableros/</loc><lastmod>2022-01-01T16:45:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

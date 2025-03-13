@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Can we imitate Nature&#39;s evolutionary abilities?  - CastilloS</title><meta name="Description" content="This is my cool site"><meta property="og:url" content="http://localhost:1313/genetic_algorithms/">
+  <meta property="og:site_name" content="CastilloS">
+  <meta property="og:title" content="Can we imitate Nature&#39;s evolutionary abilities? ">
+  <meta property="og:description" content="In the rich theatre of Nature, few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. Similarly, in the field of artificial intelligence, Genetic Algorithms stand among the select few that have successfully harnessed the principles of evolution for optimization. In this post, I will discuss these techniques that solve complex problems through an evolutionary process, leading to optimal or near-optimal solutions.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-10-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-01T00:00:00+00:00">
+    <meta property="article:tag" content="Evolutionary Algorithms">
+    <meta property="article:tag" content="Heuristic Search">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Optimization">
+    <meta property="og:image" content="http://localhost:1313/genetic_algorithms/featured-image.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/genetic_algorithms/featured-image.jpg">
+  <meta name="twitter:title" content="Can we imitate Nature&#39;s evolutionary abilities? ">
+  <meta name="twitter:description" content="In the rich theatre of Nature, few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. Similarly, in the field of artificial intelligence, Genetic Algorithms stand among the select few that have successfully harnessed the principles of evolution for optimization. In this post, I will discuss these techniques that solve complex problems through an evolutionary process, leading to optimal or near-optimal solutions.">
+      <meta name="twitter:site" content="@clausecastillo">
+<meta name="application-name" content="castillos">
+<meta name="apple-mobile-web-app-title" content="castillos"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/genetic_algorithms/" /><link rel="prev" href="http://localhost:1313/variational_autoencoders/" /><link rel="next" href="http://localhost:1313/fundational_models/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/css/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Can we imitate Nature's evolutionary abilities? ",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/genetic_algorithms\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "http:\/\/localhost:1313\/genetic_algorithms\/featured-image.jpg",
+                            "width":  1235 ,
+                            "height":  429 
+                        }],"genre": "posts","keywords": "evolutionary algorithms, heuristic search, machine learning, optimization","wordcount":  4309 ,
+        "url": "http:\/\/localhost:1313\/genetic_algorithms\/","datePublished": "2023-10-01T00:00:00+00:00","dateModified": "2023-10-01T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="CastilloS">CastilloS</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/aplications/"> Aplications </a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/genetic_algorithms/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="CastilloS">CastilloS</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/aplications/" title="">Aplications</a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/genetic_algorithms/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Can we imitate Nature's evolutionary abilities? </h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">included in <a href="/categories/genetic-algorithms/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Genetic Algorithms</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-01">2023-10-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;4309 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;21 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/genetic_algorithms/featured-image.jpg"
+        data-srcset="/genetic_algorithms/featured-image.jpg, /genetic_algorithms/featured-image.jpg 1.5x, /genetic_algorithms/featured-image.jpg 2x"
+        data-sizes="auto"
+        alt="/genetic_algorithms/featured-image.jpg"
+        title="/genetic_algorithms/featured-image.jpg" /></div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#genetic-algorithms">GENETIC ALGORITHMS</a>
+      <ul>
+        <li><a href="#some-biological-context-related-to-ga">Some biological context related to GA</a></li>
+        <li><a href="#the-essence-of-human-like-optimization">The essence of human-like optimization</a></li>
+        <li><a href="#search-for-solutions">Search for solutions</a></li>
+        <li><a href="#encoding-of-a-chromosome">Encoding of a Chromosome</a></li>
+        <li><a href="#crossover">Crossover</a></li>
+        <li><a href="#mutation">Mutation</a></li>
+        <li><a href="#selection">Selection</a></li>
+      </ul>
+    </li>
+    <li><a href="#quick-example-of-ga">Quick example of GA</a>
+      <ul>
+        <li><a href="#set-the-parameters">Set the parameters</a></li>
+        <li><a href="#creator">Creator</a></li>
+        <li><a href="#toolbox">Toolbox</a></li>
+        <li><a href="#the-evaluation-function">The Evaluation Function</a></li>
+        <li><a href="#the-genetic-operators">The Genetic Operators</a></li>
+        <li><a href="#evolving-the-population">Evolving the Population</a></li>
+        <li><a href="#creating-the-population">Creating the Population</a></li>
+        <li><a href="#evaluating-the-population">Evaluating the Population</a></li>
+        <li><a href="#the-main-loop">The Main Loop</a></li>
+        <li><a href="#evolution-process">Evolution process:</a></li>
+        <li><a href="#solution">Solution</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>In the rich theatre of Nature, few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. Similarly, in the field of artificial intelligence, Genetic Algorithms stand among the select few that have successfully harnessed the principles of evolution for optimization. In this post, I will discuss these techniques that solve complex problems through an evolutionary process, leading to optimal or near-optimal solutions.</p>
+<h2 id="genetic-algorithms">GENETIC ALGORITHMS</h2>
+<p>Few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. With its astonishing ability to hover in place and dart with unparalleled agility, this little bird serves as a living testament to the power of natural selection in fine-tuning species for specific ecological niches. Much like this remarkable creature, Genetic Algorithms (GA) stand as a testament to the ingenuity of artificial intelligence. These algorithms, part of the broader field of evolutionary computing, harness the principles of natural evolution to find optimal or near-optimal solutions to complex problems. Just as the hummingbird has evolved to become a master of aerodynamic efficiency, Genetic Algorithms evolve candidate solutions to arrive at the best possible answer, making them invaluable tools in various sectors from engineering to data science.</p>
+<h3 id="some-biological-context-related-to-ga">Some biological context related to GA</h3>
+<p>Genetic algorithms, a subset of the field of evolutionary computing in artificial intelligence, draw their inspiration from Darwin&rsquo;s theory of evolution to find the most fit solutions to complex problems. The concept of evolutionary computing itself dates back to the 1960s, initiated by Rechenberg&rsquo;s work on &lsquo;Evolution Strategies.&rsquo; It was further advanced by John Holland, who not only conceptualized Genetic Algorithms but also enriched the domain through his seminal book &lsquo;Adaption in Natural and Artificial Systems&rsquo; published in 1975. Adding another layer to this, John Koza in 1992 employed genetic algorithms to evolve LISP programs for specific tasks, coining the term &lsquo;genetic programming&rsquo; for his approach.</p>
+<p>As a nature-inspired procedure, Genetic Algorithms (GA) are fundamentally built upon key biological concepts. For instance, every living organism is composed of cells, each containing a uniform set of chromosomes. These chromosomes, essentially strings of DNA, act as blueprints for the entire organism. They consist of individual genes &mdash;blocks of DNA&mdash; that encode specific proteins. In simpler terms, each gene governs a particular trait, such as eye color, with various possible configurations for that trait, known as alleles. Each gene occupies a designated position on the chromosome, referred to as its locus. The full structure of an organism&rsquo;s genetic material is called its genome, and a specific set of genes within that genome constitutes its genotype. This genotype, influenced by developments after birth, lays the foundation for the organism&rsquo;s phenotype, shaping both its physical and mental attributes.</p>
+<p>Evolution chiefly involves generational changes, making reproduction another cornerstone in the understanding of GA. During natural reproduction, a process known as recombination or crossover occurs first, wherein genes from both parents merge to create a new chromosome, thus forming a new individual. This offspring may then undergo mutations, which are slight alterations in DNA elements, primarily induced by errors during the gene-copying process.</p>
+<p>Lastly, an organism&rsquo;s fitness is gauged by its ability to survive and thrive throughout its lifetime, which -in the contexto of an optimization problems- means that the &ldquo;fitness&rdquo; of a particular solution is measured by how well it satisfies the set criteria or objectives of the problem at hand.</p>
+<h3 id="the-essence-of-human-like-optimization">The essence of human-like optimization</h3>
+<p>When we talk about optimization, whether in business decisions or algorithmic computations, the ultimate aim is to enhance performance. As Goldberg (1989) explains:</p>
+<blockquote>
+<p><em>What are we trying to accomplish when we optimize? Optimization seeks to improve performance toward some optimal point or points. Note that this definition has two parts: 1) we seek improvement to approach some 2) optimal point. There is a clear distinction between the process of improvement and the destination or optimum itself. Yet, in judging optimization procedures, we commonly focus solely upon convergence (does the method reach the optimum?) and forget entirely about interim performance.</em></p></blockquote>
+<p>These ideas are particularly crucial in Genetic Algorithms where we deal with complex search spaces comprising of all feasible solutions to a problem. Each solution can be represented as a point in this space and evaluated based on its &lsquo;fitness&rsquo; or suitability to the problem at hand. Traditional perspectives on optimization often focus narrowly on convergence while overlooking the importance of intermediate performance levels. This inclination likely finds its roots in the calculus-based origins of optimization theories. However, such a viewpoint doesn&rsquo;t fit naturally with complex systems or real-world decision-making scenarios, such as in business. Here, the emphasis isn&rsquo;t necessarily on achieving a singular &lsquo;best&rsquo; outcome but rather on making quality decisions within available resources. Success is often relative to competition and context, aiming for a &lsquo;satisficing&rsquo; level of performance (Simon, 1969).</p>
+<p>Applying this more nuanced understanding of optimization to Genetic Algorithms means recognizing that the journey toward the optimal is as significant as the destination itself. Within the search space, GA operates by generating new potential solutions as evolution progresses, each with its own fitness value. The optimization process thus becomes dynamic, continuously updating as new points are discovered in the search space. In complex systems, the goal isn&rsquo;t merely to locate an extreme value (minimum or maximum) but to progressively improve, even if reaching the &lsquo;perfect&rsquo; optimum may be elusive.</p>
+<p>In sum, when using Genetic Algorithms for optimization, the objective extends beyond mere convergence to an optimal point. The focus is also on the quality of interim solutions, which is essential for handling complex systems where &lsquo;good enough&rsquo; often suffices. It&rsquo;s not merely about finding the best solution but about consistently striving for better ones.&quot;</p>
+<h3 id="search-for-solutions">Search for solutions</h3>
+<p>In genetic algorithms, the search for a solution is carried on through an evolutionary process that begins with a collection of individuals, commonly referred to as a &lsquo;population&rsquo;. Each individual in this population is represented by its own unique chromosome, which is essentially an encoded set of attributes. Initially, this population is often generated randomly, representing a diverse range of potential solutions to the problem at hand.</p>
+<p>Members of one population are selected to create a new generation, guided by the aspiration that this new set of individuals will outperform the preceding ones. To achieve this aim, individuals are selected based on their &lsquo;fitness&rsquo;&mdash;a measure of their suitability for solving the given problem. The higher their fitness, the greater their chance of being chosen to produce offspring. To quantify this fitness, we employ a fitness function (also known as an evaluation function) that takes an individual as input and returns a scalar value. This numerical output enables us to compare the fitness levels of different individuals within the population.</p>
+<p>This evolutionary cycle continues until a certain condition is met, such as reaching a predetermined number of generations or achieving a sufficient improvement in the best solution.</p>
+<p><strong>Procedure</strong></p>
+<ol>
+<li><strong>[Start]</strong> Generate a random population of <code>n</code> chromosomes (suitable solutions for the problem)</li>
+<li><strong>[Fitness]</strong> Evaluate the fitness <code>f(x)</code> of each chromosome <code>x</code> in the population</li>
+<li><strong>[New Population]</strong> Create a new population by repeating the following steps until the new population is complete:
+<ol>
+<li><strong>[Selection]</strong> Select two parent chromosomes from a population according to their fitness (the better the fitness, the bigger the chance to be selected).</li>
+<li><strong>[Crossover]</strong> With a crossover probability, cross over the parents to form new offspring (children). If no crossover was performed, the offspring is an exact copy of the parents.</li>
+<li><strong>[Mutation]</strong> With a mutation probability, mutate new offspring at each locus (position in chromosome).</li>
+<li><strong>[Accepting]</strong> Place new offspring in the new population.</li>
+</ol>
+</li>
+<li><strong>[Replace]</strong> Use the new generated population for a further run of the algorithm.</li>
+<li><strong>[Test]</strong> If the end condition is satisfied, stop, and return the best solution in the current population.</li>
+<li><strong>[Loop]</strong> Go to step 2.</li>
+</ol>
+<h3 id="encoding-of-a-chromosome">Encoding of a Chromosome</h3>
+<p>A chromosome encapsulates the information of the solution it represents. The most common form of encoding is a binary string. For instance:</p>
+<ul>
+<li><strong>Chromosome 1</strong>: <code>1101100100110110</code></li>
+<li><strong>Chromosome 2</strong>: <code>1101111000011110</code></li>
+</ul>
+<p>In this binary encoding, each bit could signify certain characteristics of the solution. Alternatively, the entire string could represent a numerical value, an approach often employed in basic GA implementations. However, encoding can vary depending on the problem at hand. For example, one could use integer or real numbers, or even encode permutations.</p>
+<h3 id="crossover">Crossover</h3>
+<p>Once the encoding method is chosen, the next step is the crossover operation. Crossover blends genes from parent chromosomes to produce new offspring. The simplest method involves picking a random crossover point and merging parts of the two parent chromosomes. Here&rsquo;s a quick illustration (where <code>|</code> indicates the crossover point):</p>
+<ul>
+<li><strong>Chromosome 1</strong>: <code>11011 | 00100110110</code></li>
+<li><strong>Chromosome 2</strong>: <code>11010 | 11000011110</code></li>
+<li><strong>Offspring 1</strong>: <code>11011 | 11000011110</code></li>
+<li><strong>Offspring 2</strong>: <code>11010 | 00100110110</code></li>
+</ul>
+<p>Multiple crossover points can also be utilized, and the complexity of the crossover operation is often dictated by the type of encoding used.</p>
+<p>The crossover probability dictates the frequency of crossover operations. If crossover is bypassed, the offspring become exact replicas of their parents. On the other hand, if crossover is performed, the offspring inherit traits from both parents&rsquo; chromosomes.</p>
+<ul>
+<li><strong>100% Crossover Probability</strong>: All offspring are created through crossover.</li>
+<li><strong>0% Crossover Probability</strong>: The new generation is produced using exact copies of the chromosomes from the previous generation. Note that this doesn&rsquo;t necessarily mean the new generation will be identical to the old one.</li>
+</ul>
+<p>The objective of crossover is to combine the advantageous traits from each parent, thereby generating improved offspring. However, it&rsquo;s often beneficial to allow a portion of the older population to continue into the next generation.</p>
+<h3 id="mutation">Mutation</h3>
+<p>Following crossover, mutation comes into play. The purpose of mutation is to avoid convergence of the entire population to a local optimum. It involves making random changes to the offspring generated by the crossover. In the case of binary encoding, this could mean flipping random bits from 1 to 0 or vice versa. For example:</p>
+<ul>
+<li><strong>Original Offspring 1</strong>: <code>1101111000011110</code></li>
+<li><strong>Original Offspring 2</strong>: <code>1101100100110110</code></li>
+<li><strong>Mutated Offspring 1</strong>: <code>1100111000011110</code></li>
+<li><strong>Mutated Offspring 2</strong>: <code>1101101100110110</code></li>
+</ul>
+<p>Like crossover, the specific technique used for mutation largely depends on the chosen encoding method. For instance, if permutations are being encoded, mutation could be executed by swapping two genes.</p>
+<p>Mutation probability determines how frequently mutations will occur within a chromosome. In the absence of mutation, the offspring are produced either directly following crossover or as direct copies, with no changes applied.</p>
+<ul>
+<li><strong>100% Mutation Probability</strong>: The entire chromosome undergoes mutation.</li>
+<li><strong>0% Mutation Probability</strong>: No changes occur within the chromosome.</li>
+</ul>
+<p>Mutation serves as a mechanism to prevent the genetic algorithm from converging to local optima. However, excessive mutation is counterproductive, as the algorithm may essentially devolve into a random search.</p>
+<h3 id="selection">Selection</h3>
+<p>As outlined early, chromosomes are selected from the population to serve as parents for the crossover operation. The challenge lies in deciding which chromosomes to select. Darwin&rsquo;s theory of evolution suggests that the fittest individuals are more likely to survive and produce offspring. There are several methods for selecting these &ldquo;fit&rdquo; chromosomes, such as roulette wheel selection, Boltzmann selection, tournament selection, rank selection, steady-state selection, and others. This sections will describe some of these methods.</p>
+<p><strong>Roulette Wheel Selection</strong></p>
+<p>In this method, parents are selected based on their fitness levels. The fitter the chromosome, the higher the chance it has of being selected. Imagine a roulette wheel where each section is proportional to the fitness value of a chromosome. A marble is rolled on this wheel, and the chromosome where it stops is selected. Essentially, chromosomes with higher fitness values have larger sections and are more likely to be chosen.</p>
+<p>Here&rsquo;s how the algorithm works:</p>
+<ol>
+<li><strong>[Sum]</strong> Calculate the sum <code>( S )</code> of all chromosome fitnesses in the population.</li>
+<li><strong>[Select]</strong> Generate a random number <code>( r )</code> from the interval <code>( (0, S) )</code>.</li>
+<li><strong>[Loop]</strong> Iterate through the population, summing fitnesses from 0 to <code>( s )</code>. Stop and return the chromosome when <code>( s &gt; r )</code>.</li>
+</ol>
+<p><strong>Rank Selection</strong></p>
+<p>Roulette wheel selection may become problematic when there are large disparities in fitness values. In such cases, rank selection can be more appropriate. In this method, chromosomes are first ranked. Each chromosome then receives a fitness score based on this ranking, from 1 (least fit) to ( N ) (most fit), where ( N ) is the number of chromosomes in the population.</p>
+<p><strong>Steady-State Selection</strong></p>
+<p>This isn&rsquo;t a specific method of selecting parents, but rather an approach to population management. In this model, a large portion of the existing chromosomes can survive to the next generation. The basic idea is to select a few good chromosomes for creating new offspring, remove some less-fit chromosomes, and place the new offspring in their spots.</p>
+<p><strong>Elitism</strong></p>
+<p>Elitism is an approach where the best chromosome(s) are directly transferred to the next generation to ensure that the optimal solutions found so far are not lost. This can significantly improve the performance of a GA.</p>
+<h2 id="quick-example-of-ga">Quick example of GA</h2>
+<p>The following example aims to showcase the capabilities of genetic algorithms and provide a quick overview of the Distributed Evolutionary Algorithms in Python <a href="https://deap.readthedocs.io/en/master/" target="_blank" rel="noopener noreffer ">DEAP</a> framework. DEAP is a Python library specifically designed for evolutionary computing. In this toy example, our objective is straightforward: we aim to find the minimum value of a function, which will be presented in the subsequent code cell, within the range [−33,33]. This example is adapted from the excellent &lsquo;Neural Network&rsquo; seminar course offered at UTN-Paraná 2023, which is taught by the distinguished <a href="http://sinc.unl.edu.ar/staff/matias-gerard/" target="_blank" rel="noopener noreffer ">Dr.Matías Gerard</a>.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Función a optimizar.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">z</span><span class="o">=-</span><span class="mf">20.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">y</span><span class="p">)))</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">+</span><span class="mi">20</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">z</span></span></span></code></pre></div></div>
+<p>This function gives the following output evaluated in the range [-33, 33].</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/genetic_algorithms/function.png"
+        data-srcset="/genetic_algorithms/function.png, /genetic_algorithms/function.png 1.5x, /genetic_algorithms/function.png 2x"
+        data-sizes="auto"
+        alt="/genetic_algorithms/function.png"
+        title="/genetic_algorithms/function.png" width="801" height="690" /></p>
+<p>As we can see, the function is simple and has a global minimum within the specified range, with no local minima. The evolutionary algorithm should solve it without difficulty.</p>
+<p>In order to solve this problem, we need a bunch of ingredients. First we have to define our individuals and to generate a population using them. Then we will add some functions and operators taking care of the evaluation and evolution of our population and finally put everything together in script.</p>
+<p>But first of all, we need to import some modules.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">deap</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">deap</span> <span class="kn">import</span> <span class="n">base</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">deap</span> <span class="kn">import</span> <span class="n">creator</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">deap</span> <span class="kn">import</span> <span class="n">tools</span></span></span></code></pre></div></div>
+<p>Then we will define some auxiliary functions:</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bin</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Generate random bit
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mutation</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    This function iterates through the chromosome and evaluates, for each gene,
+</span></span></span><span class="line"><span class="cl"><span class="s1">    whether to apply the mutation operator. 
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">]</span></span></span></code></pre></div></div>
+<p>We implement the genotype-to-phenotype mapping function. We will represent the variables $x$ and $y$ using 12 and 24 bits, respectively.</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">bin2dec</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">lengths</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">length_x</span><span class="p">,</span> <span class="n">length_y</span> <span class="o">=</span> <span class="n">lengths</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="n">ind_x</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[:</span><span class="n">length_x</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ind_y</span> <span class="o">=</span> <span class="n">ind</span><span class="p">[</span><span class="n">length_x</span><span class="p">:</span><span class="n">length_x</span><span class="o">+</span><span class="n">length_y</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ind_x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">x</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">((</span><span class="n">high</span><span class="o">-</span><span class="n">low</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">length_x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="n">x</span> <span class="c1">#Evolutionary Computation 1, p.169 and 2, p.39</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ind_y</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">y</span> <span class="o">+=</span> <span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="n">low</span> <span class="o">+</span> <span class="p">((</span><span class="n">high</span><span class="o">-</span><span class="n">low</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">length_y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span></span></span></code></pre></div></div>
+<p>Finally, we create a fitness function based on the objective function given above:</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">fitness</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Fitness function for our problem      
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">dec</span> <span class="o">=</span> <span class="n">bin2dec</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">low</span><span class="o">=</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="n">high</span><span class="p">,</span> <span class="n">lengths</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">24</span><span class="p">))</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">z</span> <span class="o">=</span> <span class="n">F</span><span class="p">(</span><span class="n">dec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dec</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>    
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">z</span></span></span></code></pre></div></div>
+<p>Now let&rsquo;s begin our evolutionary experiment.</p>
+<h3 id="set-the-parameters">Set the parameters</h3>
+<p>Before we go on, is time to define some constants we will use later on.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">IND_SIZE</span> <span class="o">=</span> <span class="mi">36</span>  <span class="c1"># cromosome</span>
+</span></span><span class="line"><span class="cl"><span class="n">LB</span> <span class="o">=</span> <span class="o">-</span><span class="mi">33</span>       <span class="c1"># lower and upper bound</span>
+</span></span><span class="line"><span class="cl"><span class="n">UB</span> <span class="o">=</span> <span class="mi">33</span>     
+</span></span><span class="line"><span class="cl"><span class="n">POP_SIZE</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># populations </span>
+</span></span><span class="line"><span class="cl"><span class="n">PM</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="n">IND_SIZE</span> <span class="c1"># probability of mutation</span>
+</span></span><span class="line"><span class="cl"><span class="n">N_PARENTS</span> <span class="o">=</span> <span class="n">POP_SIZE</span> <span class="o">-</span> <span class="mi">1</span> 
+</span></span><span class="line"><span class="cl"><span class="n">PX</span> <span class="o">=</span> <span class="mf">0.9</span>        <span class="c1"># probabiltiy of crossover</span>
+</span></span><span class="line"><span class="cl"><span class="n">GMAX</span> <span class="o">=</span> <span class="mi">100</span>      </span></span></code></pre></div></div>
+<h3 id="creator">Creator</h3>
+<p>Since the actual structure of the required individuals in genetic algorithms does strongly depend on the task at hand, DEAP does not contain any explicit structure. It will rather provide a convenient method for creating containers of attributes, associated with fitnesses, called the deap.creator. Using this method we can create custom individuals in a very simple way.</p>
+<p>The creator is a class factory that can build new classes at run-time. It will be called with first the desired name of the new class, second the base class it will inherit, and in addition any subsequent arguments you want to become attributes of your class. This allows us to build new and complex structures of any type of container from lists to n-ary trees.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">creator</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&#34;Fitness&#34;</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">               <span class="n">base</span><span class="o">.</span><span class="n">Fitness</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">               <span class="n">weights</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">creator</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="s2">&#34;Individual&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">               <span class="nb">list</span><span class="p">,</span>  
+</span></span><span class="line"><span class="cl">               <span class="n">fitness</span><span class="o">=</span><span class="n">creator</span><span class="o">.</span><span class="n">Fitness</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>First we will define the class Fitness. It will inherit the Fitness class of the deap.base module and contain an additional attribute called weights. Please mind the value of weights to be the tuple (-1.0,), this way we will be minimizing a single objective fitness. In DEAP single objectives is a special case of multi-objectives.</p>
+<p>Next we will create the class Individual, which will inherit the class list and contain our previously defined Fitness class in its fitness attribute. Note that upon creation all our defined classes will be part of the creator container and can be called directly.</p>
+<h3 id="toolbox">Toolbox</h3>
+<p>Now we will use our custom classes to create types representing our individuals as well as our whole population.</p>
+<p>All the objects we will use on our way, an individual, the population, as well as all functions, operators, and arguments will be stored in a DEAP container called Toolbox. It contains two methods for adding and removing content, register() and unregister().</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">toolbox</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">Toolbox</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;attribute&#34;</span><span class="p">,</span> <span class="nb">bin</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;individual&#34;</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">initRepeat</span><span class="p">,</span> <span class="n">creator</span><span class="o">.</span><span class="n">Individual</span><span class="p">,</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">attribute</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">IND_SIZE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;population&#34;</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">initRepeat</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">individual</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>In this code block we register a generation function toolbox.attribute() and two initialization ones individual() and population(). toolbox.attr_bool(), when called, will draw a random bits (0 or 1). The two initializers, on the other hand, will instantiate an individual or population.</p>
+<p>The registration of the tools to the toolbox only associates aliases to the already existing functions and freezes part of their arguments. This allows us to fix an arbitrary amount of argument at certain values so we only have to specify the remaining ones when calling the method.</p>
+<p>Our individuals will be generated using the function initRepeat(). Its first argument is a container class, in our example the Individual one we defined in the previous section. This container will be filled using the method attritubte(), provided as second argument, and will contain <code>N</code> bit, as specified using the third argument. When called, the individual() method will thus return an individual initialized with what would be returned by calling the attribute() method <code>N</code> times. Finally, the population() method uses the same paradigm, but we don&rsquo;t fix the number of individuals that it should contain.</p>
+<h3 id="the-evaluation-function">The Evaluation Function</h3>
+<p>The evaluation function in our example is given by the $F$ functions presented above.</p>
+<h3 id="the-genetic-operators">The Genetic Operators</h3>
+<p>Within DEAP there are two ways of using operators. We can either simply call a function from the tools module or register it with its arguments in a toolbox, as we have already seen for our initialization methods. The most convenient way, however, is to register them in the toolbox, because this allows us to easily switch between the operators if desired. The toolbox method is also used when working with the algorithms module.</p>
+<p>Registering the genetic operators required for the evolution in our minimization problem and their default arguments in the toolbox is done as follows.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;evaluate&#34;</span><span class="p">,</span> <span class="n">fitness</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;mate&#34;</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">cxTwoPoint</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;mutate&#34;</span><span class="p">,</span> <span class="n">mutation</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">PM</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">toolbox</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;select&#34;</span><span class="p">,</span> <span class="n">tools</span><span class="o">.</span><span class="n">selTournament</span><span class="p">,</span> <span class="n">tournsize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span></span></span></code></pre></div></div>
+<p>The evaluation will be performed by calling the alias fitness. It is important to not fix its argument in here. We will need it later on to apply the function to each separate individual in our population. The mutation, on the other hand, needs an argument to be fixed (the independent probability of each attribute to be mutated).</p>
+<h3 id="evolving-the-population">Evolving the Population</h3>
+<p>Once the representation and the genetic operators are chosen, we will define an algorithm combining all the individual parts and performing the evolution of our population until the minimization problem is solved.</p>
+<h3 id="creating-the-population">Creating the Population</h3>
+<p>First of all, we need to actually instantiate our population. But this step is effortlessly done using the <code>population()</code> method we registered in our toolbox earlier on.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">pop</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">population</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">POP_SIZE</span><span class="p">)</span>  </span></span></code></pre></div></div>
+<p><strong>pop</strong> will be a list composed of 100 individuals. Since we left the parameter <strong>n</strong> open during the registration of the <code>population()</code> method in our toolbox, we are free to create populations of arbitrary size.</p>
+<h3 id="evaluating-the-population">Evaluating the Population</h3>
+<p>The next thing to do is to evaluate our brand new population. We <code>map()</code> the evaluation function to every individual and then assign their respective fitness. Note that the order in fitnesses and population is the same.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Evaluate the entire population</span>
+</span></span><span class="line"><span class="cl"><span class="n">fitnesses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">toolbox</span><span class="o">.</span><span class="n">evaluate</span><span class="p">,</span> <span class="n">pop</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">fit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">fitnesses</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">fit</span></span></span></code></pre></div></div>
+<p>The evolution of the population is the final step we need to complete. Recall that our individuals are represented by 36-bit chromosomes, and our goal is to evolve the population until we reach the minimum of the objective function.</p>
+<p>To check the performance of the evolution, we will calculate some statistics in our population.</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Fitness of individuals</span>
+</span></span><span class="line"><span class="cl"><span class="n">stats_fit</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ind</span><span class="p">:</span> <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Lenght of individual </span>
+</span></span><span class="line"><span class="cl"><span class="n">stats_size</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">stats_active_genes</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Statistics</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ind</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ind</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mstats</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">MultiStatistics</span><span class="p">(</span><span class="n">fitness</span><span class="o">=</span><span class="n">stats_fit</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">size</span><span class="o">=</span><span class="n">stats_size</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                               <span class="n">genes</span><span class="o">=</span><span class="n">stats_active_genes</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;avg&#34;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;std&#34;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;min&#34;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mstats</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&#34;max&#34;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">logbook</span> <span class="o">=</span> <span class="n">tools</span><span class="o">.</span><span class="n">Logbook</span><span class="p">()</span></span></span></code></pre></div></div>
+<h3 id="the-main-loop">The Main Loop</h3>
+<p>In genetic algorithms, evolution occurs via either mutation or crossover, both of which happen (or don&rsquo;t happen) randomly. In mutation, we change one or more of the genes of one of our individuals. In cross-over, two individuals are mated to mix their genes. The crossover (or mating) and mutation operators, provided within DEAP, usually take respectively 2 or 1 individual(s) as input and return 2 or 1 modified individual(s). In addition they modify those individuals within the toolbox container and we do not need to reassign their results.</p>
+<p>We will perform both the crossover (mating) and the mutation of the produced children with a certain probability. The <code>del</code> statement will invalidate the fitness of the modified offspring.</p>
+<p>In the following script we will creates an offspring list, which is an exact copy of the selected individuals. The <code>toolbox.clone()</code> method ensure that we don&rsquo;t use a reference to the individuals but an completely independent instance. This is of utter importance since the genetic operators in toolbox will modify the provided objects in-place.</p>
+<p>We then mutate and mate the individuals to find the next generation of individuals. We evaluate them, and continue until one of our individuals evolves to be the perfect organism (minimum), or until the number of generations reaches 100.</p>
+<p>At each generation, we output some statistics about that generation&rsquo;s population and the best individual.</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">records</span> <span class="o">=</span> <span class="n">mstats</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">logbook</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">gen</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">records</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">GMAX</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">idx_elite</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">fitnesses</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">elite</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">pop</span><span class="p">[</span><span class="n">idx_elite</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">del</span> <span class="n">elite</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parents</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">pop</span><span class="p">,</span> <span class="n">POP_SIZE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">offspring</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">toolbox</span><span class="o">.</span><span class="n">clone</span><span class="p">,</span> <span class="n">pop</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">POP_SIZE</span><span class="o">//</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parent1</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">parents</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">POP_SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parent2</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">parents</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">POP_SIZE</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">PX</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">childs</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">mate</span><span class="p">(</span><span class="n">parent1</span><span class="p">,</span> <span class="n">parent2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">childs</span> <span class="o">=</span> <span class="p">(</span><span class="n">parent1</span><span class="p">,</span> <span class="n">parent2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">offspring</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">childs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">offspring</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">childs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">mutant</span> <span class="ow">in</span> <span class="n">offspring</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">toolbox</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="n">mutant</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">del</span> <span class="n">mutant</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span>
+</span></span><span class="line"><span class="cl">    <span class="n">offspring</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">elite</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fitnesses</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">backend</span><span class="o">=</span><span class="s1">&#39;multiprocessing&#39;</span><span class="p">)(</span><span class="n">delayed</span><span class="p">(</span><span class="n">fitness</span><span class="p">)(</span><span class="n">ind</span><span class="p">,</span> <span class="n">LB</span><span class="p">,</span> <span class="n">UB</span><span class="p">)</span> <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">offspring</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">fit</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">offspring</span><span class="p">,</span> <span class="n">fitnesses</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">(</span><span class="n">fit</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pop</span> <span class="o">=</span> <span class="n">toolbox</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">offspring</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">records</span> <span class="o">=</span> <span class="n">mstats</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pop</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">logbook</span><span class="o">.</span><span class="n">record</span><span class="p">(</span><span class="n">gen</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="o">**</span><span class="n">records</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">g</span><span class="o">%</span><span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;GENERATION: </span><span class="si">{</span><span class="n">g</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ELITE -- Fitness: </span><span class="si">{</span><span class="n">elite</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.4</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FITNES: &#39;</span><span class="p">,</span> <span class="n">records</span><span class="p">[</span><span class="s1">&#39;fitness&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    </span></span></code></pre></div></div>
+<h3 id="evolution-process">Evolution process:</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 10
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5722
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 1.2363773729277125, &#39;std&#39;: 0.6934457474019109, &#39;min&#39;: 0.5671581279089928, &#39;max&#39;: 2.512008838665629}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 20
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 30
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 40
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 50
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 60
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 70
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 80
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}
+</span></span><span class="line"><span class="cl">    ===
+</span></span><span class="line"><span class="cl">    GENERATION: 90
+</span></span><span class="line"><span class="cl">    ELITE -- Fitness: 0.5671
+</span></span><span class="line"><span class="cl">    FITNES:  {&#39;avg&#39;: 0.5670580268782999, &#39;std&#39;: 0.0, &#39;min&#39;: 0.5670580268782999, &#39;max&#39;: 0.5670580268782999}</span></span></code></pre></div></div>
+<h3 id="solution">Solution</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/genetic_algorithms/output.png"
+        data-srcset="/genetic_algorithms/output.png, /genetic_algorithms/output.png 1.5x, /genetic_algorithms/output.png 2x"
+        data-sizes="auto"
+        alt="/genetic_algorithms/output.png"
+        title="Optimal point for minimization problem with GA" width="801" height="690" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Genetic Algorithms showcase the robustness and versatility of bio-inspired computing. Their ability to explore complex, high-dimensional search spaces makes them invaluable in situations where traditional, exhaustive search methods fall short. Whether it&rsquo;s optimization challenges in machine learning, route planning in logistics, or even simulating natural processes in biology, Genetic Algorithms have demonstrated their effectiveness across a diverse range of domains.</p>
+<p>While originally designed for the study of adaptation in natural systems (J. Holland, 1975), most GAs have been developed for optimization purposes (Whitley, 1994). They have been applied in a large variety of research domains: biology (Street and Mayo, 1999), economics (Chatterjee et al., 2018, Waheeb and Ghazali, 2019), finance (Lwin et al., 2014, Han et al., 2019), operational research (Della Croce et al., 1995, Baker and Ayechew, 2003), game theory (Axelrod et al., 1987, Vi ́e, 2020b), deep learning and neural networks (Stanley et al., 2019, Chung and Shin, 2020), forecasting (Packard, 1988, C. Ahn and Ramakrishna, 2003), optimisation (Wiransky, 2020, Dhunny et al., 2020), computer science and algorithms (Koza, 1992), healthcare (Tao et al., 2019, Devarriya et al., 2020) or data science (Yang and Honavar, 1998, Maulik and Bandyopadhyay, 2000, Raymer et al., 2000).</p>
+<p>As we continue to deepen our understanding of these algorithms, their range of applications is likely to expand, further cementing their status as a reliable tool for solving intricate problems.</p>
+<div class="details admonition note">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw" aria-hidden="true"></i>Bibliography<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>Goldberg, David E. 1989. Genetic Algorithms in Search, Optimization, and Machine Learning. New York, NY, USA: Addison-Wesley.</li>
+<li>Kramer, Oliver. 2017. Genetic Algorithm Essentials. Vol. 679. Studies in Computational Intelligence. Cham: Springer International Publishing.</li>
+<li>Vignolo, Leandro D., and Matias F. Gerard. 2017. &quot;Evolutionary Local Improvement on Genetic Algorithms for Feature Selection.&quot; In 2017 XLIII Latin American Computer Conference (CLEI), 1&ndash;8. Cordoba: IEEE. <a href="https://doi.org/10.1109/CLEI.2017.8226467" target="_blank" rel="noopener noreffer ">https://doi.org/10.1109/CLEI.2017.8226467</a>.</li>
+</ul>
+</div>
+        </div>
+    </div>
+<p>Pics by <a href="https://www.reddit.com/user/mmmPlE/">mmmPIE in <a href="https://www.reddit.com/r/HybridAnimals/">Reddit/HybridAnimals</a>, and <a href="https://unsplash.com/es/@dulceylima">Dulcey Lima in Unsplash.</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-10-01</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/genetic_algorithms/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on X" data-sharer="x" data-url="http://localhost:1313/genetic_algorithms/" data-title="Can we imitate Nature&#39;s evolutionary abilities? " data-via="clausecastillo" data-hashtags="evolutionary algorithms,heuristic search,machine learning,optimization"><i class="fab fa-x-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Threads" data-sharer="threads" data-url="http://localhost:1313/genetic_algorithms/" data-title="Can we imitate Nature&#39;s evolutionary abilities? "><i class="fab fa-threads fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/genetic_algorithms/" data-hashtag="evolutionary algorithms"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://localhost:1313/genetic_algorithms/" data-title="Can we imitate Nature&#39;s evolutionary abilities? "><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://localhost:1313/genetic_algorithms/" data-title="Can we imitate Nature&#39;s evolutionary abilities? "><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/genetic_algorithms/" data-title="Can we imitate Nature&#39;s evolutionary abilities? "><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Diaspora" data-sharer="diaspora" data-url="http://localhost:1313/genetic_algorithms/" data-title="Can we imitate Nature&#39;s evolutionary abilities? " data-description=""><i class="fab fa-diaspora fa-fw" aria-hidden="true"></i></a><a href="https://t.me/share/url?url=http%3a%2f%2flocalhost%3a1313%2fgenetic_algorithms%2f&amp;text=Can%20we%20imitate%20Nature%27s%20evolutionary%20abilities%3f%20" target="_blank" title="Share on Telegram"><i class="fab fa-telegram fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/evolutionary-algorithms/">Evolutionary Algorithms</a>,&nbsp;<a href="/tags/heuristic-search/">Heuristic Search</a>,&nbsp;<a href="/tags/machine-learning/">Machine Learning</a>,&nbsp;<a href="/tags/optimization/">Optimization</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/variational_autoencoders/" class="prev" rel="prev" title="Generative Models: Variational Autoencoders"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Generative Models: Variational Autoencoders</a>
+            <a href="/fundational_models/" class="next" rel="next" title="Large Language Models and Expert Assistants">Large Language Models and Expert Assistants<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.145.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.1-DEV"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a>
+        </div>
+
+        <div id="fixed-buttons-hidden"><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/algoliasearch/lite/browser.umd.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/contrib/auto-render.min.js"></script><script src="/lib/katex/contrib/copy-tex.min.js"></script><script src="/lib/katex/contrib/mhchem.min.js"></script><script src="/lib/cookieconsent/cookieconsent.min.js"></script><script>window.config={"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"PASDMWALPK","algoliaIndex":"index.en","algoliaSearchKey":"b42948e51daaa93df92381c8e2ac0f93","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script src="/js/theme.min.js"></script></body>
+</html>

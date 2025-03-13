@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Data Driven Dulture - Category - CastilloS</title>
+        <link>http://localhost:1313/categories/data-driven-dulture/</link>
+        <description>Data Driven Dulture - Category - CastilloS</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/data-driven-dulture/" rel="self" type="application/rss+xml" /><item>
+    <title>Justice Analitics</title>
+    <link>http://localhost:1313/analitics_in_judiciary/</link>
+    <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/analitics_in_judiciary/</guid>
+    <description><![CDATA[<p>This post chronicles the transformative journey that the Judiciary of Entre Ríos, Argentina, where I serve as Director, is undertaking in the realm of statistics.</p>]]></description>
+</item>
+</channel>
+</rss>

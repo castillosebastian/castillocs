@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Optimization - Tag - CastilloS</title>
+        <link>http://localhost:1313/tags/optimization/</link>
+        <description>Optimization - Tag - CastilloS</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 01 Oct 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/optimization/" rel="self" type="application/rss+xml" /><item>
+    <title>Can we imitate Nature&#39;s evolutionary abilities? </title>
+    <link>http://localhost:1313/genetic_algorithms/</link>
+    <pubDate>Sun, 01 Oct 2023 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/genetic_algorithms/</guid>
+    <description><![CDATA[<p>In the rich theatre of Nature, few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. Similarly, in the field of artificial intelligence, Genetic Algorithms stand among the select few that have successfully harnessed the principles of evolution for optimization. In this post, I will discuss these techniques that solve complex problems through an evolutionary process, leading to optimal or near-optimal solutions.</p>]]></description>
+</item>
+</channel>
+</rss>

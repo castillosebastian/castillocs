@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Fundational Models - Tag - CastilloS</title>
+        <link>http://localhost:1313/tags/fundational-models/</link>
+        <description>Fundational Models - Tag - CastilloS</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 01 Apr 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/tags/fundational-models/" rel="self" type="application/rss+xml" /><item>
+    <title>Large Language Models and Expert Assistants</title>
+    <link>http://localhost:1313/fundational_models/</link>
+    <pubDate>Mon, 01 Apr 2024 00:00:00 &#43;0000</pubDate>
+    <author>CastilloCS</author>
+    <guid>http://localhost:1313/fundational_models/</guid>
+    <description><![CDATA[<p>In the ever-evolving landscape of Artificial Intelligence, a groundbreaking category of technologies known as <strong>foundation models</strong> is reshaping our interaction with the digital world. These models, which encompass the broad and powerful class of Large Language Models (LLMs), are built on expansive datasets, enabling them to perform an astonishing array of tasks. From engaging in human-like dialogues and answering complex questions to composing music and generating video content, LLMs are rapidly becoming specialized powerhouses in AI. Their versatility allows for remarkable applications that stretch the bounds of creativity and problem-solving. Through this series of posts, we will embark on a journey to uncover the myriad applications of LLMs across different domains, showcasing their transformative potential in reshaping industries and enhancing human capabilities.</p>]]></description>
+</item>
+</channel>
+</rss>

@@ -1,15 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Dashboards - Category - CastilloS</title>
-        <link>https://castillosebastian.github.io/categories/dashboards/</link>
+        <link>http://localhost:1313/categories/dashboards/</link>
         <description>Dashboards - Category - CastilloS</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</managingEditor>
-            <webMaster>castilloclaudiosebastian@gmail.com (Castillo Claudio Sebastian)</webMaster><lastBuildDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</lastBuildDate><atom:link href="https://castillosebastian.github.io/categories/dashboards/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/dashboards/" rel="self" type="application/rss+xml" /><item>
     <title>Justice Analitics</title>
-    <link>https://castillosebastian.github.io/analitics_in_judiciary/</link>
+    <link>http://localhost:1313/analitics_in_judiciary/</link>
     <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
-    <author>CastilloS</author>
-    <guid>https://castillosebastian.github.io/analitics_in_judiciary/</guid>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/analitics_in_judiciary/</guid>
     <description><![CDATA[<p>This post chronicles the transformative journey that the Judiciary of Entre Ríos, Argentina, where I serve as Director, is undertaking in the realm of statistics.</p>]]></description>
 </item>
 </channel>

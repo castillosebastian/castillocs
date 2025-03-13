@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Chatbot&#43; - Category - CastilloS</title>
+        <link>http://localhost:1313/categories/chatbot&#43;/</link>
+        <description>Chatbot&#43; - Category - CastilloS</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://localhost:1313/categories/chatbot&#43;/" rel="self" type="application/rss+xml" /><item>
+    <title>Retrieval-augmented generation for Chatbot</title>
+    <link>http://localhost:1313/documents_qa/</link>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>http://localhost:1313/documents_qa/</guid>
+    <description><![CDATA[<p>I developed a chatbot-like agent that utilizes Retrieval-Augmented Generation, integrating a pre-trained sequence-to-sequence model with a document database. This innovative synergy facilitates the creation of a question-answering application, which is capable of delivering contextually relevant and accurate responses by querying specific information.</p>]]></description>
+</item>
+</channel>
+</rss>
