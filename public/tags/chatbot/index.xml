@@ -7,7 +7,7 @@
     <title>Retrieval-augmented generation for Chatbot</title>
     <link>http://localhost:1313/documents_qa/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/documents_qa/</guid>
     <description><![CDATA[<p>I developed a chatbot-like agent that utilizes Retrieval-Augmented Generation, integrating a pre-trained sequence-to-sequence model with a document database. This innovative synergy facilitates the creation of a question-answering application, which is capable of delivering contextually relevant and accurate responses by querying specific information.</p>]]></description>
 </item>

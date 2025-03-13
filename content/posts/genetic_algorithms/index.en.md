@@ -4,6 +4,7 @@ title: "Can we imitate Nature's evolutionary abilities? "
 date: 2023-10-01
 lastmod: 2023-10-01
 draft: false
+author: "CastilloCS"
 images: []
 resources:
 - name: "featured-image"

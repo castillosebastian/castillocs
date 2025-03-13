@@ -7,7 +7,7 @@
     <title>Generative Models: Variational Autoencoders</title>
     <link>http://localhost:1313/variational_autoencoders/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/variational_autoencoders/</guid>
     <description><![CDATA[<p>Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery.</p>]]></description>
 </item>

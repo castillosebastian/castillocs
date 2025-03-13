@@ -122,11 +122,9 @@ defaultContentLanguage = "en"
           disclaimer = ""
       [languages.en.params.social]
         GitHub = "castillosebastian"
-        Linkedin = "castillocs"
-        Twitter = "clausecastillo"   
+        Linkedin = "castillocs"           
         Phone = "+5493434153914"
-        Email = "castilloclaudiosebastian@gmail.com"
-        RSS = true
+        Email = "castilloclaudiosebastian@gmail.com"        
   [languages.es]
     weight = 2
     title = "CastilloS"
@@ -200,11 +198,9 @@ defaultContentLanguage = "en"
           disclaimer = ""
       [languages.es.params.social]
         GitHub = "castillosebastian"
-        Linkedin = "castillocs"
-        Twitter = "clausecastillo"
+        Linkedin = "castillocs"        
         Phone = "+5493434153914"
-        Email = "castilloclaudiosebastian@gmail.com"
-        RSS = true
+        Email = "castilloclaudiosebastian@gmail.com"        
 # default amount of posts in each pages
 paginate = 12
 # google analytics code [UA-XXXXXXXX-X]
@@ -438,21 +434,21 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     [params.page.share]
       enable = true
       Twitter = false
-      Facebook = true
-      Linkedin = false
-      Whatsapp = false
+      Facebook = false
+      Linkedin = true
+      Whatsapp = true
       Pinterest = false
       Tumblr = false
-      HackerNews = true
+      HackerNews = false
       Reddit = false
       VK = false
       Buffer = false
       Xing = false
-      Line = true
+      Line = false
       Instapaper = false
       Pocket = false
       Flipboard = false
-      Weibo = true
+      Weibo = false
       Blogger = false
       Baidu = false
       Odnoklassniki = false

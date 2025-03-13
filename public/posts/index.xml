@@ -23,7 +23,7 @@
     <title>Can we imitate Nature&#39;s evolutionary abilities? </title>
     <link>http://localhost:1313/genetic_algorithms/</link>
     <pubDate>Sun, 01 Oct 2023 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/genetic_algorithms/</guid>
     <description><![CDATA[<p>In the rich theatre of Nature, few creatures exemplify the power of evolutionary optimization as strikingly as the hummingbird. Similarly, in the field of artificial intelligence, Genetic Algorithms stand among the select few that have successfully harnessed the principles of evolution for optimization. In this post, I will discuss these techniques that solve complex problems through an evolutionary process, leading to optimal or near-optimal solutions.</p>]]></description>
 </item>
@@ -31,7 +31,7 @@
     <title>Generative Models: Variational Autoencoders</title>
     <link>http://localhost:1313/variational_autoencoders/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/variational_autoencoders/</guid>
     <description><![CDATA[<p>Generative models are a class of statistical models that aim to learn the underlying data distribution from a given dataset. These models provide a way to generate new samples that are statistically similar to the training data. They have gained substantial attention in various domains, such as image generation, speech synthesis, and even drug discovery.</p>]]></description>
 </item>
@@ -39,7 +39,7 @@
     <title>Retrieval-augmented generation for Chatbot</title>
     <link>http://localhost:1313/documents_qa/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/documents_qa/</guid>
     <description><![CDATA[<p>I developed a chatbot-like agent that utilizes Retrieval-Augmented Generation, integrating a pre-trained sequence-to-sequence model with a document database. This innovative synergy facilitates the creation of a question-answering application, which is capable of delivering contextually relevant and accurate responses by querying specific information.</p>]]></description>
 </item>
@@ -47,7 +47,7 @@
     <title>Responsible AI Tools</title>
     <link>http://localhost:1313/responsible_ai/</link>
     <pubDate>Thu, 01 Jun 2023 10:49:29 -0300</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/responsible_ai/</guid>
     <description><![CDATA[<p>Responsible AI has become a crucial aspect of every Machine Learning project, underscoring the need for tools that promote the creation of fair and ethically sound models. In this post, we delve into some key concepts and replicate IBM&rsquo;s inFairness example solution to address bias in the &lsquo;Adult Income&rsquo; dataset. Beyond the technical configurations adopted, the intent to algorithmically address unfairness and the statistical pursuit of both overt and hidden bias in data are particularly noteworthy. These are the key insights we hope readers will take away from this post.</p>]]></description>
 </item>
@@ -55,7 +55,7 @@
     <title>Justice Analitics</title>
     <link>http://localhost:1313/analitics_in_judiciary/</link>
     <pubDate>Thu, 01 Dec 2016 21:57:40 &#43;0800</pubDate>
-    <author>xxxx</author>
+    <author>CastilloCS</author>
     <guid>http://localhost:1313/analitics_in_judiciary/</guid>
     <description><![CDATA[<p>This post chronicles the transformative journey that the Judiciary of Entre Ríos, Argentina, where I serve as Director, is undertaking in the realm of statistics.</p>]]></description>
 </item>

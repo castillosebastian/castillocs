@@ -4,6 +4,7 @@ title: "Retrieval-augmented generation for Chatbot"
 date: 2023-09-01
 lastmod: 2023-09-01
 draft: false
+author: "CastilloCS"
 images: []
 resources:
 - name: "featured-image"

@@ -4,6 +4,7 @@ title: "Responsible AI Tools"
 date: 2023-06-01T10:49:29-03:00
 lastmod: 2023-06-01T21:29:01+08:00
 draft: false
+author: "CastilloCS"
 images: []
 resources:
 - name: "featured-image"
