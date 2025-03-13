@@ -1,113 +1,114 @@
-# Synthetic Data and Feature Selection
+# Unraveling Complexity: How Genetic Algorithms and Synthetic Data Enhance Feature Selection
 
 
-Synthetic data is a type of data that is created by an algorithm, rather than collected from the real world. It is a powerful tool for training machine learning models, but it can also be used to create realistic data for testing and validation.
+Dive into the intersection of biology-inspired algorithms and cutting-edge generative AI with this latest blog post. We explore how Genetic Algorithms (GAs), drawing inspiration from natural evolution, and Variational Autoencoders (VAEs), sophisticated generative models, team up to tackle some of machine learning’s toughest challenges: feature selection in highly dimensional, noisy, and imbalanced datasets. Discover practical insights from real-world experiments, learn why more data isn't always better, and see how carefully tuned synthetic data generation can significantly boost predictive accuracy and model interpretability. This post is a preview of my master’s thesis, supervised by Dr. Matias Gerard and Dr. Leandro Vignolo, CONICET–CINCI.
 
 <!--more-->
 
-## Foundation models disruption
+## A pervasive problem: Feature selection
 
-What happened with the emergence of Large Language Models (LLMs) that caused a profound impact in the relatively niche AI community, and how did this ripple effect extend into various spheres of public life? To understand this transformation, we must explore the roots from which LLMs have sprung and the distinctive features that set them apart from their predecessors.
+Imagine you're facing a mountain of data—a spreadsheet sprawling across thousands of columns but only a handful of meaningful rows. In machine learning, scenarios like these are surprisingly common, creating serious headaches for data scientists and researchers alike. The sheer volume of data isn't always helpful; in fact, it often adds noise, redundancy, and complexity that can drown out the real signals you're after.
 
-At their core, LLMs are not a radical departure from the well-established principles of deep neural networks (DNNs). For decades, DNNs have been instrumental in advancing a range of technologies, from image and speech recognition to natural language processing (NLP). A notable milestone in this field dates back to 2012 with the introduction of AlexNet, a type of DNN that uses convolutions, in the ImageNet Large Scale Visual Recognition Challenge. It significantly outperformed its competitors, marking the beginning of the deep learning revolution, supported by advanced infrastructure such as GPUs. However, despite their technological significance, DNNs remained largely within the domain of specialists and enthusiasts, rarely capturing the public's imagination or expectation.
+This is where the art of **feature selection** steps in. It’s like sorting through the noise to discover hidden gems—those crucial features that truly matter for predicting outcomes. Effective feature selection not only sharpens your model’s predictions but also simplifies it, making it easier to interpret and trust.
 
-The landscape began to change as researchers and engineers focused on leveraging DNNs for language-based applications. Early successes in language technologies, such as machine translation and simple chatbots, demonstrated the potential to create tools that could tackle specific, task-oriented problems with solutions that mimicked human-like understanding and responses.    
+## Facing Real-World Challenges
 
-Yet, these technologies, while impressive, often fell short of replicating the depth and nuance of human cognitive abilities in language.   
+In textbooks, datasets seem neatly packaged and perfectly balanced. But real-world data can be messy: high-dimensional spaces, limited samples, imbalanced classes, and plenty of irrelevant noise. Imagine trying to pinpoint important details in thousands of irrelevant or redundant features—it's like finding a needle in a noisy, high-dimensional haystack.
 
-A significant leap in the evolution of AI for language processing came with the development of the Transformer architecture. Just as AlexNet had marked a turning point in image recognition by harnessing the power of Convolutional Neural Networks (CNNs), the introduction of Transformers ([Vaswani et al., 2017](https://arxiv.org/abs/1706.03762)), revolutionized natural language processing. This was a pivotal moment in AI's evolution, leading directly to the creation of LLMs.
+Typically, we tackle this with methods like:
 
-LLMs were not just incremental improvements; they represented a mayor step forward. By training on vastly larger datasets and integrating a more complex and nuanced understanding of language, made possible by the Transformer architecture, LLMs began to achieve — and in many cases, surpass — human-like capabilities across a wide range of linguistic domains. 
+- **Filter Methods**: Quick but might overlook feature interdependencies.
+- **Wrapper Methods**: Effective but computationally expensive.
+- **Embedded Methods**: Balanced approaches, integrating feature selection directly into the model training.
 
-{{< admonition type=info title="The saga of OpenAI's Generative Pre-trained Transformer" open=false >}}
-The history of the evolution of the Generative Pre-trained Transformer (GPT) series by OpenAI is a important journey through recent advancements in artificial intelligence and natural language processing. From its inception, the GPT series has been at the forefront of demonstrating the emergent properties and scaling laws that underlie large language models (LLMs). 
+But what if the problem is especially complex—like microarray datasets with tens of thousands of features but fewer than a hundred samples? Traditional methods often stumble here, struggling to reliably distinguish the meaningful features from noise. As datasets grow increasingly complex, the limitations of traditional approaches become glaringly apparent, demanding innovative solutions.
 
-### GPT-1: The Foundation
+## Genetic Algorithms to save the day
 
-During the 2018, OpenAI publish the paper "Improving Language Understanding by Generative Pre-Training". The first in the series, GPT-1, laid the groundwork for utilizing unsupervised learning to pre-train a language model on a large corpus of text. It demonstrated that pre-training followed by task-specific fine-tuning could achieve remarkable performance across a variety of NLP tasks, even with fewer data for supervised training. This model set the stage for the power of transformers in language understanding and generation.
+To overcome these challenges, scientists often turn to **Genetic Algorithms (GAs)**—an approach inspired by natural evolution. Think of a GA as nature’s own problem-solving toolkit:
 
-### GPT-2: Scaling Up and Emergent Abilities
+- **Population**: Multiple candidate solutions (feature subsets) compete simultaneously.
+- **Selection**: Better-performing solutions survive and propagate.
+- **Crossover & Mutation**: Solutions evolve and improve over generations through recombination and random adjustments.
 
-One year later, a second work came to ligth with the publication of "Language Models are Unsupervised Multitask Learners". In this new experiment, PT-2 significantly increased the scale, with 1.5 billion parameters. OpenAI highlighted the model's ability to generate coherent and surprisingly nuanced text passages, perform rudimentary reading comprehension, machine translation, and even solve some types of common sense reasoning without task-specific training. One of the seminal findings from GPT-2’s development was the demonstration of emergent abilities; as the model size increased, it began to exhibit new behaviors and capabilities that were not directly taught.
 
-### GPT-3: The Power of Scale
+{{< admonition type=info title="Genetic Algorithms: Core Concepts" open=false >}}
+GAs are population-based optimization techniques inspired by evolutionary biology. The algorithm typically maintains a *population* of candidate solutions (often called *individuals*), each of which is:
+1. **Encoded** in some representation (e.g., a binary string).
+2. **Evaluated** using a *fitness function* that measures how “good” the solution is.
+3. **Recombined** via genetic operators – **selection**, **crossover**, and **mutation** – to form a new population in the hope of discovering increasingly better solutions.
 
-By the 2020, with the publication of the paper "Language Models are Few-Shot Learners" and the presentation of GPT-3, OpenAI expanded the model to an unprecedented 175 billion parameters. This leap forward demonstrated the "scaling laws" in AI, where increasing the model size, data, and compute led to predictable improvements in performance. GPT-3 showcased remarkable few-shot learning abilities, where the model could understand and perform tasks with just a few examples provided in the prompt. This model emphasized the potential of LLMs to generalize across tasks without task-specific fine-tuning, a significant breakthrough in AI research.
+### 1.1 Encoding the Solution Space
+A GA does not manipulate the raw data directly; instead, it uses an *encoded* representation. For example, in feature-selection problems with \(n\) features, each individual can be a binary vector of length \(n\), where a 1 indicates “this feature is chosen” and a 0 indicates “this feature is excluded.” This encoding is crucial because:
+- It allows GA operators (mutation, crossover) to be clearly defined.
+- It can significantly affect the GA’s convergence behavior if chosen poorly.
+
+### 1.2 Population-Based Search
+GAs evaluate many candidate solutions simultaneously rather than improving a single solution at a time. This population perspective promotes *exploration* of multiple regions in the solution space. Maintaining diversity in the population is essential:
+- **Low diversity** risks premature convergence to suboptimal solutions.
+- **High diversity** fosters broader exploration and increases the likelihood of finding better solutions.
+
+### 1.3 Fitness Function
+The **fitness function** is central to the GA’s search. It measures how well each individual (in its *decoded* form) solves the target problem. For feature selection, we typically combine two objectives:
+1. High predictive accuracy (or another performance metric) on a chosen classifier (e.g., an MLP).  
+2. Fewer selected features, to encourage simpler, more interpretable solutions.
+
+### 1.4 Genetic Operators: Selection, Crossover, Mutation
+- **Selection**: Chooses higher-fitness individuals to produce offspring. Popular schemes include *roulette wheel*, *tournament*, and *window* selection.  
+- **Crossover**: Mates two “parent” solutions to produce offspring, typically by splitting each parent’s encoding at one or more points and swapping segments.  
+- **Mutation**: Makes small random changes in an individual’s encoding—e.g., flipping bits in a binary vector. Mutation helps the GA explore new areas of the solution space.
 {{< /admonition >}}
 
-As a result, LLMs have evolved beyond the realm of task-specific tools to become generalized platforms capable of learning and adapting to an unprecedented breadth of applications. From writing and summarizing texts to generating creative content and engaging in sophisticated dialogues, these platforms have demonstrated flexibility and depth previously unimaginable. They have transitioned from being a subject of academic interest to a cornerstone of new products and services that touch many aspects of our daily lives.  Yet, despite these advancements, LLMs face critical challenges that could limit their effectiveness, particularly when deployed in domains where precision and current knowledge are essential.
+But GAs need enough data to properly evaluate candidate solutions. Limited or imbalanced datasets make this evaluation unreliable, risking poor feature selection. Moreover, without sufficient diversity and representation in the dataset, GAs can prematurely converge to suboptimal solutions, undermining their effectiveness.
 
-## Foudational models and the need for truthfulness 
+## Synthetic Data: Fueling Genetic Algorithms
 
-One of the most significant issues confronting Large Language Models is their tendency to "hallucinate" or generate factually incorrect or misleading information. This limitation stems primarily from the models' design: they are trained on vast datasets of text from the internet, books, and other sources without any intrinsic mechanism to verify the truthfulness of the content they generate. Consequently, these models are susceptible to producing responses that might seem plausible but are factually incorrect, especially in expert domains such as law, finance, and healthcare where accuracy is crucial. This challenge highlights a critical gap in their ability to serve as reliable tools in experts and professional settings.
+Here’s the game changer: What if we could artificially expand datasets, creating more balanced and informative data points? Enter **Variational Autoencoders (VAEs)**—powerful generative models that learn data distributions and generate realistic synthetic samples.
 
-The problem of hallucination in LLMs is closely tied to another critical challenge: access to factual information. LLMs are typically static models once trained, meaning they are not updated with new information unless retrained with new data. This static nature implies that they can quickly become outdated, further compounding the issue of generating incorrect or irrelevant information based on older data sets.
+VAEs encode data into simplified representations and decode them back into new, similar-yet-novel data points. They tackle class imbalance by generating more examples of minority classes and reduce overfitting by adding diversity. VAEs achieve this by modeling latent variables in the data, capturing essential characteristics that define the dataset and enabling the generation of plausible new samples that enrich the original data.
 
-The consequence of these issues is significant. In domains where expert knowledge and up-to-date information are paramount, reliance on LLMs without addressing these limitations can lead to decisions based on outdated or incorrect data, which can be detrimental in fields like healthcare, where patient outcomes can depend on the latest medical research, or in law, where legal precedents may shift over time.
+## A Perfect Pair: VAEs and Genetic Algorithms
 
-Addressing the problem of hallucination and the need for access to factual information is therefore crucial for the development of LLMs that are truly useful in professional settings. One promising approach to mitigate these problems is integrating LLMs with external databases or dynamic information sources that can provide accurate, up-to-date context for the model's responses. 
+Our approach integrates VAEs and GAs into a potent feature-selection framework:
 
-## The Role of External Databases in Improving LLM Responses
+1. **Generate Synthetic Data**: We first use a VAE to expand the dataset, balancing classes and reducing noise.
+2. **Run Genetic Algorithms**: With more robust data, GAs effectively find the most predictive subsets of features.
 
-The integration of external databases into the LLM workflow offers a dual advantage: it not only provides a direct link to factual and up-to-date information but also enables the model to learn from a broader and more current dataset than what was available during its initial training. By accessing external databases, LLMs can pull in the most current data relevant to a query, whether it involves recent legal statutes, current financial market trends, or the latest medical research. This capability ensures that the responses generated are not only contextually appropriate but also reflect the most accurate information available.
+By combining these approaches, we amplify the strengths of both—ensuring better data representation and more accurate feature evaluation, ultimately producing superior results.
 
-The RAG architecture merges the power of pre-trained language models with the precision of information retrieval systems. This pattern typically involves two main components:
+## What Did We Discover?
 
-1. **Retriever:** Before generating a response, the retriever component searches an external database to find relevant documents or data snippets that might contain pertinent information for answering the user's query. This process is based on similarity measures between the query and the information stored in the database.
+When testing this combination across various datasets, the results were compelling:
 
-2. **Generator:** Once the relevant information is retrieved, the generator component of the RAG takes over. This is usually a pre-trained language model, like those used in standard LLMs, which uses both the original query and the retrieved documents to generate a coherent and informed response. The generator is capable of synthesizing information from the retriever and the knowledge it has learned during pre-training, creating a response that is both accurate and contextually enriched.
+- For datasets overwhelmed with noise, like the Madelon dataset, GA accuracy jumped significantly—from 75% to 83%—by leveraging synthetic data. The GA also zeroed in on fewer, truly important features, drastically improving interpretability.
+- With highly imbalanced and complex datasets like gene-expression data, careful synthetic data generation significantly improved model stability and accuracy, especially benefiting underrepresented classes, ensuring models don't overlook rare yet critical signals.
 
-## From Naive RAG to Agents 
+Interestingly, more synthetic data isn't always better. There's an optimal amount of synthetic data, beyond which performance begins to degrade—highlighting the importance of balance and quality. Excessive synthetic data can lead to overlapping distributions or diluted signals, emphasizing the delicate balance required in data augmentation.
 
-We can trace the progression and evolution of RAG architectures through several key stages: Naive RAG, Advanced RAG, Modular RAG, and finally Agentic RAG (see:https://arxiv.org/abs/2312.10997)
+## Lessons from Our Experiments
 
-**Naive RAG**   
+Several practical insights emerged:
 
-The earliest iterations of RAG, which we term as "Naive RAG," focus primarily on the basic integration of retrieval mechanisms with generative models. In this setup, the retrieval component is straightforward, often fetching data directly related to the input query from a fixed database or set of documents. The generator then uses this retrieved information as additional context to produce responses. Although this approach enhances the model's output by grounding it in retrieved documents, it is limited by the static nature of the retrieval process and the simplicity of its integration, which can lead to suboptimal context utilization and relevance issues in the responses.
+- **Quality over Quantity**: Excess synthetic data can introduce confusion, emphasizing the importance of an optimal, tailored approach.
+- **Simpler Models Can Excel**: Surprisingly, deeper neural networks weren't always better. Sometimes, a simpler VAE architecture performed best, balancing complexity and efficiency.
+- **Careful Tuning Is Essential**: Class weighting, feature pre-selection, and controlled generation methods significantly improved outcomes on difficult datasets, showcasing that meticulous tuning often outweighs raw computational power.
+- **Context Matters**: Results varied significantly across different datasets, reinforcing the importance of tailoring methods to the specific characteristics of each problem.
 
-**Advanced RAG**   
+## Where Do We Go Next?
 
-Building on the foundations of Naive RAG, the "Advanced RAG" models incorporate more sophisticated retrieval techniques, such as using machine learning to improve the relevance of retrieved documents based on the query's context and the ongoing interaction history. Advanced RAG also starts to utilize feedback mechanisms where the generator's output can influence subsequent retrieval queries, creating a more dynamic interaction between the retrieval and generation processes. This allows the system to adapt more effectively to the nuances of a conversation or a complex query sequence, thereby improving the overall coherence and relevance of the generated content.
+Combining genetic algorithms with synthetic data generation doesn't just solve challenging feature-selection problems—it also opens doors to more reliable, interpretable machine learning models. Future explorations might involve advanced generative models (like diffusion models) or even multi-objective genetic algorithms to optimize additional factors beyond accuracy, such as computational cost, interpretability, or fairness.
 
-**Modular RAG**   
+Additionally, integrating hybrid approaches like combining VAEs with other generative or reinforcement learning methods could further enhance the quality and usability of synthetic data.
 
-"Modular RAG" architectures take the flexibility of RAG systems further by decoupling the retrieval and generation components to a greater extent, allowing for interchangeable modules that can be optimized independently. This modularity enables the integration of different retrieval or generator models depending on the specific requirements of a task or domain, such as using specialized databases for medical inquiries or financial records. Modular RAG systems can dynamically switch between different modules mid-conversation, providing tailored responses based on the most appropriate data source or generation strategy for each query.
+In short, by carefully merging biological inspiration with artificial creativity, we can build models that not only learn better but also make sense out of complex data landscapes—ensuring that our predictions are both robust and trustworthy. Through ongoing innovation and careful experimentation, the synergy between genetic algorithms and synthetic data promises to reshape how we approach complex machine learning challenges, unlocking new possibilities across diverse fields and applications.
 
-**Agentic RAG**   
-
-The most advanced stage, "Agentic RAG," introduces significant enhancements that imbue the system with greater agency capabilities. These RAG models are designed to not only retrieve and generate information but also to make autonomous decisions about which actions to take—such as when to retrieve more information, which sources to consult, and how to interact with other systems or databases to resolve complex queries. Agentic RAG systems are characterized by their ability to function more independently and their capacity to handle tasks that require higher levels of cognitive abilities and decision-making, similar to how a human expert might operate within specific domains.
-
-The evolution of RAG from Naive to Agentic models illustrates a trajectory towards increasingly sophisticated, adaptable, and intelligent systems capable of performing complex tasks across various domains with high levels of accuracy and reliability. These developments highlight the potential of RAG architectures to significantly enhance the practical utility of LLMs in real-world applications, especially in knowledge-intensive fields where up-to-date and precise information is crucial.
-
-The RAG model thus operates as a feedback loop between retrieval and generation, continually refining the information it pulls from external sources to improve the relevance and accuracy of its outputs. This mechanism makes RAG particularly useful in expert domains, where precision and up-to-date knowledge are crucial.
-
-## Notes on building RAG-type assistants
-
-1. Core Reasoning Engine:        
-
-At the heart of RAG-type systems are Large Language Models (LLMs) that acts as reasoning engines. This engines are enhanced by various modules that provides the necessary tools and factual information to function effectively. This setup positions the LLMs as more than just text generators; they serve as a dynamic reasoning units capable of complex generation processes when supplemented with the right tools. In this way, RAGs can be seen as a bridge between the vast knowledge stored in external databases and the reasoning capabilities of LLMs.
-
-2. Iterative Development Approach:     
-
-It is critical to start with a basic design and then progressively advance to more sophisticated levels. This approach allows for full control over the application's execution. Over time, as the system's capabilities are proven and its reliability is established, you can allow the RAG to take more autonomous decisions. This gradual transition is important for ensuring the system remains robust and the project's constraints (regarding response time) are met.
-
-3. Orchestration of Responses:   
-     
-Effective orchestration involves ensuring seamless integration of parametric information derived from the LLM’s inherent capabilities with the knowledge retrieved during the execution. In many scenarios, the LLM alone can handle responses effectively; however, the challenge lies in integrating this capability with dynamically retrieved external data to enhance the relevance and factual groundedness of responses.    
-
-4. Handling API Unreliability:
-
-APIs, which serves as bridges to external data for retrieval and completion in the generation process, do not always perform as expected (or documented). Planning for unexpected outcomes and incorporating fallback mechanisms or alternatives strategies are essential. This foresight helps maintain the system's performance and ensures consistent user experiences despite external failures.    
-
-5. Building Effective Retrievers:     
-
-The success of a RAG-type system heavily relies on the quality of the retrieval strategy. An effective retriever is essential to provide high-quality, relevant information to the LLM. This is akin to the adage "garbage in, garbage out" —feeding the LLM with poor quality or irrelevant data will lead to poor quality outputs. Therefore, developing sophisticated retrieval mechanisms that can accurately discern and fetch pertinent information is crucial for generating high-quality responses.
 
 {{< admonition type=note title="Bibliography" open=false >}}
-- Krizhevsky, A., Sutskever, I., & Hinton, G. E. (2012). ImageNet Classification with Deep Convolutional Neural Networks. In Advances in Neural Information Processing Systems 25 (NIPS 2012).
-- Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention Is All You Need. In Advances in Neural Information Processing Systems 30 (NIPS 2017).
-- Yunfan Gao et al., Retrieval-Augmented Generation for Large Language Models: A Survey, 2024.
+- Goldberg, David E. 1989. Genetic Algorithms in Search, Optimization, and Machine Learning. New York, NY, USA: Addison-Wesley.
+- Kingma, Diederik P., and Max Welling. 2019. “An Introduction to Variational Autoencoders.” Foundations and Trends® in Machine Learning 12 (4): 307–92. https://doi.org/10.1561/2200000056.
+- Vignolo, Leandro D., and Matias F. Gerard. 2017. “Evolutionary Local Improvementon Genetic Algorithms for Feature Selection.” In 2017 XLIII Latin American Computer Conference (CLEI), 1–8. Cordoba: IEEE. https://doi.org/10.1109/CLEI.2017.8226467.
+- Zhang, Rui, Feiping Nie, Xuelong Li, and Xian Wei. 2019. “Feature Selection with Multi-View Data: A Survey.” Information Fusion 50 (October): 158–67. https://doi.org/10.1016/j.inffus.2018.11.019.
 {{< /admonition >}}
 
-Pic by <a href="https://unsplash.com/es/@hjx518756?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">McDobbie Hu</a> en <a href="https://unsplash.com/es/fotos/fotografia-de-luces-bokeh-5RgShZblKAQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  
+Photo by <a href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Tim Mossholder</a> on <a href="https://unsplash.com/photos/brown-wooden-fence-during-daytime-rjT7P6EFOKU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      

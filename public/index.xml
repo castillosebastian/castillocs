@@ -6,12 +6,12 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 13 Mar 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Synthetic Data and Feature Selection</title>
+    <title>Unraveling Complexity: How Genetic Algorithms and Synthetic Data Enhance Feature Selection</title>
     <link>http://localhost:1313/syntheticdata_and_featureselection/</link>
     <pubDate>Thu, 13 Mar 2025 00:00:00 &#43;0000</pubDate>
     <author>CastilloCS</author>
     <guid>http://localhost:1313/syntheticdata_and_featureselection/</guid>
-    <description><![CDATA[<p>Synthetic data is a type of data that is created by an algorithm, rather than collected from the real world. It is a powerful tool for training machine learning models, but it can also be used to create realistic data for testing and validation.</p>]]></description>
+    <description><![CDATA[<p>Dive into the intersection of biology-inspired algorithms and cutting-edge generative AI with this latest blog post. We explore how Genetic Algorithms (GAs), drawing inspiration from natural evolution, and Variational Autoencoders (VAEs), sophisticated generative models, team up to tackle some of machine learning’s toughest challenges: feature selection in highly dimensional, noisy, and imbalanced datasets. Discover practical insights from real-world experiments, learn why more data isn&rsquo;t always better, and see how carefully tuned synthetic data generation can significantly boost predictive accuracy and model interpretability. This post is a preview of my master’s thesis, supervised by Dr. Matias Gerard and Dr. Leandro Vignolo, CONICET–CINCI.</p>]]></description>
 </item>
 <item>
     <title>Large Language Models and Expert Assistants</title>
