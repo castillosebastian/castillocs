@@ -107,7 +107,7 @@
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/aplications/" title="">Aplications</a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/genetic_algorithms/" selected>English</option></select>
                 </a></div>
@@ -293,7 +293,7 @@
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">deap</span> <span class="kn">import</span> <span class="n">creator</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">deap</span> <span class="kn">import</span> <span class="n">tools</span></span></span></code></pre></div></div>
 <p>Then we will define some auxiliary functions:</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -314,7 +314,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>    
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p</span> <span class="k">else</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ind</span><span class="p">]</span></span></span></code></pre></div></div>
 <p>We implement the genotype-to-phenotype mapping function. We will represent the variables $x$ and $y$ using 12 and 24 bits, respectively.</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -440,7 +440,7 @@
 </span></span><span class="line"><span class="cl">    <span class="n">ind</span><span class="o">.</span><span class="n">fitness</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">fit</span></span></span></code></pre></div></div>
 <p>The evolution of the population is the final step we need to complete. Recall that our individuals are represented by 36-bit chromosomes, and our goal is to evolve the population until we reach the minimum of the objective function.</p>
 <p>To check the performance of the evolution, we will calculate some statistics in our population.</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -469,7 +469,7 @@
 <p>In the following script we will creates an offspring list, which is an exact copy of the selected individuals. The <code>toolbox.clone()</code> method ensure that we don&rsquo;t use a reference to the individuals but an completely independent instance. This is of utter importance since the genetic operators in toolbox will modify the provided objects in-place.</p>
 <p>We then mutate and mate the individuals to find the next generation of individuals. We evaluate them, and continue until one of our individuals evolves to be the perfect organism (minimum), or until the number of generations reaches 100.</p>
 <p>At each generation, we output some statistics about that generation&rsquo;s population and the best individual.</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -510,7 +510,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    </span></span></code></pre></div></div>
 <h3 id="evolution-process">Evolution process:</h3>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

@@ -106,7 +106,7 @@
                     </a>
                 </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/aplications/" title="">Aplications</a><a class="menu-item" href="https://github.com/castillosebastian/castillocs" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw' aria-hidden='true'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
-            </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/responsible_ai/" selected>English</option></select>
                 </a></div>
@@ -556,7 +556,7 @@ Name: count, dtype: int64
 </div>
 <h3 id="simple-neural-network-model">Simple neural network model</h3>
 <p>Folowing the IBM <a href="https://github.com/IBM/inFairness/blob/main/examples/adult-income-prediction/adult_income_prediction.ipynb" target="_blank" rel="noopener noreffer ">example</a> in the income prediction task, we will test a simple neural network.</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -687,7 +687,7 @@ Name: count, dtype: int64
 </span></span><span class="line"><span class="cl"><span class="n">X_test_df_spouse_flipped</span><span class="o">.</span><span class="n">relationship_Wife</span><span class="o">.</span><span class="n">values</span></span></span></code></pre></div></div>
 <pre><code>array([1, 0, 1, ..., 1, 1, 1])
 </code></pre>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -710,7 +710,7 @@ Name: count, dtype: int64
 </span></span><span class="line"><span class="cl"><span class="n">test_dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_ds</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">test_dl_flip</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_ds_flip</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></span></span></code></pre></div></div>
 <p>We test a multilayer neural network as proposed in the IBM implementation example.</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -744,7 +744,7 @@ Name: count, dtype: int64
 </span></span><span class="line"><span class="cl"><span class="n">loss_fn</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">cross_entropy</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">EPOCHS</span> <span class="o">=</span> <span class="mi">10</span></span></span></code></pre></div></div>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -788,7 +788,7 @@ Spouse consistency: 0.9636222910216719
 <p>The authors use Wasserstein distances to measure the similarity between individuals. Unlike Mahalanobis, Wasserstein distance can be used to compare two probability distributions and is defined as the minimum cost that must be paid to transform one distribution into the other.  The distances between data points are calculated in a way that takes into account protected attributes (in our example: gender or race). The goal is to ensure that similar individuals, as determined by Wasserstein distance, are treated similarly by the machine learning model.</p>
 <p>To achieve this, the algorithm learn &lsquo;sensitive directions&rsquo; in the data. These are directions in the feature space along which changes are likely to correspond to changes in protected attributes. These is a clever approach to uncover hidden biases by identifying subtle patterns that may correspond to changes in protected attributes, even if those attributes are not present in our model inputs. This allows the model to account for potential biases that might otherwise go unnoticed.</p>
 <p>For instance, to identify a sensitive direction associated with a particular attribute (e.g., gender), the algorithm use a logistic regression classifier to distinguish between classes (such as men and women in the data). The coefficients from this logistic regression model define a direction within the feature space. The performance of the machine learning model is assessed by its worst-case performance on hypothetical populations of users with perturbed sensitive attributes. By minimizing the loss function, the system is ensured to perform well on all such populations.</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -869,7 +869,7 @@ Balanced accuracy: 0.742399333699871
 Spouse consistency: 0.9997788589119858
 </code></pre>
 <h3 id="results">Results</h3>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
         <span class="code-title"><i class="arrow fas fa-chevron-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
